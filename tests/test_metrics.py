@@ -1,8 +1,8 @@
 """Tests for common.metrics.
 
 Written before the implementation. Every expected value below was computed by
-hand from the formulas as `COURSE_NOTATION_2026-07-30.md` §2.1 prints them, not
-from any library.
+hand from the formulas as the course prints them on printed sl. 47-48 of
+`files/lectures/Time-Series Forecasting.pdf` (PDF pp. 45-46), not from any library.
 
 Worked example used throughout:
 
@@ -188,9 +188,9 @@ def test_percentage_metrics_are_deliberately_absent():
     """MAPE and SMAPE divide by |y_t|.
 
     LTSF results are computed on z-scored data, so the series crosses zero and
-    both metrics blow up. `COURSE_NOTATION` §2.1 already flags MAPE as undefined
-    at y_t = 0. This test exists so that adding them is a deliberate act with a
-    conversation attached, not a quiet import.
+    both metrics blow up. The course's own metric table (printed sl. 48) already
+    flags MAPE as undefined at y_t = 0. This test exists so that adding them is a
+    deliberate act with a conversation attached, not a quiet import.
     """
     assert not hasattr(metrics, "mape")
     assert not hasattr(metrics, "smape")

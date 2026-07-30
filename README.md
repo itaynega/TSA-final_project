@@ -76,13 +76,38 @@ quick start below — `exp_main.py` opens that same file in append mode.
 
 Two tracks, running in parallel.
 
-| Track | Who | What |
-|---|---|---|
-| **Reproduce the paper's result** | Itay | Get the target cell running and matching, on our hardware, and record every environment deviation |
-| **Design the improvement** | Amitay | Understand the method and its limitations well enough to choose a change we can defend. Not chosen yet, deliberately |
+| Track | Owner | What | Owns which files |
+|---|---|---|---|
+| **Reproduce the paper's result** | Itay | Get the target cell running and matching on our hardware, and record every environment deviation | `common/data.py`, `common/split.py`, the reconstruction run |
+| **Design the improvement** | Amitay | Understand the method and its limitations well enough to choose a change we can defend | `common/metrics.py`, the baseline, the improvement, the leakage audit, the report |
 
 The improvement is picked **after** the method is understood, not before. Choosing first and
 justifying afterwards is the failure mode this sequencing exists to prevent.
+`files/project/TQNET_BRIEF.md` is that understanding — it is written, so the gate is open.
+
+The leakage audit is deliberately Amitay's even though the pipeline is Itay's: it is audited by
+whoever did **not** write it.
+
+## Settled — do not reopen
+
+- **Paper: TQNet.** Selection is closed.
+- **Benchmark: ETTh1**, multivariate, `seq_len=96`; target cell `pred_len=96`.
+- **Task type:** multivariate, supervised, deterministic point forecasting. The report has to state
+  this explicitly.
+- **Evaluation protocol: the paper's own.** The forecast origin slides across the test split at
+  stride 1 with a fixed model — that is *rolling-origin* evaluation, which the brief names as
+  acceptable. **Do not add walk-forward as a second protocol:** it retrains per fold, so its numbers
+  would not be comparable to the paper's and the comparison tables would break.
+- **Metrics: MSE, MAE, RMSE, MdAE**, implemented once in `common/metrics.py`. MAE is both the paper's
+  metric and a course metric, so it discharges two requirements at once. **MAPE and SMAPE are
+  excluded** — they divide by |yₜ| and the data is z-scored, so the series crosses zero constantly.
+- **Baseline: seasonal-naive, period 24.** The trap: it must be computed on the **z-scored scale,
+  using the train-fitted scaler, over the identical windows** as TQNet. A raw-scale baseline is not
+  comparable to anything in the paper's table, and the mistake stays invisible until the numbers look
+  strange.
+- **One improvement**, costing roughly one training run. Not two, however good the first one looks.
+- The improvement imports the split and the metrics from `common/` and **asserts the split hash**.
+  Anything it estimates from data, it estimates from the **training split only**.
 
 ## What is in here
 
@@ -94,9 +119,14 @@ justifying afterwards is the failure mode this sequencing exists to prevent.
 | `files/lectures/` | The ten course lecture decks, plus `CPDexamples.pdf` (which is **Laurent Oudre's** ENS deck, not this course's — cite him, never Rika) |
 | `repro/tqnet-ablation-flags.patch` | Turns TQNet's hard-coded ablation switches into `--use_tq` / `--channel_aggre` flags. Defaults reproduce the published model exactly |
 | `repro/run_etth1_ablation.sh` | Runs the two ETTh1 ablations the paper never published — does TQ help at all at 7 channels? |
+| `common/` | The shared frozen foundation both stages import. `metrics.py` and `results.py` exist; `data.py` and `split.py` are Itay's, still to come |
+| `tests/` | `pytest` suite over `common/`. Run it with `python3 -m pytest` from the repo root |
+| `report/` | Report material as it gets drafted. `metrics.md` discharges the two metric requirements |
 
-Earlier planning documents (plan, dispatches, rubric, requirements table) were removed to get back to
-a clean point. They are still in git history if anything needs recovering.
+Earlier planning documents (plan, dispatches, rubric, requirements table, worker briefs) were removed
+to get back to a clean point; their still-live decisions are in **Settled** above. They remain in git
+history if anything needs recovering, but the working tree is the source of truth — if a document
+contradicts this README or `TQNET_BRIEF.md`, the document is stale.
 
 ## Reproduction quick start
 

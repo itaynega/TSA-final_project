@@ -1,8 +1,8 @@
 """Forecast error metrics, in the course's notation.
 
-Written to `COURSE_NOTATION_2026-07-30.md` §2.1, which records these formulas as
-they are printed on slides 47-48 of `Time-Series Forecasting.pdf` (PDF pp. 45-46).
-The course defines the error term first:
+The formulas are as printed on slides 47-48 of `files/lectures/Time-Series
+Forecasting.pdf` (PDF pp. 45-46). Both slides are images, so the formulas were
+recovered by rendering the pages. The course defines the error term first:
 
     e_t = y_t - f(x_t)
 
@@ -22,9 +22,9 @@ Four metrics, and only four. Between them they discharge two requirements:
 
 MAPE and SMAPE are deliberately not here. Both divide by |y_t|, and long-horizon
 forecasting results — including TQNet's — are computed on z-scored data, where the
-series crosses zero. The course's own table already marks MAPE undefined at
-y_t = 0. If either is ever wanted, compute it on the original scale, label it as
-such, and follow the course in writing it without a x100 factor.
+series crosses zero. The course's own table (printed sl. 48) already marks MAPE
+undefined at y_t = 0. If either is ever wanted, compute it on the original scale,
+label it as such, and follow the course in writing it without a x100 factor.
 
 Two conventions worth stating once, because getting either wrong produces a
 number that looks plausible and is not comparable to anything:

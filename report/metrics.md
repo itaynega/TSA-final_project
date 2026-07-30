@@ -131,5 +131,4 @@ and they are *not* comparable to any error expressed in the units of the origina
 - `Time-Series Forecasting.pdf`, printed sl. 47 (PDF p. 45) — the error term, MSE, MAE, RMSE.
 - `Time-Series Forecasting.pdf`, printed sl. 48 (PDF p. 46) — MdAE, MAPE, SMAPE, NMSE, RMSLE.
   Both slides are images; the formulas were recovered by rendering the pages.
-- `COURSE_NOTATION_2026-07-30.md` §2.1, which records the above verbatim.
 - Implementation: `common/metrics.py`. Tests: `tests/test_metrics.py`.
