@@ -1,0 +1,26 @@
+{
+  "arm": "baseline",
+  "extra": {
+    "data_sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066",
+    "period": 24,
+    "split": "test"
+  },
+  "git_commit": "3894e4f",
+  "metrics": {
+    "MAE": 0.43330271118779884,
+    "MSE": 0.512225108181955,
+    "MdAE": 0.26066610775972177,
+    "RMSE": 0.7156990346381327
+  },
+  "model": "seasonal_naive_24",
+  "n_points": 1871520,
+  "n_windows": 2785,
+  "notes": "Seasonal-naive, period 24, on z-scored ETTh1 using the train-fitted scaler, over the identical 2785 test windows as the reconstruction.",
+  "pred_len": 96,
+  "recorded_ns": 1785426202205168000,
+  "run_id": "baseline-seasonal_naive_24-sna-h96-1785426202205168000",
+  "seed": null,
+  "seq_len": 96,
+  "split_hash": "b66ee6b47e2b2eb8",
+  "timestamp": "2026-07-30T18:43:22"
+}

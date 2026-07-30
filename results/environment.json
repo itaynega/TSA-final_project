@@ -1,0 +1,42 @@
+{
+  "accelerator": "cpu",
+  "dataset": {
+    "matches_expected": true,
+    "path": "/Users/inega/Desktop/timeAnalysis/TSA-final_project/TQNet/dataset/ETTh1.csv",
+    "present": true,
+    "sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066"
+  },
+  "devices": {
+    "cpu": true,
+    "cuda": false,
+    "mps": false,
+    "threads": 10
+  },
+  "import_errors": {},
+  "machine": "arm64",
+  "packages": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0",
+    "torch": "2.9.1"
+  },
+  "paper_environment": {
+    "framework": "PyTorch (version unstated)",
+    "gpu": "1x NVIDIA GeForce RTX 4090, 24 GB",
+    "python": "3.8 per upstream README (now end-of-life)",
+    "seed": 2024
+  },
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "processor": "arm",
+  "python": "3.13.5",
+  "python_executable": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+  "validated_against": {
+    "matplotlib": "3.10.7",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "python": "3.13.5",
+    "sklearn": "1.8.0",
+    "torch": "2.9.1"
+  }
+}

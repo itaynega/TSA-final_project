@@ -1,0 +1,27 @@
+# Environment for the TQNet reconstruction.
+#
+# Upstream's own TQNet/requirements.txt lists five package names and no versions, and
+# its README asks for Python 3.8, which is end-of-life. So there is no upstream
+# constraint to satisfy -- only a record to keep, which is what the pins below are.
+#
+# These are the versions the reconstruction was validated on, and on which it matched
+# the published MSE to 0.00017. `python3 tools/check_env.py` reports any drift from
+# them; drift is a reportable deviation, not an error.
+#
+#   python 3.13.5   (upstream asks for 3.8; see the note on pandas below)
+#
+# Install:
+#   python3 -m pip install -r requirements.txt
+#
+# Note on pandas: upstream's data loader calls `df_stamp.drop(['date'], 1)`, a
+# positional form that pandas 2.0 removed, so unmodified upstream code cannot run on
+# any pandas listed here. The vendored copy is patched; see docs/02 for the change.
+
+numpy==2.2.6
+pandas==2.3.3
+scikit-learn==1.8.0
+torch==2.9.1
+matplotlib==3.10.7
+
+# Test suite only. Not needed to train or to produce the report.
+pytest==9.1.1

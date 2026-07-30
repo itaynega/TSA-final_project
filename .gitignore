@@ -1,4 +1,6 @@
-# Data — D3 decides at T5 whether we ship or link. Never commit raw datasets.
+# Datasets. Never committed: `tools/get_data.py` downloads ETTh1.csv from a pinned
+# commit and verifies it against a sha256, which is a stronger guarantee than a copy
+# in git would be. The assignment allows a documented download in place of the file.
 data/
 dataset/
 *.csv
@@ -6,21 +8,40 @@ dataset/
 *.npz
 !files/**/*.csv
 
-# Model artefacts and run outputs
+# Model artefacts and per-run output. `TQNet/results/<setting>/pred.npy` is ~7 MB per
+# run and is reproducible from the checkpoint, so it stays local.
 checkpoints/
-runs/
+TQNet/results/
+TQNet/test_results/
+TQNet/result_ours.txt
 logs/
-results/*.pt
 *.pth
 *.ckpt
+*.pt
 
-# Python
+# Our run records are the opposite case: small JSON, one file per run, and the report
+# is assembled from them. They MUST be committed, so re-include them after the broad
+# `runs/` rule below (which exists for framework-generated run directories).
+runs/
+!results/runs/
+!results/runs/*.json
+!results/*.json
+
+# Generated report material. Committed deliberately -- report/results.md and its
+# figures are deliverables, and a reader without the dataset still needs to see them.
+
+# Caches
+.cache/
 __pycache__/
 *.py[cod]
+.pytest_cache/
 .ipynb_checkpoints/
 .venv/
 venv/
 env/
+
+# Scratch space used when re-vendoring upstream
+.upstream_tmp/
 
 # OS
 .DS_Store
