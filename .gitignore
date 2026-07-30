@@ -1,0 +1,27 @@
+# Data — D3 decides at T5 whether we ship or link. Never commit raw datasets.
+data/
+dataset/
+*.csv
+*.npy
+*.npz
+!files/**/*.csv
+
+# Model artefacts and run outputs
+checkpoints/
+runs/
+logs/
+results/*.pt
+*.pth
+*.ckpt
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db

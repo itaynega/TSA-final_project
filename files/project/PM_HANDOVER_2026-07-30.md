@@ -66,8 +66,13 @@ anything**. "I verified these five things and the plan stands" is a good outcome
 **Assignment:** reconstruct a time-series paper, then improve it. Deadline **10.08**. Five working days,
 **none yet spent** — the work so far has been planning and pre-work.
 
-**Chosen paper: none.** This is the critical path. `PLAN` §3 Day 1 locks it by end of day (D6′), and that gate
-is not negotiable — a locked mediocre paper beats an unlocked exciting one on Day 2.
+**Chosen paper: TQNet (ICML 2025) — LOCKED (D35).** *[Updated 30 Jul. This paragraph replaces "Chosen paper:
+none", which was true when this handover was written and is no longer. The live decision log lives in
+`DISPATCHES_2026-07-30.md`, which has run to D36 and is ahead of `PLAN_2026-07-30_v2.md` — read DISPATCHES
+first.]* Selection is closed: four scouting dispatches, a 2024–26 gap-fill, rubric v2 applied. Dispatches
+**#12** (clone-and-run probe — BLOCKING, R1) and **#13** (method and limitations; forbidden from proposing an
+improvement, D36) are written and ready to send together. Proposed amendments awaiting a ruling are in
+`AMENDMENTS_2026-07-30.md`.
 
 **Done:** requirements table (A1–A5, B1–B10, C1–C2, D1–D5, E1–E3, F1–F7). Plan at revision 2 of v2.
 Dispatch #1 (course notation map) executed, audited, **accepted**; it produced
