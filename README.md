@@ -38,6 +38,7 @@ Written to answer the three questions the project brief asks. Read them in order
 | **[`docs/01-paper-and-method.md`](docs/01-paper-and-method.md)** | The paper, the problem it attacks, the Temporal Query algorithm, and how all of it maps onto the course material |
 | **[`docs/02-architecture-and-implementation.md`](docs/02-architecture-and-implementation.md)** | The architecture step by step, how the code implements it, six paper/code disagreements, and **every change we made to the vendored code** |
 | **[`docs/03-running-the-experiments.md`](docs/03-running-the-experiments.md)** | How the training data is generated, how training and validation run, and how to reproduce every number |
+| **[`docs/STATUS.md`](docs/STATUS.md)** | **Open gaps, each with the command that closes it.** Read this before picking up work |
 
 Supporting material:
 
@@ -46,6 +47,8 @@ Supporting material:
 - [`report/metrics.md`](report/metrics.md) — the four metrics in the course's notation,
   and why MAPE/SMAPE are excluded.
 - [`report/results.md`](report/results.md) — generated tables and figures.
+- [`report/paper_code_divergences.md`](report/paper_code_divergences.md) — the six places
+  the TQNet paper and the TQNet code disagree, and which one we followed.
 
 ## Where things stand
 
@@ -71,8 +74,18 @@ Two results beyond the reproduction, both in `docs/03` §3.7:
   hard limit on what our cell can demonstrate, and directly relevant to choosing an
   improvement.
 
+> ⚠️ **Both findings above are currently untraceable.** They come from five runs whose
+> record files were never committed to `results/runs/`, which holds only the baseline and
+> the target cell. Rerunning and ingesting them is ~5 minutes — see
+> [`docs/STATUS.md`](docs/STATUS.md) **G2**.
+
 **Stage 2 is not started.** The improvement is chosen *after* the method is understood,
 not before.
+
+**Open gaps before Stage 2.** The leakage audit was run and ruled (`docs/03` §3.2) but its
+artefacts were never committed, so B2 — the brief's only PASS/FAIL requirement — has no
+evidence a grader can check. That plus four other gaps are listed with their fix commands
+in [`docs/STATUS.md`](docs/STATUS.md). **Read it before picking up work.**
 
 | Track | Owner | Owns |
 |---|---|---|
@@ -107,9 +120,9 @@ The leakage audit is deliberately owned by whoever did **not** write the pipelin
 | `common/` | The shared frozen foundation: `split.py`, `data.py`, `metrics.py`, `results.py` |
 | `tools/` | Helper scripts: data fetch, env check, leakage audit, baseline, result ingest, report builder |
 | `repro/` | `run_reconstruction.sh` (Stage 1) and `run_etth1_ablation.sh` (the unpublished ETTh1 ablation) |
-| `docs/` | The three documents above |
-| `report/` | Report material. `metrics.md` and `audit.md` are written; `results.md` is generated |
-| `results/runs/` | One JSON per run. Committed — the report is assembled from these |
+| `docs/` | The three documents above, plus `STATUS.md` (open gaps) |
+| `report/` | Report material. `metrics.md` and `paper_code_divergences.md` are written; `results.md` is generated. **`audit.md` is not yet generated — STATUS.md G1** |
+| `results/runs/` | One JSON per run. Committed — the report is assembled from these. **Currently 2 of 7 runs — STATUS.md G2** |
 | `tests/` | `pytest` suite over `common/` and `tools/`. Run with `python3 -m pytest` from the root |
 | `files/project/` | The assignment brief, the paper, and `TQNET_BRIEF.md` |
 | `files/lectures/` | The ten course decks, plus `CPDexamples.pdf` (which is **Laurent Oudre's** ENS deck, not this course's — cite him, never Rika) |
@@ -143,7 +156,9 @@ digest proves we evaluated on the same bytes rather than claiming to.
 - Pull before you start, push when you stop.
 - **Do not put your clone inside a OneDrive- or Dropbox-synced folder.** Sync clients
   lock and rewrite files under `.git/` while git is using them, which corrupts the
-  object store.
+  object store. ⚠️ **Amitay's clone currently breaks this rule** and stale
+  `.git/*.lock` files prove OneDrive is interfering. No corruption yet — see
+  [`docs/STATUS.md`](docs/STATUS.md) **G5** for the fix.
 
 ## Environment
 
