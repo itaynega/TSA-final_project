@@ -158,16 +158,22 @@ Found by reading both. Reported as findings, unreconciled. **Item 1 changes the 
 anyone reimplementing from the equations gets something different from what produced
 0.3712.
 
-> This section and §2.6 are the two halves of a three-way picture — paper, upstream
+> **This table is superseded in detail by
+> [`../report/paper_code_divergences.md`](../report/paper_code_divergences.md)**, which
+> re-checked every item against the PDF and the source, split the behavioural divergences
+> from the cosmetic ones, and refuted four apparent mismatches — including part of item 3
+> below. Where the two disagree, that file wins.
+>
+> This section and §2.6 are also the two halves of a three-way picture — paper, upstream
 > repository, our tree. [`04-paper-vs-upstream-vs-ours.md`](04-paper-vs-upstream-vs-ours.md)
-> puts them in one table and states the rule we followed: **where the paper and the code
-> disagree, we follow the code**, because the code is what produced the published number.
+> joins them and states the rule we followed: **where the paper and the code disagree, we
+> follow the code**, because the code is what produced the published number.
 
 | # | Paper says | Code does | Why it matters |
 |---|---|---|---|
 | 1 | Attention scaled by $1/\sqrt{L} = 1/\sqrt{96}$ (eq. 3) | `nn.MultiheadAttention` scales by $1/\sqrt{d_{head}} = 1/\sqrt{24}$ | Logits are 2× larger than the equation implies |
 | 2 | MLP is `Linear(GeLU(Linear(·)))` (eq. 5) — no trailing activation | `Linear → GELU → Linear → GELU` (`TQNet.py:31-36`) | An extra nonlinearity sits between the MLP and the residual add |
-| 3 | Instance norm is "optional" (§3.2) | On by default for ETT, off for PEMS/Solar via `--use_revin 0` | It is a per-dataset switch, not an option. Despite the flag name, `layers/RevIN.py` is never imported — there are no affine parameters |
+| 3 | Instance norm is "optional" (§3.2) | On by default for ETT, off for PEMS/Solar via `--use_revin 0` | It is a per-dataset switch, not an option. **Corrected:** this row previously added that `layers/RevIN.py` is never imported and there are no affine parameters, implying a mismatch. That part is **wrong** — §3.2 adopts *"a simple yet effective IN method that used in iTransformer and CycleNet"* and equations 7–8 define plain mean/variance removal with no learnable terms, so the code matches the paper. See `report/paper_code_divergences.md` item 8 |
 | 4 | Table 1: ETTh1 has 14,400 timesteps | The CSV has 17,420; the loader hard-stops at 14,400 | 3,020 rows (~4 months) silently discarded |
 | 5 | $\theta_{TQ} \in \mathbb{R}^{C \times W}$, indexed from "time step *t*" | Parameter is `(W, C)`; index is the phase at `s_end` | Only coincidentally equivalent when *W* divides *L* |
 | 6 | `--model_type` documented as `[linear, mlp]` | Read and never used | Dead flag |

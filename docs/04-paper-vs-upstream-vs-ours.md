@@ -34,21 +34,45 @@ much better use of them than silently correcting them in Stage 1 and losing the 
 
 ## 4.1 Where the paper and the repository disagree
 
-Six places, found by reading both. **Ours follows the code in all six.**
+> **The authoritative treatment is
+> [`../report/paper_code_divergences.md`](../report/paper_code_divergences.md)** (Amitay,
+> 31 Jul), which checks every item against the PDF and the source directly, separates the
+> behavioural divergences from the cosmetic ones, and — the part most worth reading —
+> lists four things that *look* like divergences and are not. Do not restate the analysis
+> from here; cite that file.
 
-| # | **P** — the paper says | **U** — the code does | **O** — ours | Consequence |
-|---|---|---|---|---|
-| 1 | Attention scaled by $1/\sqrt{L}=1/\sqrt{96}$ (eq. 3) | `nn.MultiheadAttention` scales by $1/\sqrt{d_{head}}=1/\sqrt{24}$ | follows U | Logits are **2× larger** than the equation implies. Anyone reimplementing from eq. 3 gets a different model |
-| 2 | MLP is $\mathrm{Linear}(\mathrm{GeLU}(\mathrm{Linear}(\cdot)))$ (eq. 5) — no trailing activation | `Linear → GELU → Linear → GELU` (`TQNet.py:31-36`) | follows U | An extra nonlinearity sits between the MLP and the residual add |
-| 3 | Instance normalisation is "optional" (§3.2) | A per-dataset switch: on for ETT, off for PEMS/Solar via `--use_revin 0`. Despite the flag name, `layers/RevIN.py` is **never imported** — there are no affine parameters | follows U (on, no affine) | It is not an option, it is a dataset-dependent part of the method |
-| 4 | Table 1: ETTh1 has 14,400 timesteps | The CSV has 17,420; the loader hard-stops at 14,400 | follows U, and `common/data.py` reproduces the same truncation | **3,020 rows (~4 months) are silently discarded.** The paper misreports the series length |
-| 5 | $\theta_{TQ}\in\mathbb{R}^{C\times W}$, indexed from "time step *t*" | Parameter is `(W, C)`; the index is the **absolute CSV row number mod *W*** taken at `s_end`, the first *forecast* step | follows U exactly | Equivalent only because *W*=24 divides *L*=96. On Electricity (*W*=168 > *L*=96) the two readings differ |
-| 6 | `--model_type` documented as `[linear, mlp]` | Parsed, assigned, **never used** (`TQNet.py:12`) | follows U; excluded from our hyperparameter table | A dead flag. Reporting it as a hyperparameter would be wrong |
+The three findings from it that the P/U/O split depends on:
 
-Items **1** and **3** are named in `files/project/TQNET_BRIEF.md` §7 as components an
-improvement could attach to. Item **5** is the one most likely to bite a reimplementation,
-because getting the phase wrong shifts every query by a constant and degrades the model
-quietly instead of crashing.
+**1. The attention scale.** Equation 3 (and equation 10) divide by $\sqrt{L}=\sqrt{96}$;
+`nn.MultiheadAttention` divides by the per-head width, $\sqrt{96/4}=\sqrt{24}$. The scores
+entering the softmax are **exactly 2× larger** in the code. This single item is why the
+rule in §4.0 exists.
+
+**2. Reimplement from Appendix A.1, not Section 3.** The main text's equations 5 and 6 omit
+both residual connections *and* the 96→512 projection. Someone building from Section 3
+alone gets a materially smaller, different network. Algorithm 1 on p. 13 gives the full
+forward pass and the code matches it — so this is an **internal inconsistency in the
+paper**, not a paper/code disagreement, and it is the reason `docs/02` §2.1 traces the
+architecture from the code rather than from the equations.
+
+**3. The truncation.** Table 1 lists ETTh1 as 14,400 timesteps; the CSV has 17,420 and the
+loader hard-stops at 14,400, discarding about 4.1 months. **O follows U here too** —
+`common/data.py` reproduces the same truncation deliberately, and
+`tests/test_data.py` checks it element for element against the vendored loader. Had we
+used the full series, our windows would not be the paper's windows and the 0.045% match
+would be meaningless.
+
+**Ours follows the code on every divergence, without exception.**
+
+### One correction this document previously carried
+
+An earlier version of §4.1, and `docs/02` §2.5 item 3, reported the absence of learnable
+scale/shift terms in the instance normalisation as a paper/code divergence. **It is not
+one.** The paper's equations 7–8 define plain mean/variance removal with no learnable
+parameters, and §3.2 states outright that it adopts *"a simple yet effective IN method that
+used in iTransformer and CycleNet"*, citing RevIN only as related work. The code matches the
+paper; the unused `layers/RevIN.py` is a leftover file, not evidence of a mismatch. See
+`report/paper_code_divergences.md` item 8. `docs/02` §2.5 has been corrected.
 
 ---
 

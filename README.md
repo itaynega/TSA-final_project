@@ -38,7 +38,8 @@ Written to answer the three questions the project brief asks. Read them in order
 | **[`docs/01-paper-and-method.md`](docs/01-paper-and-method.md)** | The paper, the problem it attacks, the Temporal Query algorithm, and how all of it maps onto the course material |
 | **[`docs/02-architecture-and-implementation.md`](docs/02-architecture-and-implementation.md)** | The architecture step by step, how the code implements it, six paper/code disagreements, and **every change we made to the vendored code** |
 | **[`docs/03-running-the-experiments.md`](docs/03-running-the-experiments.md)** | How the training data is generated, how training and validation run, and how to reproduce every number |
-| **[`docs/04-paper-vs-upstream-vs-ours.md`](docs/04-paper-vs-upstream-vs-ours.md)** | The three implementations side by side — the paper as *described*, the authors' repository as *executed*, and our tree — and why we follow the code wherever the two disagree |
+| **[`docs/04-paper-vs-upstream-vs-ours.md`](docs/04-paper-vs-upstream-vs-ours.md)** | The three implementations side by side — the paper as *described*, the authors' repository as *executed*, and our tree — and which one we followed where they disagree |
+| **[`docs/STATUS.md`](docs/STATUS.md)** | **Open gaps, each with the command that closes it.** Read this before picking up work |
 
 Supporting material:
 
@@ -47,6 +48,8 @@ Supporting material:
 - [`report/metrics.md`](report/metrics.md) — the four metrics in the course's notation,
   and why MAPE/SMAPE are excluded.
 - [`report/results.md`](report/results.md) — generated tables and figures.
+- [`report/paper_code_divergences.md`](report/paper_code_divergences.md) — the six places
+  the TQNet paper and the TQNet code disagree, and which one we followed.
 
 ## Where things stand
 
@@ -72,8 +75,18 @@ Two results beyond the reproduction, both in `docs/03` §3.7:
   hard limit on what our cell can demonstrate, and directly relevant to choosing an
   improvement.
 
+> ⚠️ **Both findings above are currently untraceable.** They come from five runs whose
+> record files were never committed to `results/runs/`, which holds only the baseline and
+> the target cell. Rerunning and ingesting them is ~5 minutes — see
+> [`docs/STATUS.md`](docs/STATUS.md) **G2**.
+
 **Stage 2 is not started.** The improvement is chosen *after* the method is understood,
 not before.
+
+**Open gaps before Stage 2.** The leakage audit was run and ruled (`docs/03` §3.2) but its
+artefacts were never committed, so B2 — the brief's only PASS/FAIL requirement — has no
+evidence a grader can check. That plus four other gaps are listed with their fix commands
+in [`docs/STATUS.md`](docs/STATUS.md). **Read it before picking up work.**
 
 | Track | Owner | Owns |
 |---|---|---|
@@ -121,19 +134,30 @@ is still the team's to make** — this README records the evidence, not a decisi
 
 ### Order of work
 
-1. **Choose the axis** (above). Everything else is blocked on this.
-2. **Pre-register** the improvement before running it — the predicted direction *and* a
-   rough magnitude, written down first. This is a hard project rule, and requirement C1
-   asks for the justification anyway.
-3. **Run it** on the frozen split. `common.results.assert_split_hash` enforces
+The gap-closing steps and their exact commands live in
+[`docs/STATUS.md`](docs/STATUS.md); they are not repeated here. Interleaved with the axis
+decision above, the whole remaining sequence is:
+
+1. **Close G5, then G1, then G2 and G3** — see `docs/STATUS.md`. G5 protects every
+   subsequent write, G1 closes the brief's only PASS/FAIL requirement, and G2/G3 make the
+   numbers this README quotes traceable. About fifteen minutes in total, mostly waiting.
+2. **Choose the axis** (above). Stage 2 is blocked on this and nothing else.
+3. **Pre-register** the improvement before running it — the predicted direction *and* a
+   rough magnitude, written down first. This is `docs/STATUS.md` **G4**, it is a hard
+   project rule, and requirement C1 asks for the justification anyway.
+4. **Run it** on the frozen split. `common.results.assert_split_hash` enforces
    `b66ee6b47e2b2eb8`; requirement C2 is pass/fail on this.
-4. **Multiple seeds plus a paired test.** Not optional given the noise floor above.
-5. **Write the report** — seven mandated sections, F1–F7, in order, as a PDF.
+5. **Multiple seeds plus a paired test.** Not optional given the noise floor above.
+6. **Write the report** — seven mandated sections, F1–F7, in order, as a PDF.
+
+Steps 1 and 2 are independent, so they can run in parallel across the two tracks.
 
 ### Things the report must not forget
 
 - **F5 requires a table**, and it must be three-way: paper / reconstruction / improved.
-  `tools/make_report.py` assembles it from `results/runs/`, so no number is retyped.
+  `tools/make_report.py` assembles it from `results/runs/`, so no number is retyped — which
+  is exactly why **G2 has to be closed first**, or the table is built from two runs out of
+  seven.
 - **F6 requires "what did not work."** Negative results are graded content here. The ETTh1
   ablation — the paper's own headline mechanism being unmeasurable at seven channels — is
   the strongest thing we have for that section, and it is already measured.
@@ -143,8 +167,11 @@ is still the team's to make** — this README records the evidence, not a decisi
   be left to assume we rewrote the architecture from scratch.
   [`docs/04`](docs/04-paper-vs-upstream-vs-ours.md) §4.3 states this in the form the report
   can reuse.
-- **Six paper/code disagreements** are a finding worth reporting in their own right, not an
-  implementation footnote. See [`docs/04`](docs/04-paper-vs-upstream-vs-ours.md) §4.1.
+- **The paper/code divergences are a finding in their own right**, not an implementation
+  footnote — a published paper and its own official code describe different models, and one
+  difference changes the attention scale by a factor of two.
+  [`report/paper_code_divergences.md`](report/paper_code_divergences.md) is the write-up;
+  [`docs/04`](docs/04-paper-vs-upstream-vs-ours.md) §4.4 frames it for F6.
 
 ### Still open
 
@@ -180,9 +207,9 @@ is still the team's to make** — this README records the evidence, not a decisi
 | `common/` | The shared frozen foundation: `split.py`, `data.py`, `metrics.py`, `results.py` |
 | `tools/` | Helper scripts: data fetch, env check, leakage audit, baseline, result ingest, report builder |
 | `repro/` | `run_reconstruction.sh` (Stage 1) and `run_etth1_ablation.sh` (the unpublished ETTh1 ablation) |
-| `docs/` | The three documents above |
-| `report/` | Report material. `metrics.md` and `audit.md` are written; `results.md` is generated |
-| `results/runs/` | One JSON per run. Committed — the report is assembled from these |
+| `docs/` | The four numbered documents above, plus `STATUS.md` (open gaps) |
+| `report/` | Report material. `metrics.md` and `paper_code_divergences.md` are written; `results.md` is generated. **`audit.md` is not yet generated — STATUS.md G1** |
+| `results/runs/` | One JSON per run. Committed — the report is assembled from these. **Currently 2 of 7 runs — STATUS.md G2** |
 | `tests/` | `pytest` suite over `common/` and `tools/`. Run with `python3 -m pytest` from the root |
 | `files/project/` | The assignment brief, the paper, and `TQNET_BRIEF.md` |
 | `files/lectures/` | The ten lecture PDFs, and nothing else. One of them, `CPDexamples.pdf`, is **Laurent Oudre's** ENS deck rather than this course's — cite him, never Rika |
@@ -216,7 +243,9 @@ digest proves we evaluated on the same bytes rather than claiming to.
 - Pull before you start, push when you stop.
 - **Do not put your clone inside a OneDrive- or Dropbox-synced folder.** Sync clients
   lock and rewrite files under `.git/` while git is using them, which corrupts the
-  object store.
+  object store. ⚠️ **Amitay's clone currently breaks this rule** and stale
+  `.git/*.lock` files prove OneDrive is interfering. No corruption yet — see
+  [`docs/STATUS.md`](docs/STATUS.md) **G5** for the fix.
 
 ## Environment
 
