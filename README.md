@@ -38,6 +38,7 @@ Written to answer the three questions the project brief asks. Read them in order
 | **[`docs/01-paper-and-method.md`](docs/01-paper-and-method.md)** | The paper, the problem it attacks, the Temporal Query algorithm, and how all of it maps onto the course material |
 | **[`docs/02-architecture-and-implementation.md`](docs/02-architecture-and-implementation.md)** | The architecture step by step, how the code implements it, six paper/code disagreements, and **every change we made to the vendored code** |
 | **[`docs/03-running-the-experiments.md`](docs/03-running-the-experiments.md)** | How the training data is generated, how training and validation run, and how to reproduce every number |
+| **[`docs/04-paper-vs-upstream-vs-ours.md`](docs/04-paper-vs-upstream-vs-ours.md)** | The three implementations side by side — the paper as *described*, the authors' repository as *executed*, and our tree — and why we follow the code wherever the two disagree |
 
 Supporting material:
 
@@ -81,6 +82,78 @@ not before.
 
 The leakage audit is deliberately owned by whoever did **not** write the pipeline.
 
+---
+
+## Next move
+
+**Deadline 10.08. Stage 1 is done; everything remaining is Stage 2 and the report.**
+
+### The decision that unblocks everything: which axis
+
+The brief permits improving *performance, robustness, interpretability, efficiency **or**
+applicability*. Only the first is closed off by our own evidence, and it is worth being
+blunt about why:
+
+- The margin TQNet claims on this cell is **0.004 MSE**.
+- **Our** three-seed standard deviation is **0.00215 MSE** — half the margin, and twice
+  the paper's own 0.001.
+- The ablation shows that on ETTh1 **neither the Temporal Query nor the channel attention
+  is measurable above that noise**, and the pure MLP is nominally best.
+
+So an accuracy improvement here would have to beat a mechanism that itself cannot be
+detected, using a metric whose noise floor is half the effect size. **Do not target MSE.**
+Anything we do target must be evaluated over multiple seeds with a paired test.
+
+Three candidate axes survive that filter, all traceable to the limitations inventory in
+[`files/project/TQNET_BRIEF.md`](files/project/TQNET_BRIEF.md) §6 and the component list
+in §7:
+
+| Axis | Attaches at | Evidence it is real | Risk |
+|---|---|---|---|
+| **Uncertainty / probabilistic output** | the output projection, `TQNet.py:35-38` | Inventory item 7: the model has **no** uncertainty output of any kind — point forecasts only, plain MSE loss. Nothing to beat, so a result is guaranteed to exist | Must not be judged on MSE; needs its own metric (e.g. pinball loss, coverage) declared up front |
+| **Robustness to a misspecified period *W*** | the query gather, `TQNet.py:53-54` | Inventory item 6: the paper's own Figure 6 shows *W*=167 scoring **worse than using no TQ at all**. A conceded, published failure | Touches periodicity → **reading PTQNet first is a prerequisite, not a nicety** |
+| **Applicability to non-integer / drifting periods** | `θ_TQ`, `TQNet.py:21` | Inventory item 5: *W* must be an integer; item 1: it is hand-set per dataset | Same PTQNet prerequisite; also the largest implementation cost |
+
+The uncertainty axis is the recommendation on a two-day clock: it has no originality
+prerequisite blocking it, it attaches at a single layer, it costs about one training run,
+and "the method emits no uncertainty at all" is an unarguable starting point. **The choice
+is still the team's to make** — this README records the evidence, not a decision.
+
+### Order of work
+
+1. **Choose the axis** (above). Everything else is blocked on this.
+2. **Pre-register** the improvement before running it — the predicted direction *and* a
+   rough magnitude, written down first. This is a hard project rule, and requirement C1
+   asks for the justification anyway.
+3. **Run it** on the frozen split. `common.results.assert_split_hash` enforces
+   `b66ee6b47e2b2eb8`; requirement C2 is pass/fail on this.
+4. **Multiple seeds plus a paired test.** Not optional given the noise floor above.
+5. **Write the report** — seven mandated sections, F1–F7, in order, as a PDF.
+
+### Things the report must not forget
+
+- **F5 requires a table**, and it must be three-way: paper / reconstruction / improved.
+  `tools/make_report.py` assembles it from `results/runs/`, so no number is retyped.
+- **F6 requires "what did not work."** Negative results are graded content here. The ETTh1
+  ablation — the paper's own headline mechanism being unmeasurable at seven channels — is
+  the strongest thing we have for that section, and it is already measured.
+- **Say plainly what "reconstruction" means in our case.** We vendored and re-ran the
+  authors' model; what we reimplemented independently is the data path and the metrics.
+  That is defensible and it is *why* the 0.045% match is meaningful, but a reader must not
+  be left to assume we rewrote the architecture from scratch.
+  [`docs/04`](docs/04-paper-vs-upstream-vs-ours.md) §4.3 states this in the form the report
+  can reuse.
+- **Six paper/code disagreements** are a finding worth reporting in their own right, not an
+  implementation footnote. See [`docs/04`](docs/04-paper-vs-upstream-vs-ours.md) §4.1.
+
+### Still open
+
+- **PTQNet** (Xun et al., *Inf. Process. Manage.* 63(7):104785, Apr 2026) is paywalled and
+  unread. It blocks the two period-related axes above. University library access should
+  get it.
+- Five submission artefacts are required (D1–D5): reconstruction code, improvement code,
+  dataset or documented download, the PDF report, and this README.
+
 ## Settled — do not reopen
 
 - **Paper: TQNet.** Selection is closed.
@@ -112,7 +185,7 @@ The leakage audit is deliberately owned by whoever did **not** write the pipelin
 | `results/runs/` | One JSON per run. Committed — the report is assembled from these |
 | `tests/` | `pytest` suite over `common/` and `tools/`. Run with `python3 -m pytest` from the root |
 | `files/project/` | The assignment brief, the paper, and `TQNET_BRIEF.md` |
-| `files/lectures/` | The ten course decks, plus `CPDexamples.pdf` (which is **Laurent Oudre's** ENS deck, not this course's — cite him, never Rika) |
+| `files/lectures/` | The ten lecture PDFs, and nothing else. One of them, `CPDexamples.pdf`, is **Laurent Oudre's** ENS deck rather than this course's — cite him, never Rika |
 
 ## Two decisions that changed since the earlier plan
 

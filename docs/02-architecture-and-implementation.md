@@ -158,6 +158,11 @@ Found by reading both. Reported as findings, unreconciled. **Item 1 changes the 
 anyone reimplementing from the equations gets something different from what produced
 0.3712.
 
+> This section and §2.6 are the two halves of a three-way picture — paper, upstream
+> repository, our tree. [`04-paper-vs-upstream-vs-ours.md`](04-paper-vs-upstream-vs-ours.md)
+> puts them in one table and states the rule we followed: **where the paper and the code
+> disagree, we follow the code**, because the code is what produced the published number.
+
 | # | Paper says | Code does | Why it matters |
 |---|---|---|---|
 | 1 | Attention scaled by $1/\sqrt{L} = 1/\sqrt{96}$ (eq. 3) | `nn.MultiheadAttention` scales by $1/\sqrt{d_{head}} = 1/\sqrt{24}$ | Logits are 2× larger than the equation implies |

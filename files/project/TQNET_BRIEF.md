@@ -12,6 +12,25 @@ Forecasting*, ICML 2025, PMLR 267. arXiv 2505.12917v2 (11 Sep 2025). Local copy:
 
 ---
 
+## Status — read before relying on §9 or §12
+
+This brief was written **before** anything was run and is kept as the record of what was known
+then. Three parts of it have since been overtaken; the rest stands.
+
+| Section | Status now |
+|---|---|
+| **§9**, "the two runs that are prepared and waiting" | **Done, and the answer is surprising.** The ablation ran. On ETTh1 every variant lands inside one seed standard deviation and the **pure MLP is nominally the best of the three** — neither the Temporal Query nor the channel attention is measurable at *C*=7. Numbers in `docs/03` §3.7. §9 also refers to `repro/tqnet-ablation-flags.patch`, which **no longer exists**: the flags are applied directly in the vendored tree and the runner is `repro/run_etth1_ablation.sh`. |
+| **§12 Q2**, "does TQ help on ETTh1 at all?" | **Answered: not measurably.** See above. |
+| **§12 Q3**, "our own seed spread" | **Measured: 0.002154 MSE** over seeds 2024/2025/2026, about twice the paper's reported 0.001. That is the bar Stage 2 must clear. |
+
+Still open and still blocking: **§12 Q1** (PTQNet, paywalled — a prerequisite for any
+period-related improvement) and **§12 Q4** (which of the five permitted axes we target).
+
+The limitations inventory in **§6** and the component list in **§7** are unaffected and are still
+the material to brainstorm against.
+
+---
+
 ## 0. Read this first
 
 **On ETTh1 — the dataset we are reconstructing — TQNet is not the winning model.** Averaged over the

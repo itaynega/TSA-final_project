@@ -185,8 +185,8 @@ between them isolates what the network adds beyond knowing that ETTh1 repeats da
 **Stationarity and normalisation.** Instance normalisation — subtract the window's mean
 and divide by its standard deviation, then invert on the output — is the course's
 differencing/detrending intuition applied per window, to handle distribution shift
-between training and test periods. The paper's equations 7–8; `Pre-precessing.pdf` and
-`Time-Series Analysis.pdf` cover the underlying stationarity requirement.
+between training and test periods. The paper's equations 7–8; `Pre-precessing.pdf` covers
+the underlying stationarity requirement.
 
 **Correlation structure.** The 7×7 attention map is a learned cross-correlation matrix
 between channels. Reading it is the course's cross-correlation analysis, learned rather
@@ -212,6 +212,9 @@ the paper's own Table 7 shows that stacking three of these blocks makes results
   code implements it, where the paper and the code disagree, and every change we made.
 - `docs/03-running-the-experiments.md` — data, training, validation, and how to
   reproduce every number.
+- `docs/04-paper-vs-upstream-vs-ours.md` — the three implementations side by side: the
+  paper as described, the authors' repository as executed, and our tree. Read this before
+  writing report sections F3 and F5.
 - `files/project/TQNET_BRIEF.md` — the prior deep read of the paper and repository,
   including a 20-item limitations inventory for Stage 2.
 - `report/metrics.md` — the metrics, in the course's notation.
