@@ -377,3 +377,47 @@ Every number in §1 was read from the file named beside it. Nothing in this docu
 Stage-2 run, because no Stage-2 run has happened. The two numbers this study is measured against —
 σ = 0.002154 and the ablation triple — are quoted from `docs/03` §3.7 and are **flagged as lacking
 committed run records (STATUS G2)**; §6 requires that gap closed before the first arm runs.
+
+## Amendments
+
+### 2026-08-09 — Arm D parameter-count correction
+
+**What was wrong.** §3 Arm D's derivation paragraph states that Arm D spends *"37,248 parameters
+(5.6% of the model)"*. That is the channel-attention block's parameter count alone, not the count
+Arm D actually removes. The same section's prediction line already states the correct absolute
+counts — **Parameters 661,640 → 624,224 (−5.7%)** — and 661,640 − 624,224 = **37,416**, not 37,248.
+The derivation paragraph and the prediction line were internally inconsistent.
+
+**Where 37,248 came from.** `docs/02-architecture-and-implementation.md` line 230 and
+`docs/04-paper-vs-upstream-vs-ours.md` lines 96–97 both record three measured parameter counts for
+the target cell: **661,640** (published, `--use_tq`/`--channel_aggre` both on), **661,472**
+(`--use_tq 0`), and **624,224** (`--use_tq 0 --channel_aggre 0`). (`docs/02` line 149 and `docs/04`
+line 175 independently record 661,640 as the measured trainable-parameter count.)
+
+- 661,472 − 624,224 = **37,248** — the channel-attention block alone (`--channel_aggre` removed,
+  `--use_tq` still on).
+- 661,640 − 661,472 = **168** — the Temporal Query alone (`--use_tq` removed, `--channel_aggre`
+  still on).
+- 37,248 + 168 = **37,416** — both mechanisms removed together, matching 661,640 − 624,224.
+
+Arm D's mechanism drops **both** the Temporal Query and the channel-attention layer — §3 Arm D,
+"Mechanism now": *"The Temporal Query and the channel-attention layer always run."* The derivation
+paragraph quoted only the channel-attention block's count (37,248) while describing a change that
+removes both mechanisms, omitting the 168-parameter Temporal Query.
+
+**The correct figure.** Arm D removes **37,416 parameters**: directly, 661,640 − 624,224 = 37,416;
+independently, 37,248 + 168 = 37,416. As a share of the model, 37,416 / 661,640 = 0.0565504 (full
+precision, independently recomputed from the two source files above), which is **5.66%** of the
+model at two decimal places — not 5.65%. (5.655039…% rounds to 5.66%, not 5.65%; this entry states
+the recomputed figure rather than a rounded-down one because it did not survive independent
+recomputation from the same two source counts.)
+
+**What is not changed.** The prediction line in §3 Arm D — **"Parameters 661,640 → 624,224
+(−5.7%)"** — is correct as written and is unchanged by this amendment; it already used the correct
+absolute counts. Only the derivation paragraph's stated parameter count and percentage were wrong.
+No prediction, threshold, or selection rule anywhere in §§0–7 is altered by this entry — this block
+is an addition only.
+
+**Sources.** `docs/02-architecture-and-implementation.md` lines 149, 230;
+`docs/04-paper-vs-upstream-vs-ours.md` lines 96–97, 175; this file's own §3 Arm D (lines 269–271,
+282) and `## Provenance` block above.
