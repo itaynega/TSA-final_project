@@ -1,0 +1,148 @@
+{
+  "data": {
+    "channels": [
+      "HUFL",
+      "HULL",
+      "MUFL",
+      "MULL",
+      "LUFL",
+      "LULL",
+      "OT"
+    ],
+    "csv_path": "C:\\Users\\amita\\OneDrive\\\u05e9\u05d5\u05dc\u05d7\u05df \u05d4\u05e2\u05d1\u05d5\u05d3\u05d4\\\u05e2\u05d1\u05d5\u05d3\u05d5\u05ea\\\u05dc\u05d9\u05de\u05d5\u05d3\u05d9\u05dd\\\u05e9\u05e0\u05d4 \u05d3'\\\u05e1\u05de\u05e1\u05d8\u05e8 \u05d7'\\\u05e0\u05d9\u05ea\u05d5\u05d7 \u05e1\u05d3\u05e8\u05d5\u05ea \u05e2\u05d9\u05ea\u05d9\u05d5\u05ea\\Final Project\\TSA-final_project\\TQNet\\dataset\\ETTh1.csv",
+    "first_timestamp": "2016-07-01 00:00:00",
+    "last_timestamp": "2018-06-26 19:00:00",
+    "missing_cells": 0,
+    "rows_discarded": 3020,
+    "rows_in_file": 17420,
+    "rows_used": 14400,
+    "sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066"
+  },
+  "findings": [
+    {
+      "evidence": "17420 rows, all diffs == 1h, 0 NaN",
+      "finding": "strict hourly grid, no gaps, no missing cells",
+      "ruling": "CLEAN",
+      "stage": "Grid integrity"
+    },
+    {
+      "evidence": "targets train (96, 8640), val (8640, 11520), test (11520, 14400)",
+      "finding": "splits are chronological; target ranges do not overlap",
+      "ruling": "CLEAN",
+      "stage": "Chronology"
+    },
+    {
+      "evidence": "max |train mean - full mean| = 3.8036",
+      "finding": "fitted statistics equal the training rows [0, 8640) and differ measurably from the whole-series statistics",
+      "ruling": "CLEAN",
+      "stage": "Scaler provenance"
+    },
+    {
+      "evidence": "shared target rows: {'train/val': 0, 'train/test': 0, 'val/test': 0}",
+      "finding": "no row is a forecast target in more than one split",
+      "ruling": "CLEAN",
+      "stage": "Target disjointness"
+    },
+    {
+      "evidence": "first val window starts at row 8544, first val target at row 8640",
+      "finding": "validation and test inputs read up to 96 rows before their split boundary, which is upstream's design and is not leakage: those rows are inputs only, never targets, and never fitted on",
+      "ruling": "DISCLOSE",
+      "stage": "Input reach-back"
+    },
+    {
+      "evidence": "exp_main.py: early_stopping(vali_loss, ...)",
+      "finding": "early stopping and best-checkpoint are keyed on validation loss",
+      "ruling": "CLEAN",
+      "stage": "Model selection"
+    },
+    {
+      "evidence": "exp_main.py: test_loss = self.vali(test_data, test_loader, criterion)",
+      "finding": "test loss is evaluated and printed every epoch alongside validation loss. It does not enter early stopping or checkpoint selection, so it is not leakage in the code -- but it is a human-in-the-loop channel and has to be disclosed",
+      "ruling": "DISCLOSE",
+      "stage": "Observation hygiene"
+    },
+    {
+      "evidence": "checked on all 2785 test windows",
+      "finding": "the cycle index is a function of the row number alone (`(row + L) mod W`), so it cannot carry future values",
+      "ruling": "CLEAN",
+      "stage": "Feature construction"
+    },
+    {
+      "evidence": "TQNet.py: def forward(self, x, cycle_index):",
+      "finding": "the loader computes calendar features but TQNet's forward signature takes only (x, cycle_index), so they are never consumed",
+      "ruling": "CLEAN",
+      "stage": "Covariates"
+    },
+    {
+      "evidence": "denorm lines commented: True; every test channel crosses zero: True",
+      "finding": "de-normalisation is left commented out upstream, so MSE/MAE are in z-scored units, not degrees Celsius. This is why 0.3712 is the right order of magnitude, and why MAPE and SMAPE are unusable: the normalised series crosses zero in every channel",
+      "ruling": "DISCLOSE",
+      "stage": "Metric scale"
+    }
+  ],
+  "scaler": {
+    "fitted_on_rows": [
+      0,
+      8640
+    ],
+    "mean": [
+      7.937742245659508,
+      2.0210386567335163,
+      5.079770601157927,
+      0.7461858799957015,
+      2.781762386375555,
+      0.7884531235540096,
+      17.1282616982271
+    ],
+    "scale": [
+      5.812749409143771,
+      2.0901046504076,
+      5.518793579036245,
+      1.9263792741329822,
+      1.0235226594952194,
+      0.6302366362251923,
+      9.176491024944335
+    ]
+  },
+  "split": {
+    "borders": {
+      "test": [
+        11424,
+        14400
+      ],
+      "train": [
+        0,
+        8640
+      ],
+      "val": [
+        8544,
+        11520
+      ]
+    },
+    "dataset": "ETTh1",
+    "hours_per_month": 720,
+    "lengths": {
+      "test": 2976,
+      "train": 8640,
+      "val": 2976
+    },
+    "months": {
+      "test": 4,
+      "train": 12,
+      "val": 4
+    },
+    "pred_len": 96,
+    "rows_used": 14400,
+    "scaler": "sklearn.StandardScaler fit on rows [0, 8640) only",
+    "scheme": "informer-monthly-chronological",
+    "seq_len": 96,
+    "stride": 1,
+    "windows": {
+      "test": 2785,
+      "train": 8449,
+      "val": 2785
+    }
+  },
+  "split_hash": "b66ee6b47e2b2eb8",
+  "verdict": "PASS"
+}
