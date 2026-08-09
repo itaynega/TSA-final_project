@@ -1,0 +1,55 @@
+{
+  "arm": "reconstruction",
+  "extra": {
+    "accelerator": "cpu",
+    "channel_aggre": 1,
+    "cycle": 24,
+    "data_sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066",
+    "features": "M",
+    "n_params": 784760,
+    "setting": "ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024",
+    "upstream_metric_agreement": {
+      "MAE": {
+        "abs_diff": 1.7227938520214536e-08,
+        "agree": true,
+        "ours": 0.4448278076030704,
+        "rel_diff": 3.8729453416632535e-08,
+        "upstream": 0.4448278248310089
+      },
+      "MSE": {
+        "abs_diff": 2.3338215154877773e-07,
+        "agree": true,
+        "ours": 0.4728692522345324,
+        "rel_diff": 4.935445374412704e-07,
+        "upstream": 0.47286948561668396
+      },
+      "RMSE": {
+        "abs_diff": 1.980183541583358e-07,
+        "agree": true,
+        "ours": 0.6876548932673514,
+        "rel_diff": 2.8796173643985065e-07,
+        "upstream": 0.6876550912857056
+      }
+    },
+    "use_tq": 1,
+    "variant": "published"
+  },
+  "git_commit": "9663bcd",
+  "metrics": {
+    "MAE": 0.4448278076030704,
+    "MSE": 0.4728692522345324,
+    "MdAE": 0.28848716616630554,
+    "RMSE": 0.6876548932673514
+  },
+  "model": "TQNet",
+  "n_points": 5985840,
+  "n_windows": 2545,
+  "notes": "Ingested from TQNet/results/ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024. Variant: published.",
+  "pred_len": 336,
+  "recorded_ns": 1786272610921132100,
+  "run_id": "reconstruction-TQNet-s2024-h336-1786272610921132100",
+  "seed": 2024,
+  "seq_len": 96,
+  "split_hash": "a5bcaa4090739908",
+  "timestamp": "2026-08-09T13:50:10"
+}
