@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 
+from layers.DampedTrend import DampedTrendInstanceNorm
+
 class Model(nn.Module):
     def __init__(self, configs):
         super(Model, self).__init__()
@@ -19,6 +21,20 @@ class Model(nn.Module):
         # the published model exactly.
         self.use_tq = bool(getattr(configs, 'use_tq', 1))
         self.channel_aggre = bool(getattr(configs, 'channel_aggre', 1))
+
+        # Arm A (J-11, report/prereg-improvement.md sec 3 "Arm A"): damped-trend
+        # instance normalisation, behind a flag that defaults to off. With the
+        # flag off nothing below this line runs and the forward pass is the
+        # published one, unchanged -- see layers/DampedTrend.py for the
+        # mechanism and for the two implementation choices sec 3 leaves open.
+        # phi is a config value; it is NOT selected here (that is J-12, on
+        # validation MSE at H=96 only).
+        self.use_damped_trend = bool(getattr(configs, 'use_damped_trend', 0))
+        self.damped_phi = float(getattr(configs, 'damped_phi', 0.9))
+        if self.use_damped_trend:
+            self.damped_trend = DampedTrendInstanceNorm(
+                self.seq_len, self.pred_len, self.damped_phi
+            )
 
         if self.use_tq:
             self.temporalQuery = torch.nn.Parameter(torch.zeros(self.cycle_len, self.enc_in), requires_grad=True)
@@ -42,6 +58,11 @@ class Model(nn.Module):
 
 
     def forward(self, x, cycle_index):
+
+        # damped-trend detrend (Arm A). Off by default; when off, `x` reaches
+        # the instance norm below exactly as it always did.
+        if self.use_damped_trend:
+            x, trend_slope = self.damped_trend.detrend(x)
 
         # instance norm
         if self.use_revin:
@@ -74,6 +95,12 @@ class Model(nn.Module):
         # instance denorm
         if self.use_revin:
             output = output * torch.sqrt(seq_var) + seq_mean
+
+        # damped-trend re-application (Arm A), after the de-normalisation and
+        # therefore in the original data scale, which is the scale the slope
+        # was fitted in.
+        if self.use_damped_trend:
+            output = self.damped_trend.retrend(output, trend_slope)
 
         return output
 

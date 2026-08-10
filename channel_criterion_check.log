@@ -1,0 +1,25 @@
+{
+  "channel_aggre": 0,
+  "channels": [
+    "HUFL",
+    "HULL",
+    "MUFL",
+    "MULL",
+    "LUFL",
+    "LULL",
+    "OT"
+  ],
+  "csv_path": "./dataset/ETTh1.csv",
+  "decision": "drop",
+  "n_channels": 7,
+  "row_range": [
+    0,
+    8640
+  ],
+  "statistic_name": "mean_abs_offdiag_pearson_correlation",
+  "statistic_value": 0.3110131176996824,
+  "threshold_justification": "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.",
+  "threshold_name": "CHANNEL_CORR_DROP_THRESHOLD",
+  "threshold_value": 0.3,
+  "use_tq": 0
+}

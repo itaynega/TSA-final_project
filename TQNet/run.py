@@ -1,9 +1,38 @@
 import argparse
 import os
+import sys
 import torch
 from exp.exp_main import Exp_Main
 import random
 import numpy as np
+
+import channel_criterion
+
+# Repo root (parent of TQNet/) on sys.path, so `common` -- shared, frozen,
+# read-only from here -- is importable regardless of the caller's cwd.
+# `channel_criterion` does this same insert as a side effect of import above;
+# it is repeated here, guarded, so this file does not depend on that order.
+_REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _REPO_ROOT not in sys.path:
+    sys.path.insert(0, _REPO_ROOT)
+
+from common import split as split_mod
+from common import results as results_mod
+from common import data as data_mod
+from tools import estimate_cycle
+
+# report/horizon_sigma.md, section "split_hash by horizon". The frozen
+# protocol (report/prereg-improvement.md sec 2) fixes seq_len at 96 for every
+# arm and horizon, so pred_len alone keys this table. Deliberately not a
+# single hard-coded H=96 constant: this file's run also serves pred_len
+# 192/336/720 (J-09 dispatch, "Do not hard-code the H = 96 hash into a path
+# that runs at other horizons").
+_ETTH1_SPLIT_HASH_BY_PRED_LEN = {
+    96: 'b66ee6b47e2b2eb8',
+    192: '5b9f41f467356285',
+    336: 'a5bcaa4090739908',
+    720: '17f9f51a6d81e0a2',
+}
 
 parser = argparse.ArgumentParser(description='Model family for Time Series Forecasting')
 
@@ -33,13 +62,49 @@ parser.add_argument('--label_len', type=int, default=0, help='start token length
 parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
 
 # TQNet & CycleNet
-parser.add_argument('--cycle', type=int, default=24, help='cycle length')
+def _cycle_arg(value):
+    """--cycle accepts an integer, or the literal string 'auto' (Arm B, J-14:
+    report/prereg-improvement.md sec 3). 'auto' is resolved to an int later,
+    in the Arm B block below, once --data/--seq_len are known; an integer
+    passed here is left exactly as it always was -- this function changes
+    nothing about the --cycle 24 path except making 'auto' also legal."""
+    if value == 'auto':
+        return 'auto'
+    return int(value)
+
+
+parser.add_argument('--cycle', type=_cycle_arg, default=24,
+                     help="cycle length, or 'auto' to estimate it from the training "
+                          "split (Arm B, J-14, report/prereg-improvement.md sec 3: "
+                          "ACF local-maximum and periodogram argmax on the training "
+                          "channel-mean, agreeing or the run fails loudly). ETTh1 only.")
 parser.add_argument('--model_type', type=str, default='mlp', help='model type, options: [linear, mlp]')
 parser.add_argument('--use_revin', type=int, default=1, help='1: use revin or 0: no revin')
 parser.add_argument('--use_tq', type=int, default=1,
                     help='TQNet ablation: 1 keep the Temporal Query, 0 fall back to self-attention')
 parser.add_argument('--channel_aggre', type=int, default=1,
                     help='TQNet ablation: 1 keep the channel attention layer, 0 remove it')
+parser.add_argument('--channel_criterion', type=int, default=0,
+                    help='Arm D (J-09, report/prereg-improvement.md sec 3): 1 computes the '
+                         'training-split channel-correlation criterion and overrides '
+                         '--use_tq/--channel_aggre with its decision. 0 (default) leaves '
+                         '--use_tq/--channel_aggre exactly as passed, so the default '
+                         '(both 1) reproduces the published model bit-for-bit. ETTh1 only.')
+parser.add_argument('--use_damped_trend', type=int, default=0,
+                    help='Arm A (J-11, report/prereg-improvement.md sec 3): 1 enables '
+                         'damped-trend instance normalisation -- fit a least-squares '
+                         'line per window per channel, subtract it before the instance '
+                         'norm, and add slope * sum_{k=1..h} phi^k back after the '
+                         'de-normalisation. 0 (default) leaves the instance norm exactly '
+                         'as published, so the default reproduces the published model '
+                         'bit-for-bit.')
+parser.add_argument('--damped_phi', type=float, default=0.9,
+                    help='Arm A damping factor phi, 0 < phi <= 1. Ignored unless '
+                         '--use_damped_trend 1. phi = 1 is plain linear extrapolation; '
+                         'phi -> 0 projects no trend forward. The pre-registration fixes '
+                         'the candidate set phi in {0.8, 0.9, 0.95, 1.0} and fixes that '
+                         'the choice is made once, on validation MSE at H=96 only, then '
+                         'frozen for every horizon. This flag does not make that choice.')
 
 # PatchTST
 parser.add_argument('--fc_dropout', type=float, default=0.05, help='fully connected dropout')
@@ -149,6 +214,137 @@ if args.accelerator == 'cuda' and args.use_multi_gpu:
     args.device_ids = [int(id_) for id_ in device_ids]
     args.gpu = args.device_ids[0]
 
+# --- Arm D (J-09): channel-count-conditional TQ/attention criterion --------
+# report/prereg-improvement.md sec 3, Arm D. Computed on the training split
+# only -- common.split.borders(seq_len)['train'], rows [0, 8640) for ETTh1,
+# not one row more -- never on validation or test (requirement B2). No
+# training happens in this block; it only decides use_tq/channel_aggre
+# before the model is built.
+args.channel_criterion_record = None
+if args.channel_criterion:
+    if args.data != 'ETTh1':
+        raise SystemExit(
+            "--channel_criterion is only defined for ETTh1: it relies on "
+            "common.split's ETT 12/4/4-month split scheme, which does not "
+            "describe --data {!r}".format(args.data)
+        )
+    _cc_record = channel_criterion.evaluate_criterion(
+        args.root_path, args.data_path, args.seq_len
+    )
+    args.use_tq = _cc_record['use_tq']
+    args.channel_aggre = _cc_record['channel_aggre']
+    args.channel_criterion_record = _cc_record
+    print(
+        '[channel_criterion] {}={:.6f} threshold={} (justification: {}) '
+        'rows={} -> decision={} (use_tq={}, channel_aggre={})'.format(
+            _cc_record['statistic_name'],
+            _cc_record['statistic_value'],
+            _cc_record['threshold_value'],
+            _cc_record['threshold_justification'],
+            _cc_record['row_range'],
+            _cc_record['decision'],
+            args.use_tq,
+            args.channel_aggre,
+        )
+    )
+
+# --- Arm A (J-11): damped-trend instance normalisation ---------------------
+# report/prereg-improvement.md sec 3, Arm A. A config-driven switch only: the
+# mechanism lives in TQNet/layers/DampedTrend.py and is wired into
+# TQNet/models/TQNet.py's forward pass. Nothing is selected here -- phi is
+# taken as given. The pre-registration fixes the candidate set and fixes that
+# phi is chosen once, on validation MSE at H=96, and then frozen; that
+# selection is J-12's job, not this flag's.
+if args.use_damped_trend:
+    if not (0.0 < args.damped_phi <= 1.0):
+        raise SystemExit(
+            "--damped_phi must satisfy 0 < phi <= 1 (report/prereg-improvement.md "
+            "sec 3, Arm A), got {!r}".format(args.damped_phi)
+        )
+    if args.damped_phi not in (0.8, 0.9, 0.95, 1.0):
+        print(
+            '[damped_trend] WARNING: phi={!r} is outside the pre-registered '
+            'candidate set {{0.8, 0.9, 0.95, 1.0}}'.format(args.damped_phi)
+        )
+    print(
+        '[damped_trend] enabled: phi={:g}, seq_len={}, pred_len={} '
+        '(trend added at step h = slope * phi * (1 - phi**h) / (1 - phi))'.format(
+            args.damped_phi, args.seq_len, args.pred_len
+        )
+    )
+
+# --- Arm B (J-14): estimate the period from the training split ------------
+# report/prereg-improvement.md sec 3, Arm B. Computed on the training split
+# only -- common.split.borders(seq_len)['train'], rows [0, 8640) for ETTh1,
+# not one row more (requirement B2), never on validation or test. Mirrors
+# the channel_criterion block above: a switch that resolves itself, from the
+# training split alone, before the model is built, and prints its own
+# decision. args.cycle_source records whether the value below reached
+# args.cycle by estimation or by being typed on the command line, so
+# resolved_config.json (TQNet/exp/exp_main.py) can tell the two apart even
+# when they resolve to the same integer.
+args.cycle_source = 'passed'
+args.cycle_estimate_record = None
+if args.cycle == 'auto':
+    if args.data != 'ETTh1':
+        raise SystemExit(
+            "--cycle auto is only defined for ETTh1: it relies on "
+            "common.split's ETT 12/4/4-month split scheme, which does not "
+            "describe --data {!r}".format(args.data)
+        )
+    _cy_csv_path = os.path.join(args.root_path, args.data_path)
+    _cy_train_start, _cy_train_stop = split_mod.borders(args.seq_len)['train']
+    _cy_series = estimate_cycle.load_channel_mean(_cy_csv_path, _cy_train_start, _cy_train_stop)
+    try:
+        _cy_period, _cy_record = estimate_cycle.estimate_or_raise(
+            _cy_series,
+            label='{} channel-mean train[{}, {})'.format(args.data, _cy_train_start, _cy_train_stop),
+        )
+    except estimate_cycle.CycleDisagreementError as _cy_exc:
+        raise SystemExit(
+            "--cycle auto: {} (report/prereg-improvement.md sec 3 'Arm B': "
+            "abandon)".format(_cy_exc)
+        )
+    args.cycle = _cy_period
+    args.cycle_source = 'estimated'
+    args.cycle_estimate_record = _cy_record
+    print(
+        '[cycle_auto] acf={} (peak={}) periodogram={} (power={}) agree={} '
+        'rows=[{}, {}) -> cycle={} (source=estimated)'.format(
+            _cy_record['acf_period'],
+            _cy_record['acf_peak_value'],
+            _cy_record['periodogram_period'],
+            _cy_record['periodogram_power'],
+            _cy_record['agree'],
+            _cy_train_start,
+            _cy_train_stop,
+            args.cycle,
+        )
+    )
+
+# Every ETTh1 run asserts the split fingerprint (standing order 12), with the
+# two-argument form `assert_split_hash(expected, actual)` (common/results.py
+# -- the pre-registration's one-argument form in sec 2 does not match the
+# code; the code wins, standing order 5). Established here; later arms copy
+# this call rather than re-deriving it.
+if args.data == 'ETTh1':
+    _split_csv_path = os.path.join(args.root_path, args.data_path)
+    if os.path.exists(_split_csv_path):
+        _expected_hash = _ETTH1_SPLIT_HASH_BY_PRED_LEN.get(args.pred_len)
+        if _expected_hash is None:
+            raise SystemExit(
+                "no recorded split hash for --pred_len {}; "
+                "report/horizon_sigma.md only covers 96/192/336/720 at "
+                "seq_len=96".format(args.pred_len)
+            )
+        _actual_hash = split_mod.split_hash(
+            args.seq_len, args.pred_len, data_mod.data_sha256(_split_csv_path)
+        )
+        results_mod.assert_split_hash(_expected_hash, _actual_hash)
+        print('[split_hash] expected={} actual={} OK'.format(_expected_hash, _actual_hash))
+    else:
+        print('[split_hash] WARNING: {} not found, split hash not asserted'.format(_split_csv_path))
+
 
 def release_cache():
     """Free accelerator memory where the concept exists."""
@@ -167,6 +363,10 @@ Exp = Exp_Main
 # checkpoint paths and result labels untouched.
 abl_tag = '' if (args.use_tq == 1 and args.channel_aggre == 1) \
     else '_tq{}ca{}'.format(args.use_tq, args.channel_aggre)
+
+# Same rule for Arm A: empty unless the arm is on, so no existing run's
+# checkpoint path or results directory changes name.
+abl_tag += '' if not args.use_damped_trend else '_dphi{:g}'.format(args.damped_phi)
 
 
 if args.is_training:

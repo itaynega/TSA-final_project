@@ -1,0 +1,18 @@
+{
+  "accelerator": "cpu",
+  "channel_aggre": 0,
+  "cycle": 24,
+  "data": "ETTh1",
+  "features": "M",
+  "model": "TQNet",
+  "n_params": 944336,
+  "n_windows": 2161,
+  "pred_len": 720,
+  "seed": 2025,
+  "seq_len": 96,
+  "setting": "ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0",
+  "upstream_mae": 0.47510072588920593,
+  "upstream_mse": 0.4901391267776489,
+  "upstream_rmse": 0.7000993490219116,
+  "use_tq": 0
+}

@@ -1,201 +1,101 @@
 # Status — open gaps
 
-Audited **2026-07-31** against the repository at commit `6b6777e`, by reading the files rather
-than by reading a status report. Every gap below names the command that closes it.
+**Re-audited 2026-08-09 19:05 IDT against `HEAD` = `3d807b0d064c063488a53dcae6d8d4a9cd8278e7`,
+by reading the repository rather than a status report.**
 
-**None of these are design problems.** Stage 1 reproduces, the tests pass, and the numbers are
-internally consistent. What is missing is the *artefact trail* — results that exist in prose but
-not in committed files. That distinction matters because the project's own rule (PLAN §5 T15) is
-"a number that cannot be traced does not get printed."
+> **This file was previously audited on 2026-07-31 at commit `6b6777e` and had gone badly stale:
+> it still listed G1, G3 and G4 as open when all three had closed, and it named Itay as owner of
+> two gaps after his machine became unavailable.** The 07-31 text is preserved in git history at
+> `6b6777e:docs/STATUS.md`. Anyone who read this file between 13:00 and 19:00 on 09.08 got a
+> wrong picture of the project.
 
----
-
-## Summary
-
-| # | Gap | Severity | Owner | Cost |
-|---|---|---|---|---|
-| **G1** | Leakage-audit artefacts never committed | **Highest — B2 is the brief's only PASS/FAIL** | Amitay | ~1 min |
-| **G2** | 5 of 7 runs have no committed run record | High — breaks traceability | Itay | ~5 min |
-| **G3** | Only horizon 96 exists; F5 needs four | Medium | Itay | ~3 min |
-| **G4** | Neither pre-registration exists, though D10 requires them | Medium — process, and it is a marked item | Amitay | ~30 min |
-| **G5** | Repo lives inside OneDrive, against D23 | High — silent corruption risk | Both | ~10 min |
-| **G6** | Stage 2 not started | Expected, not a defect | Amitay | — |
+**None of these are design problems.** Stage 1 reproduces on two architectures, the tests pass, and
+the numbers are internally consistent. What was missing was the *artefact trail*. Most of it now
+exists.
 
 ---
 
-## G1 — The leakage audit has no committed evidence
+## Summary — 09.08 19:05
 
-**This is the most important item on the page.** Requirement **B2** is the only PASS/FAIL
-requirement in the brief:
+| # | Gap | State | Evidence |
+|---|---|---|---|
+| **G1** | Leakage-audit artefacts never committed | **CLOSED 12:41** | Commit `9663bcd`. `report/audit.md` (4,067 B) and `results/audit.json` (5,091 B). 10 rulings, 7 CLEAN / 3 DISCLOSE, re-read from the committed blob |
+| **G2** | 5 of 7 runs have no committed run record | **HALF CLOSED, HALF PERMANENTLY UNCLOSEABLE** | See below |
+| **G3** | Only horizon 96 exists; F5 needs four | **CLOSED 13:50** | Commit `ee6e334`. 12 new records at H = 96/192/336/720 × seeds 2024/2025/2026. 14 records total |
+| **G4** | Neither pre-registration exists | **CLOSED for the improvement; permanently open, by design, for the reconstruction** | Commit `ac426c7` (frozen text) + `3d807b0` (Amendments). No arm had run when it landed |
+| **G5** | Repo lives inside OneDrive, against D23 | **OPEN, knowingly accepted** | Amitay's decision, 12:00. `git fsck` silent, no corruption ever observed |
+| **G6** | Stage 2 not started | **IN PROGRESS — Gates 0–2 complete, Gate 3 next** | `STAGE2_WORKPLAN_2026-08-09.md` §-1 carries the live state |
 
-> "The reconstruction must respect the temporal structure of the data: future observations must
-> not be used during training, preprocessing, feature construction, or hyperparameter tuning."
+---
 
-**The audit was genuinely run.** `docs/03` §3.2 reports all ten checks with their rulings — seven
-CLEAN, three DISCLOSE — including the scaler check done properly (confirming `scaler.mean_` matches
-the training rows *and* differs measurably from the whole-series statistics, which is what makes the
-first half of the check meaningful).
+## G2 — re-scoped, and half of it can never close
 
-**But neither output file exists:**
+The 07-31 text said "rerun and ingest, ~5 minutes". That fix is **no longer available for half of
+this gap**, and the reason matters enough to state plainly.
 
-- `report/audit.md` — **missing**, despite `README.md` stating it is written
-- `results/audit.json` — **missing**
+**The half that closed.** The seed-spread numbers now have committed records — twelve of them, at
+`HEAD~2` (`ee6e334`), run on Amitay's x86 machine. The x86 measurement of σ at H = 96 came out at
+**0.002154**, reproducing the original arm64 figure exactly.
 
-So the strongest single piece of evidence in the project is currently unverifiable by a grader.
+**The half that cannot close.** The ETTh1 ablation triple and the original seed spread in
+`docs/03` §3.7 were produced on **Itay's macOS/arm64 machine, and that machine became unavailable on
+2026-08-09**. Their run records were never committed. They therefore cannot be traced, ever — not
+because anyone lost a file, but because the machine that would have to re-run them is gone.
 
-**Fix — needs the dataset, needs no GPU and no torch** (`tools/audit_split.py` imports only
-numpy, pandas and sklearn):
+**Under T15 those numbers do not get printed.** They are being *marked in place and retained*, not
+deleted (job J-02b in the work plan), because retaining them marked is honest and because they are a
+concrete worked example of why the traceability rule exists. **M6** in `PLAN.md` §8 is where the
+error started; this is the bill arriving.
+
+Their x86 replacements: the seed spread is superseded by `ee6e334`; the ablation is superseded by
+job J-07′, which reruns it at three seeds per variant on x86.
+
+**Note for anyone rerunning the ablation:** `repro/run_etth1_ablation.sh` takes `SEED` **singular**
+and its `VARIANTS` array holds **two** entries. Passing `SEEDS=` is silently ignored. Loop outside
+the script:
 
 ```bash
-python3 tools/get_data.py
-python3 tools/audit_split.py --markdown report/audit.md --json results/audit.json
-git add report/audit.md results/audit.json && git commit -m "Commit the leakage audit artefacts"
-```
-
-The script exits non-zero if any check fails, so a clean exit is itself the result.
-
----
-
-## G2 — Five of seven runs have no run record
-
-`results/runs/` holds **two** JSONs: the seasonal-naive baseline and the target cell. But
-`docs/03` §3.7 and `README.md` quote numbers from **seven** runs:
-
-| Run | Quoted in | Record in `results/runs/`? |
-|---|---|---|
-| Baseline, seasonal-naive 24 | `report/results.md` | **yes** |
-| TQNet seed 2024 (target cell) | everywhere | **yes** |
-| TQNet seed 2025 | `docs/03` §3.7 | **no** |
-| TQNet seed 2026 | `docs/03` §3.7 | **no** |
-| `--use_tq 0` | `docs/03` §3.7 | **no** |
-| `--use_tq 0 --channel_aggre 0` | `docs/03` §3.7 | **no** |
-
-Both headline secondary findings — **the 0.00215 seed sd** and **the ablation showing the Temporal
-Query is unmeasurable on ETTh1** — rest entirely on runs with no committed record. The seed sd is
-the bar Stage 2 is measured against, so this is not a bookkeeping detail.
-
-`README.md` says of `results/runs/`: *"One JSON per run. Committed — the report is assembled from
-these."* That is currently not true.
-
-**Fix — rerun and ingest** (each run is ~33 s on CPU):
-
-```bash
-SEEDS="2025 2026" bash repro/run_reconstruction.sh
-bash repro/run_etth1_ablation.sh
-python3 tools/collect_results.py
-git add results/runs/ && git commit -m "Commit run records for the seed spread and the ETTh1 ablation"
-```
-
-If any rerun disagrees with the number already written in `docs/03`, **the run wins** — correct the
-document, and say so in the report's discussion.
-
----
-
-## G3 — Only horizon 96 exists
-
-PLAN §5 requires **F5 to be a three-way table (paper / reconstruction / improved) with one row per
-horizon**, and the authors publish ETTh1 at 96 / 192 / 336 / 720. Only 96 has been run.
-
-`TQNet/result_authors_reference.txt` already carries the reference numbers at full precision for all
-four, so the comparison column costs nothing:
-
-| Horizon | Authors' MSE | Authors' MAE |
-|---|---|---|
-| 96 | 0.3712165653705597 | 0.3928201496601105 |
-| 192 | 0.4283985197544098 | 0.4260946214199066 |
-| 336 | 0.4757070839405060 | 0.4460628032684326 |
-| 720 | 0.4874295890331268 | 0.4697666168212890 |
-
-Three extra runs turn F5 from one row into four, and a pattern across horizons is far more
-convincing than a single cell. Roughly two minutes of compute.
-
-```bash
-PRED_LENS="192 336 720" bash repro/run_reconstruction.sh
-python3 tools/collect_results.py && python3 tools/make_report.py
-```
-
-*Verified: `repro/run_reconstruction.sh` reads `PRED_LENS` (default 96) and `SEEDS` (default 2024),
-and loops over both. `repro/run_etth1_ablation.sh` runs all three variants by default.*
-
----
-
-## G4 — Neither pre-registration exists
-
-**D10: "No experiment before its pre-registration exists."** Experiments have run. Neither
-pre-registration is in the repository:
-
-- **Reconstruction pre-registration** — the predicted number and the reproduced/not-reproduced
-  threshold, fixed before seeing anything. The reconstruction has already run, so this one can no
-  longer be written honestly. **Do not backdate it.** Say plainly in the report that the threshold
-  was set after the fact, or omit the claim. A fabricated pre-registration is worse than none.
-- **Improvement pre-registration (T13′)** — **not yet compromised, because Stage 2 has not started.**
-  Write it before the first improvement run. It needs: the derivation, a **quantitative** prediction,
-  pre-fixed thresholds, a STOP condition, and what result would make you abandon the idea.
-
-The improvement's threshold must clear **our** seed sd of 0.00215, not the paper's 0.001 — and note
-that 0.00215 is already half the 0.004 margin TQNet claims over CycleNet. Suggested home:
-`report/prereg-improvement.md`.
-
----
-
-## G5 — The repository is inside OneDrive
-
-`README.md` says, correctly:
-
-> "Do not put your clone inside a OneDrive- or Dropbox-synced folder. Sync clients lock and rewrite
-> files under `.git/` while git is using them, which corrupts the object store."
-
-The clone is currently at `…/OneDrive/שולחן העבודה/…/Final Project/TSA-final_project`.
-
-**This is already happening.** As of the audit, `.git/` contained stale artefacts of an interrupted
-write, all timestamped the same minute:
-
-```
-.git/HEAD.lock
-.git/index.lock
-.git/objects/maintenance.lock
-.git/objects/{0d,4b,6b,bf}/tmp_obj_*
-```
-
-`git fsck` reports **no corruption yet** and `HEAD` matches `origin/main`, so nothing is lost. That
-is luck, not safety — and stale `index.lock` will eventually block a commit with
-`Another git process seems to be running`.
-
-**Fix.** Everything is pushed, so re-cloning outside OneDrive is clean and loses nothing:
-
-```bash
-cd ~/Desktop            # any path NOT under OneDrive
-git clone https://github.com/itaynega/TSA-final_project.git
-```
-
-Keep the planning documents (`PLAN.md`, `REQUIREMENTS_…md`, `COURSE_NOTATION_…md`) in OneDrive if
-that is convenient — they are prose and sync fine. It is `.git/` that must not be synced.
-
-If you prefer to stay put for now, at minimum delete the stale locks before the next commit:
-
-```bash
-rm -f .git/HEAD.lock .git/index.lock .git/objects/maintenance.lock
-find .git/objects -name 'tmp_obj_*' -delete
-git fsck        # expect silence
+for s in 2024 2025 2026; do SEED=$s bash repro/run_etth1_ablation.sh; done
 ```
 
 ---
 
-## G6 — Stage 2 not started
+## G4 — closed for the improvement, and it stays open for the reconstruction
 
-Expected, not a defect: the improvement is chosen *after* the method is understood. See PLAN §5.
+**Improvement (T13′) — CLOSED.** `report/prereg-improvement.md` was committed as `ac426c7` at
+2026-08-09T18:36+03:00, **before any arm ran**, which is what D10 requires. Its text is frozen; the
+one correction since (Arm D's parameter count, 37,248 → 37,416) was appended as a dated
+`## Amendments` block in `3d807b0` with zero deletions, so the frozen text is still byte-identical
+at its own commit.
 
-The ablation finding in `docs/03` §3.7 bounds the choice and should be read before committing to a
-direction — **on ETTh1, neither the Temporal Query nor the channel-attention layer is measurable
-above run-to-run noise**, so an improvement aimed at the TQ mechanism would be tuning a component
-this dataset cannot resolve.
+**Reconstruction — permanently open, and this is the correct outcome.** The reconstruction had
+already run before any pre-registration was written, so one cannot now be written honestly.
+**It is not backdated.** The report says plainly that the reconstruction's threshold was set after
+the fact. A fabricated pre-registration would be worse than none.
 
 ---
 
-## Suggested order
+## G5 — OneDrive, and what actually happened
 
-1. **G5** — do it first. Everything else writes to git, and this protects the writes.
-2. **G1** — one command, closes the brief's only PASS/FAIL requirement.
-3. **G2** and **G3** — one sitting, ~10 minutes of compute, together they make every number traceable.
-4. **G4** — write the improvement pre-registration *before* the first Stage 2 run.
-5. **G6** — Stage 2.
+The clone is at `…/OneDrive/…/Final Project/TSA-final_project`, against D23. Amitay elected at 12:00
+to stay there for the remainder of the project and accept the risk.
+
+**The `index.lock` question is settled, and it was not OneDrive.** Two workers independently
+diagnosed stranded `.git/index.lock` files as OneDrive corruption. They were wrong. The Cowork
+session's mounted view of the filesystem refuses `unlink`, so any git command run *through the mount*
+strands its lock. The discriminating observation: **no lock existed at 12:43, two minutes after a
+commit made from a real terminal.** `git fsck` has been silent at every check.
+
+**As of 19:05 the fix is stronger still: no git command runs from a terminal at all.** All git goes
+through **GitHub Desktop** (D25), which is a native Windows application and touches the repository
+the way git expects. The mount is used for reads only.
+
+---
+
+## G6 — Stage 2, live state
+
+Gates 0, 1 and 2 are complete apart from two off-critical-path jobs (J-07′, J-02b). **Gate 3 — the
+arms — is next and has not started.** Arm C was dropped at its pre-declared 17:00 go/no-go.
+
+`STAGE2_WORKPLAN_2026-08-09.md` is the live plan; its **§-1 STATE** block is the one place to look
+for where the project is. This file describes repository gaps only.

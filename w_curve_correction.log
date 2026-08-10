@@ -1,0 +1,96 @@
+J-15d — retire the epoch-3 artefact and correct the W=24 row before J-16 reads it
+Run: 2026-08-10 ~13:35-13:51 UTC. Writes report/w_curve.md only, plus this log.
+
+--- 1. Correction applied ---
+W=24, seed 2024 cell in report/w_curve.md corrected from 0.6869550701723053 (epoch-3 artefact,
+sitting in TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/) to
+0.6712632722155959 (pre-incident measurement).
+
+Source of corrected value: results/validation/validation_metrics.log
+  sha256 4af37f4fe4be4fcc01fb17e30a15db0b06c3b390fc764d22d205e0b4bb9b573d
+  5 pre-incident log entries: "val_MSE=0.6712632722155959" + matching "SANITY ANCHOR" line, for
+  setting ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024.
+  5 post-incident entries in the same file show the same setting's logged val_MSE flip to
+  0.6869550701723053 and stay there.
+
+FINDING — dispatch sourcing instruction was wrong: the dispatch says to source
+0.6712632722155959 from results/validation/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024.json.
+That file is checked and, as of this job, it holds 0.6869550701723053 (verified directly, sha256
+ed715742bd1602e447e99fe1af2c9138f6c87a96e59911ab18bd9834124ea6e3) — it is auto-regenerated on every
+validation_metrics.py run and reflects whatever checkpoint currently sits on disk, which today is the
+epoch-3 artefact. It cannot source the corrected figure. Used results/validation/validation_metrics.log
+instead (see above) — this is what standing order 4 (M3, re-read the evidence) exists to catch, and
+per instruction #7 ("anything here you found wrong") this is flagged rather than silently substituted.
+
+--- 2. Recomputation from sidecars, independent of the PM's arithmetic ---
+W=24 seed values used: 0.6712632722155959 (results/validation/validation_metrics.log, see above),
+0.6735143635280876 (results/validation/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025.json,
+sha256 9907d633e153b6d667b8f9f4007091e86b1160313256d64b21e2e738be650fbb),
+0.6727194169596606 (results/validation/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026.json,
+sha256 193f4d1976563ce99ca1d467596df85908e1a64c6309da24b2f41daa42c60094).
+These two seed sidecars are outside the incident's blast radius (only the seed2024 directory was
+touched) and are unchanged from the values already in the pre-correction table.
+
+Computed (Python statistics.mean / statistics.stdev, n-1):
+  mean = 0.6724990175677814
+  sd   = 0.0011416150591374683
+Matches acceptance criterion 1 exactly.
+
+Eight per-W means recomputed (other seven unchanged, taken from the pre-correction table):
+  W=6   0.6714039036970284
+  W=8   0.6717737364594718
+  W=12  0.6729307021613260   <- max
+  W=23  0.6720198546674865
+  W=24  0.6724990175677814   (corrected)
+  W=25  0.6728342289621677
+  W=48  0.672529158700914
+  W=168 0.6726663638283168
+  W=6   0.6714039036970284   <- min
+
+spread = max - min = 0.6729307021613260 - 0.6714039036970284 = 0.0015267984642975962
+2sigma = 0.0022832301182749366 (unchanged, from report/w_curve.md's existing sigma_seed reference)
+ratio  = spread / 2sigma = 0.6687010880231152  ("0.67x 2sigma")
+Matches acceptance criterion 2 exactly. My own recomputation agrees with the PM's figures in the
+dispatch; no disagreement to flag on this point.
+
+--- 3. Diff summary: the other seven rows ---
+Compared byte-for-byte against the pre-correction table (captured before editing). All seven rows
+(W = 6, 8, 12, 23, 25, 48, 168) are unchanged: same val_MSE per seed, same mean, same sd, same row
+order. Confirmed with `diff` against a reconstruction of the original table; zero differences.
+
+--- 4. Superseded value ---
+The as-written W=24 row (0.6869550701723053 / 0.6735143635280876 / 0.6727194169596606, mean
+0.6777296168866845, sd 0.0079993578652003) is kept in report/w_curve.md, struck through, in its own
+row immediately below the corrected row, labelled "as written 2026-08-10 15:32-16:04 (superseded)".
+Not deleted, per PLAN §1 / this project's norm.
+
+--- 5. Epoch-3 checkpoint status ---
+NOT deleted, NOT modified. Confirmed by hash immediately before writing this log:
+  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/checkpoint.pth
+  sha256 c5d0f7bbc057d48608c15e60a4872712b363a5fa4c12238ba77fb16860773ca2
+Matches the hash recorded in STAGE2_WORKPLAN_2026-08-09.md §7l ("c5d0f7bb..."), i.e. unchanged
+across this job.
+
+--- 6. Provenance section added to report/w_curve.md ---
+New "## Provenance of the W = 24 row" section states: the cell is the pre-incident measurement and
+its actual source file (with the dispatch's sourcing error noted); the checkpoint now in the
+protected directory is an epoch-3 artefact from the §7j incident; the 1.4e-10 fingerprint match to
+the independently-truncated armB_smoke run; the two corroborating retrains (armB_auto +2.3e-10,
+reconstruction_v2 -3.6e-10) and their deviations; and the as-written vs corrected spreads either
+side of the 2sigma line (2.77x vs 0.67x).
+
+No verdict on Section 3's flatness prediction was written anywhere in the file — every mention of
+the spread-vs-2sigma comparison is phrased as a measurement, with the ruling explicitly deferred to
+J-16.
+
+No test-split number was read, computed, or quoted. results/runs/ was not opened by this job.
+
+--- 7. Files touched ---
+Written: report/w_curve.md (edited), w_curve_correction.log (this file, repo root).
+Not touched: any checkpoint (including the epoch-3 one, hash-verified above), results/validation/,
+results/runs/, report/prereg-improvement.md, any other file under report/, tools/, TQNet/. No git
+command that writes was run.
+
+--- 8. git status (read-only, exact) ---
+See return to PM below for the live `git --no-optional-locks status --porcelain` output captured at
+the time of return.

@@ -14,6 +14,7 @@ from torch.optim import lr_scheduler
 import json
 import os
 import time
+from datetime import datetime
 
 import warnings
 import matplotlib.pyplot as plt
@@ -30,6 +31,105 @@ def _load_state_dict(path, device):
     not change meaning under a different torch version.
     """
     return torch.load(path, map_location=device, weights_only=True)
+
+
+# J-12a Step 1 (STAGE2_WORKPLAN_2026-08-09.md sec 7i): the run writes its own
+# resolved config beside the checkpoint, so nothing downstream ever has to
+# reverse-engineer it from the checkpoint directory name again. `args` here is
+# the object as it stands *after* run.py's --channel_criterion (Arm D) block
+# has already overridden use_tq/channel_aggre -- these two functions only ever
+# see the resolved values, never the raw command line, because they are called
+# from inside Exp_Main, which run.py constructs after that block runs.
+RESOLVED_CONFIG_SCHEMA = 1
+
+
+def _resolved_model_fields(args, model):
+    """The subset of fields that determine the model's *architecture* --
+
+    i.e. the ones tools/validation_metrics.py must get right to rebuild a
+    model whose state_dict matches the checkpoint. Factored out of
+    `_write_resolved_config` so `test()`'s `summary` dict (which already
+    carries its own broader set of fields, see line ~397) can merge these in
+    once instead of repeating each getattr/int/float cast.
+    """
+    return {
+        'enc_in': args.enc_in,
+        'model_type': args.model_type,
+        'use_revin': int(args.use_revin),
+        'use_tq': int(getattr(args, 'use_tq', 1)),
+        'channel_aggre': int(getattr(args, 'channel_aggre', 1)),
+        # Whether Arm D's criterion (not this flag) is what decided use_tq /
+        # channel_aggre above. Recorded so a resolved_config.json can be told
+        # apart from a plain --use_tq/--channel_aggre run even though both
+        # end up with the same two flag values.
+        'channel_criterion': int(getattr(args, 'channel_criterion', 0)),
+        'use_damped_trend': int(getattr(args, 'use_damped_trend', 0)),
+        'damped_phi': float(getattr(args, 'damped_phi', 0.9)),
+    }
+
+
+def _arm_label(args):
+    """Which arm this run's resolved config represents, by the same convention
+    tools/backfill_checkpoint_config.py and tools/validation_metrics.py use:
+    'armA' if the damped-trend flag is on (J-11), else 'reconstruction' if both
+    ablation flags are at their published defaults, else 'armD' (J-09 -- whether
+    --channel_criterion decided the flags or they were passed directly, as
+    repro/run_etth1_ablation.sh does).
+    """
+    if int(getattr(args, 'use_damped_trend', 0)):
+        return 'armA'
+    if int(getattr(args, 'use_tq', 1)) == 1 and int(getattr(args, 'channel_aggre', 1)) == 1:
+        return 'reconstruction'
+    return 'armD'
+
+
+def _write_resolved_config(args, model, setting, checkpoint_dir):
+    """Write `resolved_config.json` beside `checkpoint.pth`.
+
+    Every field `tools/validation_metrics.py`'s `build_args()` needs to
+    rebuild this exact model, read from the resolved `args` object (not the
+    raw command line -- see the module-level note above). `checkpoints/` is
+    gitignored, so this file is never itself committed; Step 4 of J-12a
+    embeds this same content into the committed `results/validation/*.json`
+    sidecar instead, which is what actually carries T15' traceability.
+    """
+    config = {
+        'setting': setting,
+        'arm': _arm_label(args),
+        'model': args.model,
+        'data': args.data,
+        'model_id': getattr(args, 'model_id', None),
+        'features': args.features,
+        'target': getattr(args, 'target', 'OT'),
+        'freq': getattr(args, 'freq', 'h'),
+        'data_path': getattr(args, 'data_path', None),
+        'seq_len': args.seq_len,
+        'label_len': getattr(args, 'label_len', 0),
+        'pred_len': args.pred_len,
+        'cycle': args.cycle,
+        # Arm B (J-14, report/prereg-improvement.md sec 3): 'estimated' if
+        # --cycle auto resolved this value from the training split
+        # (TQNet/run.py), 'passed' if it was typed on the command line --
+        # the default for every run that predates this flag and for every
+        # plain --cycle <int> run after it, so this is purely additive.
+        'cycle_source': getattr(args, 'cycle_source', 'passed'),
+        'seed': getattr(args, 'random_seed', None),
+        'accelerator': getattr(args, 'accelerator', 'unknown'),
+        'd_model': getattr(args, 'd_model', None),
+        'dropout': getattr(args, 'dropout', None),
+        'batch_size': getattr(args, 'batch_size', None),
+        'n_params': int(sum(p.numel() for p in model.parameters() if p.requires_grad)),
+        'resolved_config_schema': RESOLVED_CONFIG_SCHEMA,
+        'written_by': 'TQNet/exp/exp_main.py Exp_Main.train (J-12a Step 1)',
+        'written_at': datetime.now().isoformat(timespec='seconds'),
+    }
+    config.update(_resolved_model_fields(args, model))
+
+    out_path = os.path.join(checkpoint_dir, 'resolved_config.json')
+    with open(out_path, 'w') as fh:
+        json.dump(config, fh, indent=2, sort_keys=True)
+        fh.write('\n')
+    return config
 
 
 class Exp_Main(Exp_Basic):
@@ -251,6 +351,13 @@ class Exp_Main(Exp_Basic):
         best_model_path = path + '/' + 'checkpoint.pth'
         self.model.load_state_dict(_load_state_dict(best_model_path, self.device))
 
+        # J-12a Step 1: resolved_config.json, written from the model that was
+        # just loaded from the best checkpoint, so n_params and every
+        # architecture flag in it describe exactly the weights on disk next
+        # to it -- not the args as passed on the command line before Arm D's
+        # channel_criterion (if used) had a chance to override them.
+        _write_resolved_config(self.args, self.model, setting, path)
+
         # print(f"Max Memory (MB): {max_memory}")
 
         return self.model
@@ -394,6 +501,11 @@ class Exp_Main(Exp_Basic):
                 'upstream_mae': float(mae),
                 'upstream_rmse': float(rmse),
             }
+            # J-12a Step 1: the same resolved-config fields that go into
+            # resolved_config.json beside checkpoint.pth, so
+            # tools/collect_results.py's ingestion of TQNet/results/<setting>/
+            # gets them too, not just the checkpoint-adjacent file.
+            summary.update(_resolved_model_fields(self.args, self.model))
             with open(folder_path + 'metrics.json', 'w') as handle:
                 json.dump(summary, handle, indent=2, sort_keys=True)
                 handle.write('\n')

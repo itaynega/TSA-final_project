@@ -1,0 +1,179 @@
+{
+  "accelerator": "cpu",
+  "arm": "armD",
+  "channel_aggre": 0,
+  "checkpoint_path": "TQNet/checkpoints/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/checkpoint.pth",
+  "cycle": 24,
+  "damped_phi": 0.9,
+  "data": "ETTh1",
+  "data_sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066",
+  "forced_use_damped_trend": null,
+  "missing_keys": [],
+  "model": "TQNet",
+  "n_params": 944336,
+  "n_points": 10891440,
+  "n_windows_test_dataset_len": 2161,
+  "n_windows_val": 2161,
+  "n_windows_val_dataset_len": 2161,
+  "pred_len": 720,
+  "resolved_config": {
+    "accelerator": "cpu",
+    "arm": "armD",
+    "backfill_agreement": [
+      {
+        "field": "seq_len",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 96
+      },
+      {
+        "field": "pred_len",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 720
+      },
+      {
+        "field": "seed",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 2025
+      },
+      {
+        "field": "model",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": "TQNet"
+      },
+      {
+        "field": "cycle",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 24
+      },
+      {
+        "field": "features",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": "M"
+      },
+      {
+        "field": "use_tq",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 0
+      },
+      {
+        "field": "channel_aggre",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 0
+      },
+      {
+        "field": "n_params",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": 944336
+      },
+      {
+        "field": "accelerator",
+        "source": "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+        "value": "cpu"
+      },
+      {
+        "field": "seq_len",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 96
+      },
+      {
+        "field": "pred_len",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 720
+      },
+      {
+        "field": "seed",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 2025
+      },
+      {
+        "field": "model",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": "TQNet"
+      },
+      {
+        "field": "data",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": "ETTh1"
+      },
+      {
+        "field": "cycle",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 24
+      },
+      {
+        "field": "features",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": "M"
+      },
+      {
+        "field": "use_tq",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 0
+      },
+      {
+        "field": "channel_aggre",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 0
+      },
+      {
+        "field": "n_params",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": 944336
+      },
+      {
+        "field": "accelerator",
+        "source": "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json",
+        "value": "cpu"
+      }
+    ],
+    "backfill_checked_against": [
+      "results/runs/improved-TQNet-s2025-h720-1786297728236759100.json",
+      "TQNet/results_armD/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/metrics.json"
+    ],
+    "batch_size": 256,
+    "channel_aggre": 0,
+    "channel_criterion": 0,
+    "cycle": 24,
+    "d_model": 512,
+    "damped_phi": 0.9,
+    "data": "ETTh1",
+    "data_path": "ETTh1.csv",
+    "dropout": 0.5,
+    "enc_in": 7,
+    "features": "M",
+    "freq": "h",
+    "label_len": 0,
+    "model": "TQNet",
+    "model_id": "ETTh1_96_720",
+    "model_type": "mlp",
+    "n_params": 944336,
+    "pred_len": 720,
+    "resolved_config_schema": 1,
+    "resolved_from": "backfill",
+    "seed": 2025,
+    "seq_len": 96,
+    "setting": "ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0",
+    "target": "OT",
+    "use_damped_trend": 0,
+    "use_revin": 1,
+    "use_tq": 0,
+    "written_by": "tools/backfill_checkpoint_config.py (J-12a Step 3)"
+  },
+  "scale": "z-scored (no inverse_transform applied; matches exp_main.py test(), whose de-norm block is commented out)",
+  "script_path": "tools/validation_metrics.py",
+  "seed": 2025,
+  "seq_len": 96,
+  "setting": "ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0",
+  "split_hash": "17f9f51a6d81e0a2",
+  "split_hash_expected": "17f9f51a6d81e0a2",
+  "split_hash_ok": true,
+  "timestamp": "2026-08-10T16:34:13",
+  "unexpected_keys": [],
+  "use_damped_trend": false,
+  "use_tq": 0,
+  "val_MAE": 0.853434511275635,
+  "val_MSE": 1.5658308706626174,
+  "val_MdAE": 0.5428811460733414,
+  "val_RMSE": 1.251331638960119,
+  "val_loader": "shuffle=False, drop_last=False, batch_size=256 (deliberately not vali()'s train-style shuffle=True/drop_last=True loader; see script docstring point 3)"
+}

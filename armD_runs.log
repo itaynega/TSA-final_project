@@ -1,0 +1,764 @@
+=== H=96 seed=2024 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 8.460673570632935
+Epoch: 1, Steps: 33 | Train Loss: 0.5821408 Vali Loss: 1.0127079 Test Loss: 0.5948361
+Validation loss decreased (inf --> 1.012708).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.380367755889893
+Epoch: 2, Steps: 33 | Train Loss: 0.4330633 Vali Loss: 0.7355103 Test Loss: 0.4033260
+Validation loss decreased (1.012708 --> 0.735510).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 8.606417655944824
+Epoch: 3, Steps: 33 | Train Loss: 0.3843818 Vali Loss: 0.7014597 Test Loss: 0.3854903
+Validation loss decreased (0.735510 --> 0.701460).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 8.946062564849854
+Epoch: 4, Steps: 33 | Train Loss: 0.3680718 Vali Loss: 0.6841446 Test Loss: 0.3788867
+Validation loss decreased (0.701460 --> 0.684145).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 11.901153564453125
+Epoch: 5, Steps: 33 | Train Loss: 0.3602107 Vali Loss: 0.6859454 Test Loss: 0.3769438
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 13.997951030731201
+Epoch: 6, Steps: 33 | Train Loss: 0.3556873 Vali Loss: 0.6900512 Test Loss: 0.3760846
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 16.703460216522217
+Epoch: 7, Steps: 33 | Train Loss: 0.3524347 Vali Loss: 0.6792629 Test Loss: 0.3754287
+Validation loss decreased (0.684145 --> 0.679263).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 19.10347843170166
+Epoch: 8, Steps: 33 | Train Loss: 0.3496310 Vali Loss: 0.6771929 Test Loss: 0.3738918
+Validation loss decreased (0.679263 --> 0.677193).  Saving model ...
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 19.424341201782227
+Epoch: 9, Steps: 33 | Train Loss: 0.3474287 Vali Loss: 0.6819002 Test Loss: 0.3733724
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 17.32863736152649
+Epoch: 10, Steps: 33 | Train Loss: 0.3454400 Vali Loss: 0.6746325 Test Loss: 0.3716877
+Validation loss decreased (0.677193 --> 0.674633).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 15.49907112121582
+Epoch: 11, Steps: 33 | Train Loss: 0.3444719 Vali Loss: 0.6772772 Test Loss: 0.3712561
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 14.727330207824707
+Epoch: 12, Steps: 33 | Train Loss: 0.3430808 Vali Loss: 0.6794468 Test Loss: 0.3711208
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 10.286933422088623
+Epoch: 13, Steps: 33 | Train Loss: 0.3420825 Vali Loss: 0.6753255 Test Loss: 0.3714558
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 8.751617670059204
+Epoch: 14, Steps: 33 | Train Loss: 0.3413015 Vali Loss: 0.6802781 Test Loss: 0.3709011
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 14.327591896057129
+Epoch: 15, Steps: 33 | Train Loss: 0.3407890 Vali Loss: 0.6784444 Test Loss: 0.3710077
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3709627687931061, mae:0.39211657643318176
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0/
+=== H=96 seed=2025 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 14.13179063796997
+Epoch: 1, Steps: 33 | Train Loss: 0.5812121 Vali Loss: 0.9959119 Test Loss: 0.5924728
+Validation loss decreased (inf --> 0.995912).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 13.790744304656982
+Epoch: 2, Steps: 33 | Train Loss: 0.4316904 Vali Loss: 0.7344992 Test Loss: 0.3999425
+Validation loss decreased (0.995912 --> 0.734499).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 13.417340517044067
+Epoch: 3, Steps: 33 | Train Loss: 0.3829329 Vali Loss: 0.7177773 Test Loss: 0.3843653
+Validation loss decreased (0.734499 --> 0.717777).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 13.58810806274414
+Epoch: 4, Steps: 33 | Train Loss: 0.3672343 Vali Loss: 0.6964585 Test Loss: 0.3795689
+Validation loss decreased (0.717777 --> 0.696459).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 13.149304866790771
+Epoch: 5, Steps: 33 | Train Loss: 0.3598014 Vali Loss: 0.6825466 Test Loss: 0.3776721
+Validation loss decreased (0.696459 --> 0.682547).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 13.239173650741577
+Epoch: 6, Steps: 33 | Train Loss: 0.3547881 Vali Loss: 0.6880394 Test Loss: 0.3751254
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 13.183329105377197
+Epoch: 7, Steps: 33 | Train Loss: 0.3516774 Vali Loss: 0.6800478 Test Loss: 0.3738848
+Validation loss decreased (0.682547 --> 0.680048).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 12.250385046005249
+Epoch: 8, Steps: 33 | Train Loss: 0.3494114 Vali Loss: 0.6826297 Test Loss: 0.3721597
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 13.182277917861938
+Epoch: 9, Steps: 33 | Train Loss: 0.3466333 Vali Loss: 0.6845133 Test Loss: 0.3728388
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 14.720877408981323
+Epoch: 10, Steps: 33 | Train Loss: 0.3452569 Vali Loss: 0.6806219 Test Loss: 0.3720362
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 13.34495496749878
+Epoch: 11, Steps: 33 | Train Loss: 0.3438315 Vali Loss: 0.6806732 Test Loss: 0.3723055
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 13.538575172424316
+Epoch: 12, Steps: 33 | Train Loss: 0.3428414 Vali Loss: 0.6813202 Test Loss: 0.3720266
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3732233941555023, mae:0.39163434505462646
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0/
+=== H=96 seed=2026 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 8.740716457366943
+Epoch: 1, Steps: 33 | Train Loss: 0.5926368 Vali Loss: 1.0157667 Test Loss: 0.6154874
+Validation loss decreased (inf --> 1.015767).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 18.66724729537964
+Epoch: 2, Steps: 33 | Train Loss: 0.4343715 Vali Loss: 0.7429637 Test Loss: 0.4045541
+Validation loss decreased (1.015767 --> 0.742964).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 13.705175161361694
+Epoch: 3, Steps: 33 | Train Loss: 0.3844373 Vali Loss: 0.7059885 Test Loss: 0.3887810
+Validation loss decreased (0.742964 --> 0.705989).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 11.255748271942139
+Epoch: 4, Steps: 33 | Train Loss: 0.3692866 Vali Loss: 0.6961082 Test Loss: 0.3817484
+Validation loss decreased (0.705989 --> 0.696108).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 13.860424041748047
+Epoch: 5, Steps: 33 | Train Loss: 0.3610991 Vali Loss: 0.6907815 Test Loss: 0.3776821
+Validation loss decreased (0.696108 --> 0.690781).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 14.303257703781128
+Epoch: 6, Steps: 33 | Train Loss: 0.3566400 Vali Loss: 0.6861035 Test Loss: 0.3749612
+Validation loss decreased (0.690781 --> 0.686104).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 13.195144891738892
+Epoch: 7, Steps: 33 | Train Loss: 0.3531394 Vali Loss: 0.6811147 Test Loss: 0.3740371
+Validation loss decreased (0.686104 --> 0.681115).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 13.882078886032104
+Epoch: 8, Steps: 33 | Train Loss: 0.3509040 Vali Loss: 0.6734438 Test Loss: 0.3723726
+Validation loss decreased (0.681115 --> 0.673444).  Saving model ...
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 12.840506315231323
+Epoch: 9, Steps: 33 | Train Loss: 0.3484927 Vali Loss: 0.6824412 Test Loss: 0.3728934
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 13.241042137145996
+Epoch: 10, Steps: 33 | Train Loss: 0.3471382 Vali Loss: 0.6819213 Test Loss: 0.3721879
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 14.31667184829712
+Epoch: 11, Steps: 33 | Train Loss: 0.3452989 Vali Loss: 0.6855068 Test Loss: 0.3712694
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 13.19653034210205
+Epoch: 12, Steps: 33 | Train Loss: 0.3443209 Vali Loss: 0.6834179 Test Loss: 0.3711887
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 12.280761957168579
+Epoch: 13, Steps: 33 | Train Loss: 0.3432409 Vali Loss: 0.6806494 Test Loss: 0.3710846
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37167349457740784, mae:0.3911754786968231
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0/
+=== H=192 seed=2024 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=5b9f41f467356285 actual=5b9f41f467356285 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_192', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=192, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 10.645614624023438
+Epoch: 1, Steps: 32 | Train Loss: 0.6386579 Vali Loss: 1.3068570 Test Loss: 0.6513848
+Validation loss decreased (inf --> 1.306857).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 9.523083209991455
+Epoch: 2, Steps: 32 | Train Loss: 0.4916984 Vali Loss: 1.0196326 Test Loss: 0.4502587
+Validation loss decreased (1.306857 --> 1.019633).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 9.498689413070679
+Epoch: 3, Steps: 32 | Train Loss: 0.4457352 Vali Loss: 1.0000874 Test Loss: 0.4393284
+Validation loss decreased (1.019633 --> 1.000087).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 9.606453657150269
+Epoch: 4, Steps: 32 | Train Loss: 0.4318227 Vali Loss: 0.9960448 Test Loss: 0.4381055
+Validation loss decreased (1.000087 --> 0.996045).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 9.407936096191406
+Epoch: 5, Steps: 32 | Train Loss: 0.4252417 Vali Loss: 0.9914066 Test Loss: 0.4354513
+Validation loss decreased (0.996045 --> 0.991407).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 9.749870538711548
+Epoch: 6, Steps: 32 | Train Loss: 0.4204473 Vali Loss: 0.9879200 Test Loss: 0.4319077
+Validation loss decreased (0.991407 --> 0.987920).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 9.615495443344116
+Epoch: 7, Steps: 32 | Train Loss: 0.4165269 Vali Loss: 0.9876790 Test Loss: 0.4293148
+Validation loss decreased (0.987920 --> 0.987679).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 9.901583671569824
+Epoch: 8, Steps: 32 | Train Loss: 0.4138473 Vali Loss: 0.9845926 Test Loss: 0.4309909
+Validation loss decreased (0.987679 --> 0.984593).  Saving model ...
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 10.945518255233765
+Epoch: 9, Steps: 32 | Train Loss: 0.4110853 Vali Loss: 0.9837756 Test Loss: 0.4331341
+Validation loss decreased (0.984593 --> 0.983776).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 10.259831666946411
+Epoch: 10, Steps: 32 | Train Loss: 0.4092080 Vali Loss: 0.9841791 Test Loss: 0.4333540
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 13.258135795593262
+Epoch: 11, Steps: 32 | Train Loss: 0.4070921 Vali Loss: 0.9912094 Test Loss: 0.4318212
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 8.24348258972168
+Epoch: 12, Steps: 32 | Train Loss: 0.4059841 Vali Loss: 0.9922520 Test Loss: 0.4303282
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 8.078398704528809
+Epoch: 13, Steps: 32 | Train Loss: 0.4048017 Vali Loss: 0.9885446 Test Loss: 0.4317107
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 7.850041627883911
+Epoch: 14, Steps: 32 | Train Loss: 0.4041735 Vali Loss: 0.9829162 Test Loss: 0.4315288
+Validation loss decreased (0.983776 --> 0.982916).  Saving model ...
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 8.109206438064575
+Epoch: 15, Steps: 32 | Train Loss: 0.4030148 Vali Loss: 0.9915448 Test Loss: 0.4322229
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 6.871947673600005e-05
+Epoch: 16 cost time: 10.939223766326904
+Epoch: 16, Steps: 32 | Train Loss: 0.4031650 Vali Loss: 0.9873255 Test Loss: 0.4324932
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 5.497558138880004e-05
+Epoch: 17 cost time: 10.78488039970398
+Epoch: 17, Steps: 32 | Train Loss: 0.4018474 Vali Loss: 0.9929851 Test Loss: 0.4314508
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 4.398046511104004e-05
+Epoch: 18 cost time: 8.127837657928467
+Epoch: 18, Steps: 32 | Train Loss: 0.4019696 Vali Loss: 0.9860204 Test Loss: 0.4322474
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 3.518437208883203e-05
+Epoch: 19 cost time: 8.266135454177856
+Epoch: 19, Steps: 32 | Train Loss: 0.4018621 Vali Loss: 0.9917054 Test Loss: 0.4322310
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+mse:0.42742109298706055, mae:0.42589351534843445
+saved predictions and metrics under ./results/ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0/
+=== H=192 seed=2025 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=5b9f41f467356285 actual=5b9f41f467356285 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_192', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=192, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 7.420309066772461
+Epoch: 1, Steps: 32 | Train Loss: 0.6463142 Vali Loss: 1.3145419 Test Loss: 0.6602530
+Validation loss decreased (inf --> 1.314542).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.083011865615845
+Epoch: 2, Steps: 32 | Train Loss: 0.4915275 Vali Loss: 1.0196341 Test Loss: 0.4517589
+Validation loss decreased (1.314542 --> 1.019634).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 8.29596471786499
+Epoch: 3, Steps: 32 | Train Loss: 0.4457254 Vali Loss: 1.0040033 Test Loss: 0.4391217
+Validation loss decreased (1.019634 --> 1.004003).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 7.7887818813323975
+Epoch: 4, Steps: 32 | Train Loss: 0.4320806 Vali Loss: 0.9920640 Test Loss: 0.4331960
+Validation loss decreased (1.004003 --> 0.992064).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 7.88074254989624
+Epoch: 5, Steps: 32 | Train Loss: 0.4242562 Vali Loss: 0.9960946 Test Loss: 0.4319163
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 7.682642698287964
+Epoch: 6, Steps: 32 | Train Loss: 0.4200358 Vali Loss: 0.9963781 Test Loss: 0.4321362
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 8.087850332260132
+Epoch: 7, Steps: 32 | Train Loss: 0.4161251 Vali Loss: 0.9935888 Test Loss: 0.4328979
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 8.402384996414185
+Epoch: 8, Steps: 32 | Train Loss: 0.4136320 Vali Loss: 0.9960507 Test Loss: 0.4324487
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 9.040695905685425
+Epoch: 9, Steps: 32 | Train Loss: 0.4106943 Vali Loss: 0.9873883 Test Loss: 0.4327691
+Validation loss decreased (0.992064 --> 0.987388).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 6.44644021987915
+Epoch: 10, Steps: 32 | Train Loss: 0.4093815 Vali Loss: 0.9903611 Test Loss: 0.4309197
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 6.7445385456085205
+Epoch: 11, Steps: 32 | Train Loss: 0.4074607 Vali Loss: 0.9953755 Test Loss: 0.4307730
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 7.406967878341675
+Epoch: 12, Steps: 32 | Train Loss: 0.4059050 Vali Loss: 0.9893751 Test Loss: 0.4316128
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 8.727065563201904
+Epoch: 13, Steps: 32 | Train Loss: 0.4050887 Vali Loss: 0.9947090 Test Loss: 0.4320548
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 6.828301668167114
+Epoch: 14, Steps: 32 | Train Loss: 0.4042902 Vali Loss: 0.9955431 Test Loss: 0.4321682
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+mse:0.42902806401252747, mae:0.4253937900066376
+saved predictions and metrics under ./results/ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0/
+=== H=192 seed=2026 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=5b9f41f467356285 actual=5b9f41f467356285 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_192', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=192, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8353
+val 2689
+test 2689
+Epoch: 1 cost time: 9.005314826965332
+Epoch: 1, Steps: 32 | Train Loss: 0.6460589 Vali Loss: 1.3075929 Test Loss: 0.6638005
+Validation loss decreased (inf --> 1.307593).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 9.813847780227661
+Epoch: 2, Steps: 32 | Train Loss: 0.4931387 Vali Loss: 1.0218899 Test Loss: 0.4486114
+Validation loss decreased (1.307593 --> 1.021890).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 7.7676708698272705
+Epoch: 3, Steps: 32 | Train Loss: 0.4474377 Vali Loss: 1.0030811 Test Loss: 0.4430527
+Validation loss decreased (1.021890 --> 1.003081).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 7.907101392745972
+Epoch: 4, Steps: 32 | Train Loss: 0.4325941 Vali Loss: 0.9960486 Test Loss: 0.4342999
+Validation loss decreased (1.003081 --> 0.996049).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 7.812528133392334
+Epoch: 5, Steps: 32 | Train Loss: 0.4253519 Vali Loss: 0.9910764 Test Loss: 0.4315941
+Validation loss decreased (0.996049 --> 0.991076).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 7.776381969451904
+Epoch: 6, Steps: 32 | Train Loss: 0.4207253 Vali Loss: 0.9901304 Test Loss: 0.4319989
+Validation loss decreased (0.991076 --> 0.990130).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 8.277846574783325
+Epoch: 7, Steps: 32 | Train Loss: 0.4169093 Vali Loss: 0.9978164 Test Loss: 0.4300477
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 7.987621068954468
+Epoch: 8, Steps: 32 | Train Loss: 0.4138258 Vali Loss: 0.9918194 Test Loss: 0.4311118
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 6.801900148391724
+Epoch: 9, Steps: 32 | Train Loss: 0.4123059 Vali Loss: 0.9911649 Test Loss: 0.4294122
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 6.4893834590911865
+Epoch: 10, Steps: 32 | Train Loss: 0.4099975 Vali Loss: 0.9901875 Test Loss: 0.4307978
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 6.751147985458374
+Epoch: 11, Steps: 32 | Train Loss: 0.4088948 Vali Loss: 0.9879691 Test Loss: 0.4306280
+Validation loss decreased (0.990130 --> 0.987969).  Saving model ...
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 9.271918773651123
+Epoch: 12, Steps: 32 | Train Loss: 0.4075610 Vali Loss: 0.9922103 Test Loss: 0.4300169
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 6.501967191696167
+Epoch: 13, Steps: 32 | Train Loss: 0.4050023 Vali Loss: 0.9854527 Test Loss: 0.4310705
+Validation loss decreased (0.987969 --> 0.985453).  Saving model ...
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 6.867431402206421
+Epoch: 14, Steps: 32 | Train Loss: 0.4041756 Vali Loss: 0.9896054 Test Loss: 0.4310229
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 6.6840660572052
+Epoch: 15, Steps: 32 | Train Loss: 0.4043339 Vali Loss: 0.9987081 Test Loss: 0.4308536
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 6.871947673600005e-05
+Epoch: 16 cost time: 6.825367450714111
+Epoch: 16, Steps: 32 | Train Loss: 0.4037567 Vali Loss: 0.9864523 Test Loss: 0.4311461
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 5.497558138880004e-05
+Epoch: 17 cost time: 6.747245788574219
+Epoch: 17, Steps: 32 | Train Loss: 0.4032983 Vali Loss: 0.9920229 Test Loss: 0.4314616
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 4.398046511104004e-05
+Epoch: 18 cost time: 6.661602020263672
+Epoch: 18, Steps: 32 | Train Loss: 0.4027893 Vali Loss: 0.9890574 Test Loss: 0.4316706
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2689
+mse:0.42696818709373474, mae:0.42538923025131226
+saved predictions and metrics under ./results/ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0/
+=== H=336 seed=2024 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=a5bcaa4090739908 actual=a5bcaa4090739908 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_336', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=336, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+Epoch: 1 cost time: 6.922956228256226
+Epoch: 1, Steps: 32 | Train Loss: 0.6976160 Vali Loss: 1.5876317 Test Loss: 0.6747718
+Validation loss decreased (inf --> 1.587632).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 7.243857383728027
+Epoch: 2, Steps: 32 | Train Loss: 0.5488662 Vali Loss: 1.3011849 Test Loss: 0.4972669
+Validation loss decreased (1.587632 --> 1.301185).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 7.264781475067139
+Epoch: 3, Steps: 32 | Train Loss: 0.5065980 Vali Loss: 1.2870506 Test Loss: 0.4850203
+Validation loss decreased (1.301185 --> 1.287051).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 7.5726377964019775
+Epoch: 4, Steps: 32 | Train Loss: 0.4929702 Vali Loss: 1.2791975 Test Loss: 0.4799785
+Validation loss decreased (1.287051 --> 1.279197).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 7.599266529083252
+Epoch: 5, Steps: 32 | Train Loss: 0.4848793 Vali Loss: 1.2909350 Test Loss: 0.4826145
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 7.2239670753479
+Epoch: 6, Steps: 32 | Train Loss: 0.4788990 Vali Loss: 1.2938401 Test Loss: 0.4834381
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 7.246844053268433
+Epoch: 7, Steps: 32 | Train Loss: 0.4742511 Vali Loss: 1.2875867 Test Loss: 0.4822164
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 7.431575059890747
+Epoch: 8, Steps: 32 | Train Loss: 0.4704016 Vali Loss: 1.2963752 Test Loss: 0.4842910
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 7.7781288623809814
+Epoch: 9, Steps: 32 | Train Loss: 0.4680858 Vali Loss: 1.2999439 Test Loss: 0.4851650
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+mse:0.4785034656524658, mae:0.4468006193637848
+saved predictions and metrics under ./results/ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0/
+=== H=336 seed=2025 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=a5bcaa4090739908 actual=a5bcaa4090739908 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_336', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=336, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+Epoch: 1 cost time: 7.333015441894531
+Epoch: 1, Steps: 32 | Train Loss: 0.7033515 Vali Loss: 1.5924816 Test Loss: 0.6810502
+Validation loss decreased (inf --> 1.592482).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.011451244354248
+Epoch: 2, Steps: 32 | Train Loss: 0.5479855 Vali Loss: 1.2929797 Test Loss: 0.5030007
+Validation loss decreased (1.592482 --> 1.292980).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 7.3383355140686035
+Epoch: 3, Steps: 32 | Train Loss: 0.5058689 Vali Loss: 1.2852792 Test Loss: 0.4808130
+Validation loss decreased (1.292980 --> 1.285279).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 7.292897701263428
+Epoch: 4, Steps: 32 | Train Loss: 0.4931984 Vali Loss: 1.2896944 Test Loss: 0.4799865
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 7.927149534225464
+Epoch: 5, Steps: 32 | Train Loss: 0.4851902 Vali Loss: 1.2838204 Test Loss: 0.4871468
+Validation loss decreased (1.285279 --> 1.283820).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 8.072620630264282
+Epoch: 6, Steps: 32 | Train Loss: 0.4787151 Vali Loss: 1.2971420 Test Loss: 0.4866434
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 8.02444577217102
+Epoch: 7, Steps: 32 | Train Loss: 0.4742708 Vali Loss: 1.3019987 Test Loss: 0.4853898
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 7.181083917617798
+Epoch: 8, Steps: 32 | Train Loss: 0.4706632 Vali Loss: 1.3006722 Test Loss: 0.4869157
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 8.14282488822937
+Epoch: 9, Steps: 32 | Train Loss: 0.4678597 Vali Loss: 1.3003623 Test Loss: 0.4864586
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 7.376252889633179
+Epoch: 10, Steps: 32 | Train Loss: 0.4660972 Vali Loss: 1.2911485 Test Loss: 0.4828629
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+mse:0.48577865958213806, mae:0.4525512754917145
+saved predictions and metrics under ./results/ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0/
+=== H=336 seed=2026 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=a5bcaa4090739908 actual=a5bcaa4090739908 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_336', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=336, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8209
+val 2545
+test 2545
+Epoch: 1 cost time: 6.878380298614502
+Epoch: 1, Steps: 32 | Train Loss: 0.6996704 Vali Loss: 1.5885084 Test Loss: 0.6813475
+Validation loss decreased (inf --> 1.588508).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 7.201433420181274
+Epoch: 2, Steps: 32 | Train Loss: 0.5491243 Vali Loss: 1.3107762 Test Loss: 0.4953930
+Validation loss decreased (1.588508 --> 1.310776).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 7.202703237533569
+Epoch: 3, Steps: 32 | Train Loss: 0.5068358 Vali Loss: 1.3026776 Test Loss: 0.4812678
+Validation loss decreased (1.310776 --> 1.302678).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 7.304849624633789
+Epoch: 4, Steps: 32 | Train Loss: 0.4934333 Vali Loss: 1.2893593 Test Loss: 0.4769992
+Validation loss decreased (1.302678 --> 1.289359).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 7.600602865219116
+Epoch: 5, Steps: 32 | Train Loss: 0.4860028 Vali Loss: 1.2909069 Test Loss: 0.4772833
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 7.5661985874176025
+Epoch: 6, Steps: 32 | Train Loss: 0.4792335 Vali Loss: 1.2895225 Test Loss: 0.4842637
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 7.208112716674805
+Epoch: 7, Steps: 32 | Train Loss: 0.4740885 Vali Loss: 1.2897054 Test Loss: 0.4869404
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 7.4728453159332275
+Epoch: 8, Steps: 32 | Train Loss: 0.4708801 Vali Loss: 1.2998748 Test Loss: 0.4809085
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 7.147368907928467
+Epoch: 9, Steps: 32 | Train Loss: 0.4684399 Vali Loss: 1.2994772 Test Loss: 0.4824955
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2545
+mse:0.4754827320575714, mae:0.44554054737091064
+saved predictions and metrics under ./results/ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0/
+=== H=720 seed=2024 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=17f9f51a6d81e0a2 actual=17f9f51a6d81e0a2 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_720', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+Epoch: 1 cost time: 8.22143006324768
+Epoch: 1, Steps: 30 | Train Loss: 0.8108462 Vali Loss: 1.8769529 Test Loss: 0.6875426
+Validation loss decreased (inf --> 1.876953).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.55707573890686
+Epoch: 2, Steps: 30 | Train Loss: 0.6681737 Vali Loss: 1.5658283 Test Loss: 0.5071089
+Validation loss decreased (1.876953 --> 1.565828).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 8.71393370628357
+Epoch: 3, Steps: 30 | Train Loss: 0.6252678 Vali Loss: 1.5625134 Test Loss: 0.5060093
+Validation loss decreased (1.565828 --> 1.562513).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 8.813114643096924
+Epoch: 4, Steps: 30 | Train Loss: 0.6094619 Vali Loss: 1.5664027 Test Loss: 0.5271131
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 8.702472686767578
+Epoch: 5, Steps: 30 | Train Loss: 0.5964055 Vali Loss: 1.5786430 Test Loss: 0.5246050
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 9.096362113952637
+Epoch: 6, Steps: 30 | Train Loss: 0.5887208 Vali Loss: 1.5699646 Test Loss: 0.5289080
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 8.903061628341675
+Epoch: 7, Steps: 30 | Train Loss: 0.5828851 Vali Loss: 1.5683959 Test Loss: 0.5218395
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 8.99436330795288
+Epoch: 8, Steps: 30 | Train Loss: 0.5772494 Vali Loss: 1.5649252 Test Loss: 0.5260737
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+mse:0.498832106590271, mae:0.4733841121196747
+saved predictions and metrics under ./results/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0/
+=== H=720 seed=2025 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=17f9f51a6d81e0a2 actual=17f9f51a6d81e0a2 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_720', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+Epoch: 1 cost time: 8.444011926651001
+Epoch: 1, Steps: 30 | Train Loss: 0.8147566 Vali Loss: 1.8777250 Test Loss: 0.6879259
+Validation loss decreased (inf --> 1.877725).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.927911758422852
+Epoch: 2, Steps: 30 | Train Loss: 0.6671049 Vali Loss: 1.5780214 Test Loss: 0.5049688
+Validation loss decreased (1.877725 --> 1.578021).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 8.74193263053894
+Epoch: 3, Steps: 30 | Train Loss: 0.6237216 Vali Loss: 1.5569804 Test Loss: 0.4978685
+Validation loss decreased (1.578021 --> 1.556980).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 8.811903715133667
+Epoch: 4, Steps: 30 | Train Loss: 0.6072143 Vali Loss: 1.5718096 Test Loss: 0.5268347
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 8.759148120880127
+Epoch: 5, Steps: 30 | Train Loss: 0.5960568 Vali Loss: 1.5640028 Test Loss: 0.5271056
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 9.252060890197754
+Epoch: 6, Steps: 30 | Train Loss: 0.5878806 Vali Loss: 1.5712297 Test Loss: 0.5258625
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 9.030418872833252
+Epoch: 7, Steps: 30 | Train Loss: 0.5816896 Vali Loss: 1.5646669 Test Loss: 0.5255963
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 8.819504737854004
+Epoch: 8, Steps: 30 | Train Loss: 0.5769585 Vali Loss: 1.5634035 Test Loss: 0.5213134
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+mse:0.4901391267776489, mae:0.47510072588920593
+saved predictions and metrics under ./results/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0/
+=== H=720 seed=2026 ===
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=17f9f51a6d81e0a2 actual=17f9f51a6d81e0a2 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_720', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=720, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.3110131176996824, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[0.9999999999999999, 0.23196165390164272, 0.9837243378178626, 0.1470854572763442, 0.39556083470029124, 0.112120409860881, 0.19977889170480537], [0.23196165390164272, 1.0, 0.19645373501239752, 0.9256023549691937, 0.2337494144899931, 0.29685856577411135, 0.6014441426143743], [0.9837243378178627, 0.1964537350123975, 1.0, 0.14273895718264107, 0.232797051376421, 0.03753824412102552, 0.15024069325639336], [0.1470854572763442, 0.9256023549691937, 0.1427389571826411, 1.0, 0.04807037723043171, -0.037574304489976285, 0.5235301651125962], [0.39556083470029124, 0.2337494144899931, 0.23279705137642104, 0.048070377230431706, 1.0, 0.43527358143450173, 0.3157642379852529], [0.11212040986088101, 0.2968585657741114, 0.03753824412102552, -0.037574304489976285, 0.43527358143450173, 1.0, 0.28340806138219327], [0.19977889170480537, 0.6014441426143743, 0.15024069325639336, 0.5235301651125962, 0.3157642379852529, 0.28340806138219327, 1.0]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0})
+Use CPU
+>>>>>>>start training : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 7825
+val 2161
+test 2161
+Epoch: 1 cost time: 8.5303373336792
+Epoch: 1, Steps: 30 | Train Loss: 0.8107963 Vali Loss: 1.8794558 Test Loss: 0.6877474
+Validation loss decreased (inf --> 1.879456).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 8.500870943069458
+Epoch: 2, Steps: 30 | Train Loss: 0.6661372 Vali Loss: 1.5683532 Test Loss: 0.5042432
+Validation loss decreased (1.879456 --> 1.568353).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 8.729509115219116
+Epoch: 3, Steps: 30 | Train Loss: 0.6238570 Vali Loss: 1.5665429 Test Loss: 0.5010884
+Validation loss decreased (1.568353 --> 1.566543).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 8.939377069473267
+Epoch: 4, Steps: 30 | Train Loss: 0.6084022 Vali Loss: 1.5659834 Test Loss: 0.5208364
+Validation loss decreased (1.566543 --> 1.565983).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 9.142178297042847
+Epoch: 5, Steps: 30 | Train Loss: 0.5963249 Vali Loss: 1.5712743 Test Loss: 0.5054848
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 9.308317422866821
+Epoch: 6, Steps: 30 | Train Loss: 0.5882151 Vali Loss: 1.5754240 Test Loss: 0.5211982
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 9.395565509796143
+Epoch: 7, Steps: 30 | Train Loss: 0.5813210 Vali Loss: 1.5616639 Test Loss: 0.5151561
+Validation loss decreased (1.565983 --> 1.561664).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 8.796863317489624
+Epoch: 8, Steps: 30 | Train Loss: 0.5764774 Vali Loss: 1.5749621 Test Loss: 0.5175185
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 8.938596248626709
+Epoch: 9, Steps: 30 | Train Loss: 0.5727585 Vali Loss: 1.5609539 Test Loss: 0.5283932
+Validation loss decreased (1.561664 --> 1.560954).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 9.065269231796265
+Epoch: 10, Steps: 30 | Train Loss: 0.5694358 Vali Loss: 1.5634165 Test Loss: 0.5208404
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 9.32343339920044
+Epoch: 11, Steps: 30 | Train Loss: 0.5672235 Vali Loss: 1.5710170 Test Loss: 0.5277020
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 8.81572437286377
+Epoch: 12, Steps: 30 | Train Loss: 0.5652052 Vali Loss: 1.5673933 Test Loss: 0.5286893
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 9.101233959197998
+Epoch: 13, Steps: 30 | Train Loss: 0.5625792 Vali Loss: 1.5675088 Test Loss: 0.5275006
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 9.167369365692139
+Epoch: 14, Steps: 30 | Train Loss: 0.5619404 Vali Loss: 1.5704150 Test Loss: 0.5320266
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2161
+mse:0.5243620872497559, mae:0.4952894151210785
+saved predictions and metrics under ./results/ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0/

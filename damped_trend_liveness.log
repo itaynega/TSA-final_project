@@ -1,0 +1,238 @@
+==============================================================================
+validation_metrics.py run starting 2026-08-10T09:23:19
+REPO_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+TQNET_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\TQNet
+torch version = 2.9.1+cpu
+torch.cuda.is_available() = False
+Found 26 checkpoint directories.
+[1/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2024 pred_len=192 val_MSE=0.9869258508941762 val_MAE=0.6510316144042335
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[2/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2024 pred_len=192 val_MSE=0.9896004404605488 val_MAE=0.6526268499127609
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[3/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2025 pred_len=192 val_MSE=0.9832517426354129 val_MAE=0.6487804520877789
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[4/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2025 pred_len=192 val_MSE=0.985544944546859 val_MAE=0.6499253303060188
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[5/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2026 pred_len=192 val_MSE=0.9826968910187351 val_MAE=0.6493404424524812
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[6/26] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2026 pred_len=192 val_MSE=0.9921220532366278 val_MAE=0.6534679417557892
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[7/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2024 pred_len=336 val_MSE=1.2831294057132752 val_MAE=0.7562362832683209
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[8/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2024 pred_len=336 val_MSE=1.2837455227139352 val_MAE=0.7565095498405752
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[9/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2025 pred_len=336 val_MSE=1.290187973460736 val_MAE=0.7586170378277104
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[10/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2025 pred_len=336 val_MSE=1.2876259966376138 val_MAE=0.7568751357526426
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[11/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2026 pred_len=336 val_MSE=1.2828700809595037 val_MAE=0.7558962281840311
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[12/26] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2026 pred_len=336 val_MSE=1.285842172590149 val_MAE=0.7573847980130316
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[13/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2024 pred_len=720 val_MSE=1.5656952294577686 val_MAE=0.8477118626017368
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[14/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2024 pred_len=720 val_MSE=1.564966416024261 val_MAE=0.8521000411618372
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[15/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2025 pred_len=720 val_MSE=1.5612634743032026 val_MAE=0.8493634735943071
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[16/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2025 pred_len=720 val_MSE=1.5658308706626174 val_MAE=0.853434511275635
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[17/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2026 pred_len=720 val_MSE=1.5647363575816038 val_MAE=0.8510950261802275
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[18/26] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2026 pred_len=720 val_MSE=1.5658419578095464 val_MAE=0.8533720506751904
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[19/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6712632722155959 val_MAE=0.5392097234478729
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+  SANITY ANCHOR (ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024): val_MSE=0.6712632722155959 test_MSE=0.37104994668966473 diff=0.30021332552593116
+[20/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.7321327800683107 val_MAE=0.5688711670074156
+  use_damped_trend=True damped_phi=0.8 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[21/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi1
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.7474742467274349 val_MAE=0.5874987480350673
+  use_damped_trend=True damped_phi=1.0 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[22/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2024 pred_len=96 val_MSE=0.6795092456048932 val_MAE=0.5439968638624214
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[23/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6735143635280876 val_MAE=0.53924157451204
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[24/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2025 pred_len=96 val_MSE=0.6812630824349228 val_MAE=0.5445259098960321
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[25/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6727194169596606 val_MAE=0.5414755241267981
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[26/26] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2026 pred_len=96 val_MSE=0.6808913767587101 val_MAE=0.5437019334254315
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+Done: 26 succeeded, 0 failed, 31.4s elapsed.
+Wrote summary: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\results\validation\_summary.json
+==============================================================================
+==============================================================================
+J-12a criterion 7 differential check -- folded from on.json / off.json /
+renamed.json (T15': these numbers are traced to those three files, sha256
+below, before the files are deleted per J-12d housekeeping).
+Checkpoint: TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+  arm-on  (use_damped_trend=1, damped_phi=0.8, from on.json):      val_MSE=0.7321327800683107  val_MAE=0.5688711670074156
+  arm-off (--force-use-damped-trend 0, same checkpoint, from off.json): val_MSE=0.7432173315666442  val_MAE=0.5723607567813256
+  difference (on - off): val_MSE -0.011084551498333428 (arm-on lower; the flag is reaching the model and changes the evaluated result materially -- sec 7i requirement 2)
+Directory-rename independence (from renamed.json): the same checkpoint directory renamed to
+"zzz_not_a_setting_string" and evaluated by --setting zzz_not_a_setting_string reproduces the
+identical arm-on record: val_MSE=0.7321327800683107 val_MAE=0.5688711670074156 (checkpoint_path
+reads "TQNet/checkpoints/zzz_not_a_setting_string/checkpoint.pth", resolved_config.setting still
+reads the original "..._dphi0.8" string written at training time -- confirms J-12a acceptance
+criterion 5: configuration comes from resolved_config.json, never from the directory name).
+Source files (deleted after this fold, per J-12d housekeeping / T15'):
+  on.json  sha256=953e3380643b856f04aaf19d59bea4f7c187c8e06f77b79ba44fcf856bde3c0a
+  off.json  sha256=2b3a41a98d8831e03ebca3f741ac049bf845d58eaeb684c74850839d60b67c1a
+  renamed.json  sha256=df388e9023859035064a9d5d30edfb3e9b358fe7e0f6f0245f0a97ffc6faefae
+==============================================================================

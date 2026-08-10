@@ -13,7 +13,7 @@ All figures are on **z-scored** data, over the **2,785 test windows** the split 
 | Paper (as printed, Table 5) | 0.371 | 0.393 | -- | -- | TQnet.pdf p. 15 |
 | Paper (authors' own run) | 0.371217 | 0.392820 | -- | -- | `result_authors_reference.txt` |
 | Seasonal-naive baseline (period 24) | 0.512225 | 0.433303 | 0.715699 | 0.260666 | `baseline-seasonal_naive_24-sna-h96-17854` |
-| **Our reconstruction** | 0.371050 | 0.392724 | 0.609139 | 0.251260 | `reconstruction-TQNet-s2024-h96-178542634` |
+| **Our reconstruction** | 0.371050 | 0.392724 | 0.609139 | 0.251260 | `reconstruction-TQNet-s2024-h96-178627262` |
 
 #### Reproduction gap
 
@@ -32,6 +32,17 @@ TQNet reduces MSE by **27.6%** relative to a seasonal-naive forecast at the same
 
 Note also that MAE / MdAE = 1.56 for the reconstruction. MdAE being well below MAE means the error distribution is right-skewed: most predictions are much better than the mean suggests, and the headline is carried by a minority of badly-missed windows.
 
+### Our seed spread at H=96
+
+| Seed | MSE | MAE |
+|---|---|---|
+| 2024 | 0.371050 | 0.392724 |
+| 2025 | 0.375112 | 0.393156 |
+| 2026 | 0.371837 | 0.393471 |
+| **mean** | 0.372666 | 0.393117 |
+| **sd** | 0.002154 | 0.000375 |
+
+The paper reports sigma = 0.001 MSE at this horizon on their hardware. Ours is 0.002154. This is the number any claimed improvement has to beat to be real.
 
 
 ### The paper's comparison set at H=96
@@ -89,3 +100,7 @@ PyTorch and cuDNN version differences change floating-point reduction order and 
 **`figures/fig5_error_distribution.png`** -- Distribution and CDF of absolute error, explaining the MAE / MdAE gap.
 
 ![fig5_error_distribution.png](figures/fig5_error_distribution.png)
+
+**`figures/fig6_horizon_sweep.png`** -- Ours against the paper at every horizon that has been run.
+
+![fig6_horizon_sweep.png](figures/fig6_horizon_sweep.png)

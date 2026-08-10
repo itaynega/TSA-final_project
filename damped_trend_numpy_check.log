@@ -1,0 +1,52 @@
+================================================================================================
+sum_{k=1..h} phi^k  --  closed form vs naive loop
+================================================================================================
+  phi=0        h=720  max|closed-naive| = 0.000e+00   S(1)=0.000000e+00 (must equal phi)
+  phi=1e-08    h=720  max|closed-naive| = 0.000e+00   S(1)=1.000000e-08 (must equal phi)
+  phi=0.5      h=720  max|closed-naive| = 0.000e+00   S(1)=5.000000e-01 (must equal phi)
+  phi=0.8      h=720  max|closed-naive| = 1.776e-15   S(1)=8.000000e-01 (must equal phi)
+  phi=0.9      h=720  max|closed-naive| = 8.882e-15   S(1)=9.000000e-01 (must equal phi)
+  phi=0.95     h=720  max|closed-naive| = 3.197e-14   S(1)=9.500000e-01 (must equal phi)
+  phi=1        h=720  max|closed-naive| = 0.000e+00   S(1)=1.000000e+00 (must equal phi)
+
+================================================================================================
+slope closed form vs numpy.polyfit
+================================================================================================
+max |closed-form slope - polyfit slope|                            1.387779e-16  PASS
+sum_t w_t (must be 0)                                              8.673617e-19  PASS
+residual slope after detrending                                    1.006140e-16  PASS
+window mean preserved by detrending                                1.065814e-14  PASS
+
+================================================================================================
+THE GATE: phi -> 0 with the arm on vs the arm off
+================================================================================================
+literal   revin=True  phi=0        zero-trend window               3.197442e-14  PASS
+detrended revin=True  phi=0        trended window                  0.000000e+00  PASS
+literal   revin=True  phi=1e-08    zero-trend window               3.197442e-14  PASS
+detrended revin=True  phi=1e-08    trended window                  3.448104e-09  PASS
+literal   revin=False phi=0        zero-trend window               2.131628e-14  PASS
+detrended revin=False phi=0        trended window                  0.000000e+00  PASS
+literal   revin=False phi=1e-08    zero-trend window               2.131628e-14  PASS
+detrended revin=False phi=1e-08    trended window                  3.448104e-09  PASS
+
+================================================================================================
+What the gate catches -- the same run with sum_{k=0..h-1} phi^k (off by one)
+================================================================================================
+  off-by-one variant, phi=0, trended window: discrepancy = 3.448104e-01  (caught)
+  off-by-one variant, phi=0, zero-trend window: discrepancy = 3.197442e-14  (NOT caught -- this is why both tests exist)
+
+================================================================================================
+phi = 1 is plain linear extrapolation; intermediate phi is the damped line
+================================================================================================
+max |(phi=1) - (phi=0) - slope*h|                                  7.105427e-15  PASS
+max |(phi=0.8) - (phi=0) - slope*sum phi^k|                        1.776357e-15  PASS
+max |(phi=0.9) - (phi=0) - slope*sum phi^k|                        1.776357e-15  PASS
+max |(phi=0.95) - (phi=0) - slope*sum phi^k|                       1.776357e-15  PASS
+
+================================================================================================
+For the record: arm on at phi -> 0 vs arm off on a TRENDED window
+(section 3's detrending is unconditional, so these differ by construction)
+================================================================================================
+  max |arm-on(phi=0, x) - arm-off(x)| = 3.859701e+01
+
+ALL CHECKS PASS

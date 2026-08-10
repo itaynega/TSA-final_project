@@ -1,0 +1,76 @@
+Found 12 run(s) under TQNet/results_armD
+
+ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0  [pure MLP]
+  windows   : 2,689   split 5b9f41f467356285
+  MSE 0.427421   MAE 0.425894   RMSE 0.653775   MdAE 0.274934
+  agrees with TQNet's own float32 metrics to 4.8e-07 relative
+  recorded  : improved-TQNet-s2024-h192-1786297718824254300
+
+ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0  [pure MLP]
+  windows   : 2,689   split 5b9f41f467356285
+  MSE 0.429028   MAE 0.425394   RMSE 0.655002   MdAE 0.274750
+  agrees with TQNet's own float32 metrics to 2.7e-07 relative
+  recorded  : improved-TQNet-s2025-h192-1786297719581725300
+
+ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0  [pure MLP]
+  windows   : 2,689   split 5b9f41f467356285
+  MSE 0.426968   MAE 0.425389   RMSE 0.653428   MdAE 0.274788
+  agrees with TQNet's own float32 metrics to 2.5e-07 relative
+  recorded  : improved-TQNet-s2026-h192-1786297720360776900
+
+ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0  [pure MLP]
+  windows   : 2,545   split a5bcaa4090739908
+  MSE 0.478504   MAE 0.446801   RMSE 0.691740   MdAE 0.289826
+  agrees with TQNet's own float32 metrics to 2.8e-07 relative
+  recorded  : improved-TQNet-s2024-h336-1786297721348461400
+
+ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0  [pure MLP]
+  windows   : 2,545   split a5bcaa4090739908
+  MSE 0.485779   MAE 0.452551   RMSE 0.696978   MdAE 0.294539
+  agrees with TQNet's own float32 metrics to 2.3e-07 relative
+  recorded  : improved-TQNet-s2025-h336-1786297722570589100
+
+ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0  [pure MLP]
+  windows   : 2,545   split a5bcaa4090739908
+  MSE 0.475482   MAE 0.445540   RMSE 0.689552   MdAE 0.289127
+  agrees with TQNet's own float32 metrics to 9.0e-07 relative
+  recorded  : improved-TQNet-s2026-h336-1786297723838791500
+
+ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0  [pure MLP]
+  windows   : 2,161   split 17f9f51a6d81e0a2
+  MSE 0.498832   MAE 0.473384   RMSE 0.706281   MdAE 0.317858
+  agrees with TQNet's own float32 metrics to 6.7e-07 relative
+  recorded  : improved-TQNet-s2024-h720-1786297725895635200
+
+ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0  [pure MLP]
+  windows   : 2,161   split 17f9f51a6d81e0a2
+  MSE 0.490139   MAE 0.475101   RMSE 0.700099   MdAE 0.324559
+  agrees with TQNet's own float32 metrics to 2.8e-07 relative
+  recorded  : improved-TQNet-s2025-h720-1786297728236759100
+
+ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0  [pure MLP]
+  windows   : 2,161   split 17f9f51a6d81e0a2
+  MSE 0.524362   MAE 0.495290   RMSE 0.724129   MdAE 0.340466
+  agrees with TQNet's own float32 metrics to 3.0e-07 relative
+  recorded  : improved-TQNet-s2026-h720-1786297730459978500
+
+ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0  [pure MLP]
+  windows   : 2,785   split b66ee6b47e2b2eb8
+  MSE 0.370963   MAE 0.392117   RMSE 0.609067   MdAE 0.251034
+  agrees with TQNet's own float32 metrics to 1.4e-07 relative
+  recorded  : improved-TQNet-s2024-h96-1786297731786703500
+
+ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0  [pure MLP]
+  windows   : 2,785   split b66ee6b47e2b2eb8
+  MSE 0.373223   MAE 0.391634   RMSE 0.610920   MdAE 0.249602
+  agrees with TQNet's own float32 metrics to 3.0e-07 relative
+  recorded  : improved-TQNet-s2025-h96-1786297732554574700
+
+ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0  [pure MLP]
+  windows   : 2,785   split b66ee6b47e2b2eb8
+  MSE 0.371673   MAE 0.391175   RMSE 0.609650   MdAE 0.249787
+  agrees with TQNet's own float32 metrics to 5.1e-08 relative
+  recorded  : improved-TQNet-s2026-h96-1786297733835667500
+
+Run records are under results/runs/
+Next: python3 tools/make_report.py

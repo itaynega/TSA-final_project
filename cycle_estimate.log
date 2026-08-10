@@ -1,0 +1,23 @@
+=== J-14 Arm B estimator log ===
+date: 2026-08-10T08:27:37Z
+
+--- channel-mean, ETTh1 train rows [0,8640) ---
+rows=[0, 8640) columns=all lag_range=[2, 400] acf=24 (peak ac=0.8851540915365547) periodogram=24 (power=19641471.641798608) agree=True
+exit=0
+
+--- per-channel ---
+rows=[0, 8640) columns=HUFL lag_range=[2, 400] acf=24 (peak ac=0.7989213566496084) periodogram=24 (power=276579272.59904647) agree=True
+rows=[0, 8640) columns=HULL lag_range=[2, 400] acf=24 (peak ac=0.8449543762456991) periodogram=24 (power=8833258.171093186) agree=True
+rows=[0, 8640) columns=MUFL lag_range=[2, 400] acf=24 (peak ac=0.8054706070031443) periodogram=24 (power=281986285.1170251) agree=True
+rows=[0, 8640) columns=MULL lag_range=[2, 400] acf=24 (peak ac=0.8671414673531708) periodogram=24 (power=5470519.987863513) agree=True
+estimate_cycle: ACF and periodogram disagree (ACF=48, periodogram=12) -- report/prereg-improvement.md sec 3 'Arm B': abandon.
+rows=[0, 8640) columns=LUFL lag_range=[2, 400] acf=48 (peak ac=0.5714890959890074) periodogram=12 (power=888664.4796183846) agree=False
+estimate_cycle: ACF and periodogram disagree (ACF=16, periodogram=24) -- report/prereg-improvement.md sec 3 'Arm B': abandon.
+rows=[0, 8640) columns=LULL lag_range=[2, 400] acf=16 (peak ac=0.825403737987514) periodogram=24 (power=197033.3092538623) agree=False
+estimate_cycle: ACF and periodogram disagree (ACF=22, periodogram=24) -- report/prereg-improvement.md sec 3 'Arm B': abandon.
+rows=[0, 8640) columns=OT lag_range=[2, 400] acf=22 (peak ac=0.9292378570562073) periodogram=24 (power=31525281.729956377) agree=False
+
+--- negative control: i.i.d. Gaussian noise, n=8640, seed=2024 ---
+estimate_cycle: ACF and periodogram disagree (ACF=329, periodogram=10) -- report/prereg-improvement.md sec 3 'Arm B': abandon.
+rows=[0, 8640) columns=all lag_range=[2, 400] acf=329 (peak ac=0.031995187993940175) periodogram=10 (power=94994.1286533272) agree=False
+exit=1

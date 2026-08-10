@@ -1,0 +1,49 @@
+python           : 3.13.14 C:\Users\amita\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+platform         : Windows-11-10.0.26200-SP0
+torch            : 2.9.1+cpu
+tolerance        : 1e-06
+dtype            : float64 (model.double()), eval mode
+
+====================================================================================
+THE GATE -- arm on at phi -> 0 vs arm off
+====================================================================================
+literal   revin=1 phi=0        zero-trend window               7.105427e-15   PASS
+detrended revin=1 phi=0        trended window                  0.000000e+00   PASS
+literal   revin=1 phi=1e-08    zero-trend window               7.105427e-15   PASS
+detrended revin=1 phi=1e-08    trended window                  3.468521e-09   PASS
+literal   revin=0 phi=0        zero-trend window               9.769963e-15   PASS
+detrended revin=0 phi=0        trended window                  0.000000e+00   PASS
+literal   revin=0 phi=1e-08    zero-trend window               9.769963e-15   PASS
+detrended revin=0 phi=1e-08    trended window                  3.468521e-09   PASS
+
+====================================================================================
+phi = 1 is plain linear extrapolation; the candidates are the damped line
+====================================================================================
+max |(phi=0.8 ) - (phi=0) - slope*sum phi^k|                   1.776357e-15   PASS
+max |(phi=0.9 ) - (phi=0) - slope*sum phi^k|                   1.776357e-15   PASS
+max |(phi=0.95) - (phi=0) - slope*sum phi^k|                   1.776357e-15   PASS
+max |(phi=1   ) - (phi=0) - slope*sum phi^k|                   7.105427e-15   PASS
+
+====================================================================================
+Arm off vs the published forward pass (bit-identical, not tolerance)
+====================================================================================
+revin=1 use_tq=1 channel_aggre=1  torch.equal = True   max|diff| = 0.000000e+00
+revin=1 use_tq=0 channel_aggre=0  torch.equal = True   max|diff| = 0.000000e+00
+revin=1 use_tq=1 channel_aggre=0  torch.equal = True   max|diff| = 0.000000e+00
+revin=1 use_tq=0 channel_aggre=1  torch.equal = True   max|diff| = 0.000000e+00
+revin=0 use_tq=1 channel_aggre=1  torch.equal = True   max|diff| = 0.000000e+00
+revin=0 use_tq=0 channel_aggre=0  torch.equal = True   max|diff| = 0.000000e+00
+revin=0 use_tq=1 channel_aggre=0  torch.equal = True   max|diff| = 0.000000e+00
+revin=0 use_tq=0 channel_aggre=1  torch.equal = True   max|diff| = 0.000000e+00
+
+trainable parameters  arm on = 58184   arm off = 58184
+damped_trend state_dict entries: 0 (must be 0 -- checkpoints unaffected)
+
+====================================================================================
+For the record -- arm on at phi -> 0 vs arm off on a TRENDED window.
+Section 3's detrending is unconditional, so these differ by construction;
+this is the number behind item 9 of the J-11 return, not a failure.
+====================================================================================
+max |arm-on(phi=0, x) - arm-off(x)| = 1.159291e+01
+
+ALL CHECKS PASS

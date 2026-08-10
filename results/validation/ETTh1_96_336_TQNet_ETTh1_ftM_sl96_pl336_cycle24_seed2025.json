@@ -1,0 +1,123 @@
+{
+  "accelerator": "cpu",
+  "arm": "reconstruction",
+  "channel_aggre": 1,
+  "checkpoint_path": "TQNet/checkpoints/ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025/checkpoint.pth",
+  "cycle": 24,
+  "damped_phi": 0.9,
+  "data": "ETTh1",
+  "data_sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066",
+  "forced_use_damped_trend": null,
+  "missing_keys": [],
+  "model": "TQNet",
+  "n_params": 784760,
+  "n_points": 5985840,
+  "n_windows_test_dataset_len": 2545,
+  "n_windows_val": 2545,
+  "n_windows_val_dataset_len": 2545,
+  "pred_len": 336,
+  "resolved_config": {
+    "accelerator": "cpu",
+    "arm": "reconstruction",
+    "backfill_agreement": [
+      {
+        "field": "seq_len",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 96
+      },
+      {
+        "field": "pred_len",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 336
+      },
+      {
+        "field": "seed",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 2025
+      },
+      {
+        "field": "model",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": "TQNet"
+      },
+      {
+        "field": "cycle",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 24
+      },
+      {
+        "field": "features",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": "M"
+      },
+      {
+        "field": "use_tq",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 1
+      },
+      {
+        "field": "channel_aggre",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 1
+      },
+      {
+        "field": "n_params",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": 784760
+      },
+      {
+        "field": "accelerator",
+        "source": "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json",
+        "value": "cpu"
+      }
+    ],
+    "backfill_checked_against": [
+      "results/runs/reconstruction-TQNet-s2025-h336-1786272612028778200.json"
+    ],
+    "batch_size": 256,
+    "channel_aggre": 1,
+    "channel_criterion": 0,
+    "cycle": 24,
+    "d_model": 512,
+    "damped_phi": 0.9,
+    "data": "ETTh1",
+    "data_path": "ETTh1.csv",
+    "dropout": 0.5,
+    "enc_in": 7,
+    "features": "M",
+    "freq": "h",
+    "label_len": 0,
+    "model": "TQNet",
+    "model_id": "ETTh1_96_336",
+    "model_type": "mlp",
+    "n_params": 784760,
+    "pred_len": 336,
+    "resolved_config_schema": 1,
+    "resolved_from": "backfill",
+    "seed": 2025,
+    "seq_len": 96,
+    "setting": "ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025",
+    "target": "OT",
+    "use_damped_trend": 0,
+    "use_revin": 1,
+    "use_tq": 1,
+    "written_by": "tools/backfill_checkpoint_config.py (J-12a Step 3)"
+  },
+  "scale": "z-scored (no inverse_transform applied; matches exp_main.py test(), whose de-norm block is commented out)",
+  "script_path": "tools/validation_metrics.py",
+  "seed": 2025,
+  "seq_len": 96,
+  "setting": "ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025",
+  "split_hash": "a5bcaa4090739908",
+  "split_hash_expected": "a5bcaa4090739908",
+  "split_hash_ok": true,
+  "timestamp": "2026-08-10T16:34:04",
+  "unexpected_keys": [],
+  "use_damped_trend": false,
+  "use_tq": 1,
+  "val_MAE": 0.7586170378277104,
+  "val_MSE": 1.290187973460736,
+  "val_MdAE": 0.4603079967200756,
+  "val_RMSE": 1.135864416847687,
+  "val_loader": "shuffle=False, drop_last=False, batch_size=256 (deliberately not vali()'s train-style shuffle=True/drop_last=True loader; see script docstring point 3)"
+}

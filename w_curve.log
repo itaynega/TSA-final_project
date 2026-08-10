@@ -1,0 +1,2728 @@
+==============================================================
+J-15 Arm B W-curve run started: Mon Aug 10 13:57:44     2026
+==============================================================
+
+--- Precondition 1: re-derive the anchor ---
+==============================================================================
+validation_metrics.py run starting 2026-08-10T13:57:51
+REPO_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+TQNET_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\TQNet
+torch version = 2.9.1+cpu
+torch.cuda.is_available() = False
+Found 27 checkpoint directories.
+[1/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2024 pred_len=192 val_MSE=0.9869258508941762 val_MAE=0.6510316144042335
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[2/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2024 pred_len=192 val_MSE=0.9896004404605488 val_MAE=0.6526268499127609
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[3/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2025 pred_len=192 val_MSE=0.9832517426354129 val_MAE=0.6487804520877789
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[4/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2025 pred_len=192 val_MSE=0.985544944546859 val_MAE=0.6499253303060188
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[5/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2026 pred_len=192 val_MSE=0.9826968910187351 val_MAE=0.6493404424524812
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[6/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2026 pred_len=192 val_MSE=0.9921220532366278 val_MAE=0.6534679417557892
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[7/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2024 pred_len=336 val_MSE=1.2831294057132752 val_MAE=0.7562362832683209
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[8/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2024 pred_len=336 val_MSE=1.2837455227139352 val_MAE=0.7565095498405752
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[9/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2025 pred_len=336 val_MSE=1.290187973460736 val_MAE=0.7586170378277104
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[10/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2025 pred_len=336 val_MSE=1.2876259966376138 val_MAE=0.7568751357526426
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[11/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2026 pred_len=336 val_MSE=1.2828700809595037 val_MAE=0.7558962281840311
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[12/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2026 pred_len=336 val_MSE=1.285842172590149 val_MAE=0.7573847980130316
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[13/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2024 pred_len=720 val_MSE=1.5656952294577686 val_MAE=0.8477118626017368
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[14/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2024 pred_len=720 val_MSE=1.564966416024261 val_MAE=0.8521000411618372
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[15/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2025 pred_len=720 val_MSE=1.5612634743032026 val_MAE=0.8493634735943071
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[16/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2025 pred_len=720 val_MSE=1.5658308706626174 val_MAE=0.853434511275635
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[17/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2026 pred_len=720 val_MSE=1.5647363575816038 val_MAE=0.8510950261802275
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[18/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2026 pred_len=720 val_MSE=1.5658419578095464 val_MAE=0.8533720506751904
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[19/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550701723053 val_MAE=0.5441242222601348
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+  SANITY ANCHOR (ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024): val_MSE=0.6869550701723053 test_MSE=0.37104994668966473 diff=0.31590512348264055
+[20/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.6952801971213933 val_MAE=0.5610087111832488
+  use_damped_trend=True damped_phi=0.8 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[21/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi1
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.9491608951697321 val_MAE=0.675605386674245
+  use_damped_trend=True damped_phi=1.0 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[22/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2024 pred_len=96 val_MSE=0.6795092456048932 val_MAE=0.5439968638624214
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[23/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6735143635280876 val_MAE=0.53924157451204
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[24/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2025 pred_len=96 val_MSE=0.6812630824349228 val_MAE=0.5445259098960321
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[25/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6727194169596606 val_MAE=0.5414755241267981
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[26/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2026 pred_len=96 val_MSE=0.6808913767587101 val_MAE=0.5437019334254315
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[27/27] ETTh1_96_96_armB_smoke_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550703100449 val_MAE=0.544124222302456
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+Done: 27 succeeded, 0 failed, 28.7s elapsed.
+Wrote summary: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\results\validation\_summary.json
+==============================================================================
+ANCHOR CHECK: mse1=0.6869550701723053 n_params=661640 mse2(tq0ca0)=0.6795092456048932 -> MISMATCH
+
+!!! PRECONDITION 1 FAILED: anchor drifted. STOP. Train nothing. !!!
+Return to the PM ג€” this is a Gate-1 problem, not a J-15 problem.
+==============================================================
+J-15 Arm B W-curve run started: Mon Aug 10 14:58:46     2026
+==============================================================
+
+--- Precondition 1: re-derive the anchor ---
+==============================================================================
+validation_metrics.py run starting 2026-08-10T14:58:50
+REPO_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+TQNET_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\TQNet
+torch version = 2.9.1+cpu
+torch.cuda.is_available() = False
+Found 27 checkpoint directories.
+[1/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2024 pred_len=192 val_MSE=0.9869258508941762 val_MAE=0.6510316144042335
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[2/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2024 pred_len=192 val_MSE=0.9896004404605488 val_MAE=0.6526268499127609
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[3/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2025 pred_len=192 val_MSE=0.9832517426354129 val_MAE=0.6487804520877789
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[4/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2025 pred_len=192 val_MSE=0.985544944546859 val_MAE=0.6499253303060188
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[5/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2026 pred_len=192 val_MSE=0.9826968910187351 val_MAE=0.6493404424524812
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[6/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2026 pred_len=192 val_MSE=0.9921220532366278 val_MAE=0.6534679417557892
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[7/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2024 pred_len=336 val_MSE=1.2831294057132752 val_MAE=0.7562362832683209
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[8/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2024 pred_len=336 val_MSE=1.2837455227139352 val_MAE=0.7565095498405752
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[9/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2025 pred_len=336 val_MSE=1.290187973460736 val_MAE=0.7586170378277104
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[10/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2025 pred_len=336 val_MSE=1.2876259966376138 val_MAE=0.7568751357526426
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[11/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2026 pred_len=336 val_MSE=1.2828700809595037 val_MAE=0.7558962281840311
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[12/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2026 pred_len=336 val_MSE=1.285842172590149 val_MAE=0.7573847980130316
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[13/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2024 pred_len=720 val_MSE=1.5656952294577686 val_MAE=0.8477118626017368
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[14/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2024 pred_len=720 val_MSE=1.564966416024261 val_MAE=0.8521000411618372
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[15/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2025 pred_len=720 val_MSE=1.5612634743032026 val_MAE=0.8493634735943071
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[16/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2025 pred_len=720 val_MSE=1.5658308706626174 val_MAE=0.853434511275635
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[17/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2026 pred_len=720 val_MSE=1.5647363575816038 val_MAE=0.8510950261802275
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[18/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2026 pred_len=720 val_MSE=1.5658419578095464 val_MAE=0.8533720506751904
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[19/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550701723053 val_MAE=0.5441242222601348
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+  SANITY ANCHOR (ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024): val_MSE=0.6869550701723053 test_MSE=0.37104994668966473 diff=0.31590512348264055
+[20/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.6952801971213933 val_MAE=0.5610087111832488
+  use_damped_trend=True damped_phi=0.8 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[21/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi1
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.9491608951697321 val_MAE=0.675605386674245
+  use_damped_trend=True damped_phi=1.0 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[22/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2024 pred_len=96 val_MSE=0.6795092456048932 val_MAE=0.5439968638624214
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[23/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6735143635280876 val_MAE=0.53924157451204
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[24/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2025 pred_len=96 val_MSE=0.6812630824349228 val_MAE=0.5445259098960321
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[25/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6727194169596606 val_MAE=0.5414755241267981
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[26/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2026 pred_len=96 val_MSE=0.6808913767587101 val_MAE=0.5437019334254315
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[27/27] ETTh1_96_96_armB_smoke_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550703100449 val_MAE=0.544124222302456
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+Done: 27 succeeded, 0 failed, 31.8s elapsed.
+Wrote summary: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\results\validation\_summary.json
+==============================================================================
+ANCHOR CHECK: mse1=0.6869550701723053 n_params=661640 mse2(tq0ca0)=0.6795092456048932 -> MISMATCH
+
+!!! PRECONDITION 1 FAILED: anchor drifted. STOP. Train nothing. !!!
+Return to the PM ג€” this is a Gate-1 problem, not a J-15 problem.
+==============================================================
+J-15 Arm B W-curve run started: Mon Aug 10 15:32:55     2026
+==============================================================
+
+--- Precondition 1: re-derive the anchor ---
+==============================================================================
+validation_metrics.py run starting 2026-08-10T15:32:59
+REPO_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+TQNET_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\TQNet
+torch version = 2.9.1+cpu
+torch.cuda.is_available() = False
+Found 27 checkpoint directories.
+[1/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2024 pred_len=192 val_MSE=0.9869258508941762 val_MAE=0.6510316144042335
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[2/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2024 pred_len=192 val_MSE=0.9896004404605488 val_MAE=0.6526268499127609
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[3/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2025 pred_len=192 val_MSE=0.9832517426354129 val_MAE=0.6487804520877789
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[4/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2025 pred_len=192 val_MSE=0.985544944546859 val_MAE=0.6499253303060188
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[5/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2026 pred_len=192 val_MSE=0.9826968910187351 val_MAE=0.6493404424524812
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[6/27] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2026 pred_len=192 val_MSE=0.9921220532366278 val_MAE=0.6534679417557892
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[7/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2024 pred_len=336 val_MSE=1.2831294057132752 val_MAE=0.7562362832683209
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[8/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2024 pred_len=336 val_MSE=1.2837455227139352 val_MAE=0.7565095498405752
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[9/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2025 pred_len=336 val_MSE=1.290187973460736 val_MAE=0.7586170378277104
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[10/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2025 pred_len=336 val_MSE=1.2876259966376138 val_MAE=0.7568751357526426
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[11/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2026 pred_len=336 val_MSE=1.2828700809595037 val_MAE=0.7558962281840311
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[12/27] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2026 pred_len=336 val_MSE=1.285842172590149 val_MAE=0.7573847980130316
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[13/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2024 pred_len=720 val_MSE=1.5656952294577686 val_MAE=0.8477118626017368
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[14/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2024 pred_len=720 val_MSE=1.564966416024261 val_MAE=0.8521000411618372
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[15/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2025 pred_len=720 val_MSE=1.5612634743032026 val_MAE=0.8493634735943071
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[16/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2025 pred_len=720 val_MSE=1.5658308706626174 val_MAE=0.853434511275635
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[17/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2026 pred_len=720 val_MSE=1.5647363575816038 val_MAE=0.8510950261802275
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[18/27] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2026 pred_len=720 val_MSE=1.5658419578095464 val_MAE=0.8533720506751904
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[19/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550701723053 val_MAE=0.5441242222601348
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+  SANITY ANCHOR (ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024): val_MSE=0.6869550701723053 test_MSE=0.37104994668966473 diff=0.31590512348264055
+[20/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.6952801971213933 val_MAE=0.5610087111832488
+  use_damped_trend=True damped_phi=0.8 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[21/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi1
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.9491608951697321 val_MAE=0.675605386674245
+  use_damped_trend=True damped_phi=1.0 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[22/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2024 pred_len=96 val_MSE=0.6795092456048932 val_MAE=0.5439968638624214
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[23/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6735143635280876 val_MAE=0.53924157451204
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[24/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2025 pred_len=96 val_MSE=0.6812630824349228 val_MAE=0.5445259098960321
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[25/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6727194169596606 val_MAE=0.5414755241267981
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[26/27] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2026 pred_len=96 val_MSE=0.6808913767587101 val_MAE=0.5437019334254315
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[27/27] ETTh1_96_96_armB_smoke_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550703100449 val_MAE=0.544124222302456
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+Done: 27 succeeded, 0 failed, 26.6s elapsed.
+Wrote summary: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\results\validation\_summary.json
+==============================================================================
+ANCHOR CHECK (post-incident anchor): mse1=0.6869550701723053 n_params=661640 mse2(tq0ca0)=0.6795092456048932 -> OK
+Precondition 1 passed.
+
+--- Precondition 2: pytest ---
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+..................................                                       [100%]
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27
+  C:\Users\amita\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    _epoch = datetime.utcfromtimestamp(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+178 passed, 1 warning in 8.32s
+Precondition 2 passed.
+
+--- Recording protected checkpoints BEFORE any training ---
+27 /tmp/ckpt_before.txt
+
+--- 21-run W-curve sweep (seed-major) ---
+
+=== seed=2024 W=6  (Mon Aug 10 15:33:37     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=6, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.307115316390991
+Epoch: 1, Steps: 33 | Train Loss: 0.5951972 Vali Loss: 1.0197532 Test Loss: 0.6098375
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.720270156860352
+Epoch: 2, Steps: 33 | Train Loss: 0.4376478 Vali Loss: 0.7304109 Test Loss: 0.4043476
+Validation loss decreased (1.019753 --> 0.730411).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.482522964477539
+Epoch: 3, Steps: 33 | Train Loss: 0.3850663 Vali Loss: 0.6976647 Test Loss: 0.3845662
+Validation loss decreased (0.730411 --> 0.697665).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.63704776763916
+Epoch: 4, Steps: 33 | Train Loss: 0.3677295 Vali Loss: 0.6878670 Test Loss: 0.3800435
+Validation loss decreased (0.697665 --> 0.687867).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.457025527954102
+Epoch: 5, Steps: 33 | Train Loss: 0.3585901 Vali Loss: 0.6800814 Test Loss: 0.3789322
+Validation loss decreased (0.687867 --> 0.680081).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.551058530807495
+Epoch: 6, Steps: 33 | Train Loss: 0.3532557 Vali Loss: 0.6723984 Test Loss: 0.3750084
+Validation loss decreased (0.680081 --> 0.672398).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.3994598388671875
+Epoch: 7, Steps: 33 | Train Loss: 0.3493839 Vali Loss: 0.6812589 Test Loss: 0.3752515
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.52041220664978
+Epoch: 8, Steps: 33 | Train Loss: 0.3459369 Vali Loss: 0.6735493 Test Loss: 0.3733123
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.39806342124939
+Epoch: 9, Steps: 33 | Train Loss: 0.3436166 Vali Loss: 0.6639643 Test Loss: 0.3722727
+Validation loss decreased (0.672398 --> 0.663964).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.470261335372925
+Epoch: 10, Steps: 33 | Train Loss: 0.3416713 Vali Loss: 0.6726871 Test Loss: 0.3728966
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.43088173866272
+Epoch: 11, Steps: 33 | Train Loss: 0.3397964 Vali Loss: 0.6725385 Test Loss: 0.3719319
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.460597991943359
+Epoch: 12, Steps: 33 | Train Loss: 0.3387162 Vali Loss: 0.6709362 Test Loss: 0.3720155
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.436480760574341
+Epoch: 13, Steps: 33 | Train Loss: 0.3378368 Vali Loss: 0.6750850 Test Loss: 0.3727655
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.410390853881836
+Epoch: 14, Steps: 33 | Train Loss: 0.3365090 Vali Loss: 0.6705325 Test Loss: 0.3718908
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3715765178203583, mae:0.39246803522109985
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2024/
+seed=2024 W=6 exit=0 wall=84s
+
+=== seed=2024 W=8  (Mon Aug 10 15:35:01     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=8, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.188978910446167
+Epoch: 1, Steps: 33 | Train Loss: 0.5951971 Vali Loss: 1.0197532 Test Loss: 0.6098373
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.553674221038818
+Epoch: 2, Steps: 33 | Train Loss: 0.4376538 Vali Loss: 0.7304724 Test Loss: 0.4043777
+Validation loss decreased (1.019753 --> 0.730472).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.448201656341553
+Epoch: 3, Steps: 33 | Train Loss: 0.3851155 Vali Loss: 0.6978788 Test Loss: 0.3844995
+Validation loss decreased (0.730472 --> 0.697879).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.451542377471924
+Epoch: 4, Steps: 33 | Train Loss: 0.3677710 Vali Loss: 0.6876758 Test Loss: 0.3800141
+Validation loss decreased (0.697879 --> 0.687676).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.410884380340576
+Epoch: 5, Steps: 33 | Train Loss: 0.3585762 Vali Loss: 0.6799423 Test Loss: 0.3789150
+Validation loss decreased (0.687676 --> 0.679942).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.575723886489868
+Epoch: 6, Steps: 33 | Train Loss: 0.3532228 Vali Loss: 0.6723790 Test Loss: 0.3750177
+Validation loss decreased (0.679942 --> 0.672379).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.445343732833862
+Epoch: 7, Steps: 33 | Train Loss: 0.3493355 Vali Loss: 0.6813312 Test Loss: 0.3753054
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.393867254257202
+Epoch: 8, Steps: 33 | Train Loss: 0.3458931 Vali Loss: 0.6736896 Test Loss: 0.3733680
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.434450149536133
+Epoch: 9, Steps: 33 | Train Loss: 0.3435050 Vali Loss: 0.6642887 Test Loss: 0.3723442
+Validation loss decreased (0.672379 --> 0.664289).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.5630974769592285
+Epoch: 10, Steps: 33 | Train Loss: 0.3415559 Vali Loss: 0.6729906 Test Loss: 0.3729652
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.4248692989349365
+Epoch: 11, Steps: 33 | Train Loss: 0.3396768 Vali Loss: 0.6728823 Test Loss: 0.3719735
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.525036334991455
+Epoch: 12, Steps: 33 | Train Loss: 0.3385727 Vali Loss: 0.6712784 Test Loss: 0.3721025
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.480709075927734
+Epoch: 13, Steps: 33 | Train Loss: 0.3377119 Vali Loss: 0.6755863 Test Loss: 0.3728838
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.438946485519409
+Epoch: 14, Steps: 33 | Train Loss: 0.3363755 Vali Loss: 0.6709635 Test Loss: 0.3719786
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37165290117263794, mae:0.3925676941871643
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2024/
+seed=2024 W=8 exit=0 wall=83s
+
+=== seed=2024 W=12  (Mon Aug 10 15:36:24     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=12, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.33231258392334
+Epoch: 1, Steps: 33 | Train Loss: 0.5951971 Vali Loss: 1.0197530 Test Loss: 0.6098370
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.5400071144104
+Epoch: 2, Steps: 33 | Train Loss: 0.4376230 Vali Loss: 0.7303361 Test Loss: 0.4043231
+Validation loss decreased (1.019753 --> 0.730336).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.44075608253479
+Epoch: 3, Steps: 33 | Train Loss: 0.3849748 Vali Loss: 0.6976807 Test Loss: 0.3841265
+Validation loss decreased (0.730336 --> 0.697681).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.487276077270508
+Epoch: 4, Steps: 33 | Train Loss: 0.3678622 Vali Loss: 0.6867041 Test Loss: 0.3794630
+Validation loss decreased (0.697681 --> 0.686704).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.438535928726196
+Epoch: 5, Steps: 33 | Train Loss: 0.3589550 Vali Loss: 0.6798619 Test Loss: 0.3778436
+Validation loss decreased (0.686704 --> 0.679862).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.752238512039185
+Epoch: 6, Steps: 33 | Train Loss: 0.3534145 Vali Loss: 0.6736405 Test Loss: 0.3746182
+Validation loss decreased (0.679862 --> 0.673641).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.641590356826782
+Epoch: 7, Steps: 33 | Train Loss: 0.3493461 Vali Loss: 0.6821078 Test Loss: 0.3745403
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.4441211223602295
+Epoch: 8, Steps: 33 | Train Loss: 0.3457067 Vali Loss: 0.6741443 Test Loss: 0.3730687
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.380642414093018
+Epoch: 9, Steps: 33 | Train Loss: 0.3431591 Vali Loss: 0.6643272 Test Loss: 0.3724059
+Validation loss decreased (0.673641 --> 0.664327).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.346158266067505
+Epoch: 10, Steps: 33 | Train Loss: 0.3412160 Vali Loss: 0.6724571 Test Loss: 0.3730932
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.396269083023071
+Epoch: 11, Steps: 33 | Train Loss: 0.3393128 Vali Loss: 0.6724519 Test Loss: 0.3720393
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.460824966430664
+Epoch: 12, Steps: 33 | Train Loss: 0.3382449 Vali Loss: 0.6714306 Test Loss: 0.3721186
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.496078252792358
+Epoch: 13, Steps: 33 | Train Loss: 0.3373993 Vali Loss: 0.6762122 Test Loss: 0.3730219
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.47937273979187
+Epoch: 14, Steps: 33 | Train Loss: 0.3359790 Vali Loss: 0.6707470 Test Loss: 0.3723110
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37167099118232727, mae:0.39289841055870056
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2024/
+seed=2024 W=12 exit=0 wall=83s
+
+=== seed=2024 W=23  (Mon Aug 10 15:37:47     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=23, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.457923412322998
+Epoch: 1, Steps: 33 | Train Loss: 0.5951972 Vali Loss: 1.0197533 Test Loss: 0.6098375
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.814709186553955
+Epoch: 2, Steps: 33 | Train Loss: 0.4376525 Vali Loss: 0.7304601 Test Loss: 0.4043704
+Validation loss decreased (1.019753 --> 0.730460).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.564304828643799
+Epoch: 3, Steps: 33 | Train Loss: 0.3851087 Vali Loss: 0.6978412 Test Loss: 0.3845175
+Validation loss decreased (0.730460 --> 0.697841).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.434103012084961
+Epoch: 4, Steps: 33 | Train Loss: 0.3677797 Vali Loss: 0.6877099 Test Loss: 0.3800381
+Validation loss decreased (0.697841 --> 0.687710).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.448003530502319
+Epoch: 5, Steps: 33 | Train Loss: 0.3585945 Vali Loss: 0.6799887 Test Loss: 0.3789672
+Validation loss decreased (0.687710 --> 0.679989).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.409603595733643
+Epoch: 6, Steps: 33 | Train Loss: 0.3532047 Vali Loss: 0.6721894 Test Loss: 0.3751168
+Validation loss decreased (0.679989 --> 0.672189).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.3877763748168945
+Epoch: 7, Steps: 33 | Train Loss: 0.3492600 Vali Loss: 0.6811600 Test Loss: 0.3755508
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.511514902114868
+Epoch: 8, Steps: 33 | Train Loss: 0.3457989 Vali Loss: 0.6732863 Test Loss: 0.3737034
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.375520706176758
+Epoch: 9, Steps: 33 | Train Loss: 0.3434080 Vali Loss: 0.6639187 Test Loss: 0.3727734
+Validation loss decreased (0.672189 --> 0.663919).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.446182489395142
+Epoch: 10, Steps: 33 | Train Loss: 0.3414622 Vali Loss: 0.6727164 Test Loss: 0.3734787
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.497770071029663
+Epoch: 11, Steps: 33 | Train Loss: 0.3395681 Vali Loss: 0.6726650 Test Loss: 0.3724786
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.420187950134277
+Epoch: 12, Steps: 33 | Train Loss: 0.3384204 Vali Loss: 0.6712356 Test Loss: 0.3725205
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.455610513687134
+Epoch: 13, Steps: 33 | Train Loss: 0.3374970 Vali Loss: 0.6751121 Test Loss: 0.3735505
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.463078737258911
+Epoch: 14, Steps: 33 | Train Loss: 0.3361950 Vali Loss: 0.6707583 Test Loss: 0.3726957
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37208569049835205, mae:0.3929795026779175
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2024/
+seed=2024 W=23 exit=0 wall=83s
+
+=== seed=2024 W=25  (Mon Aug 10 15:39:10     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=25, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.395811319351196
+Epoch: 1, Steps: 33 | Train Loss: 0.5951972 Vali Loss: 1.0197533 Test Loss: 0.6098375
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.380847692489624
+Epoch: 2, Steps: 33 | Train Loss: 0.4376504 Vali Loss: 0.7304747 Test Loss: 0.4043880
+Validation loss decreased (1.019753 --> 0.730475).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.5734028816223145
+Epoch: 3, Steps: 33 | Train Loss: 0.3851081 Vali Loss: 0.6982712 Test Loss: 0.3846941
+Validation loss decreased (0.730475 --> 0.698271).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.468674659729004
+Epoch: 4, Steps: 33 | Train Loss: 0.3677913 Vali Loss: 0.6880385 Test Loss: 0.3804576
+Validation loss decreased (0.698271 --> 0.688038).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.552267074584961
+Epoch: 5, Steps: 33 | Train Loss: 0.3586545 Vali Loss: 0.6808984 Test Loss: 0.3789208
+Validation loss decreased (0.688038 --> 0.680898).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.402031183242798
+Epoch: 6, Steps: 33 | Train Loss: 0.3532012 Vali Loss: 0.6737601 Test Loss: 0.3750359
+Validation loss decreased (0.680898 --> 0.673760).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.3903117179870605
+Epoch: 7, Steps: 33 | Train Loss: 0.3492866 Vali Loss: 0.6828060 Test Loss: 0.3752249
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.321300029754639
+Epoch: 8, Steps: 33 | Train Loss: 0.3457843 Vali Loss: 0.6744007 Test Loss: 0.3733283
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.507288932800293
+Epoch: 9, Steps: 33 | Train Loss: 0.3433616 Vali Loss: 0.6649615 Test Loss: 0.3722941
+Validation loss decreased (0.673760 --> 0.664961).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.554965972900391
+Epoch: 10, Steps: 33 | Train Loss: 0.3414534 Vali Loss: 0.6737618 Test Loss: 0.3728218
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.482862710952759
+Epoch: 11, Steps: 33 | Train Loss: 0.3394837 Vali Loss: 0.6739255 Test Loss: 0.3719524
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.360132694244385
+Epoch: 12, Steps: 33 | Train Loss: 0.3383860 Vali Loss: 0.6721646 Test Loss: 0.3720916
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.532490015029907
+Epoch: 13, Steps: 33 | Train Loss: 0.3374608 Vali Loss: 0.6766468 Test Loss: 0.3729080
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.35207986831665
+Epoch: 14, Steps: 33 | Train Loss: 0.3360968 Vali Loss: 0.6720217 Test Loss: 0.3721453
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3715707063674927, mae:0.3924286663532257
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2024/
+seed=2024 W=25 exit=0 wall=82s
+
+=== seed=2024 W=48  (Mon Aug 10 15:40:32     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=48, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.441203355789185
+Epoch: 1, Steps: 33 | Train Loss: 0.5951970 Vali Loss: 1.0197530 Test Loss: 0.6098370
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.411028623580933
+Epoch: 2, Steps: 33 | Train Loss: 0.4375944 Vali Loss: 0.7303686 Test Loss: 0.4043044
+Validation loss decreased (1.019753 --> 0.730369).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.434672832489014
+Epoch: 3, Steps: 33 | Train Loss: 0.3846527 Vali Loss: 0.6973404 Test Loss: 0.3842014
+Validation loss decreased (0.730369 --> 0.697340).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.317392110824585
+Epoch: 4, Steps: 33 | Train Loss: 0.3675711 Vali Loss: 0.6859237 Test Loss: 0.3798425
+Validation loss decreased (0.697340 --> 0.685924).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.565605878829956
+Epoch: 5, Steps: 33 | Train Loss: 0.3590499 Vali Loss: 0.6805857 Test Loss: 0.3778529
+Validation loss decreased (0.685924 --> 0.680586).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.460505962371826
+Epoch: 6, Steps: 33 | Train Loss: 0.3542062 Vali Loss: 0.6751913 Test Loss: 0.3745672
+Validation loss decreased (0.680586 --> 0.675191).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.4048521518707275
+Epoch: 7, Steps: 33 | Train Loss: 0.3505020 Vali Loss: 0.6849921 Test Loss: 0.3746816
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.587006092071533
+Epoch: 8, Steps: 33 | Train Loss: 0.3471486 Vali Loss: 0.6758484 Test Loss: 0.3722240
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.429686069488525
+Epoch: 9, Steps: 33 | Train Loss: 0.3445914 Vali Loss: 0.6639596 Test Loss: 0.3717379
+Validation loss decreased (0.675191 --> 0.663960).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.316754579544067
+Epoch: 10, Steps: 33 | Train Loss: 0.3427952 Vali Loss: 0.6732336 Test Loss: 0.3721490
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.437067747116089
+Epoch: 11, Steps: 33 | Train Loss: 0.3406420 Vali Loss: 0.6732712 Test Loss: 0.3713783
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.3825600147247314
+Epoch: 12, Steps: 33 | Train Loss: 0.3394878 Vali Loss: 0.6710111 Test Loss: 0.3714537
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.2559473514556885
+Epoch: 13, Steps: 33 | Train Loss: 0.3385649 Vali Loss: 0.6759271 Test Loss: 0.3720299
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.42051362991333
+Epoch: 14, Steps: 33 | Train Loss: 0.3371393 Vali Loss: 0.6703347 Test Loss: 0.3713050
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3710048496723175, mae:0.39275798201560974
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2024/
+seed=2024 W=48 exit=0 wall=83s
+
+=== seed=2024 W=168  (Mon Aug 10 15:41:55     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=168, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.604732275009155
+Epoch: 1, Steps: 33 | Train Loss: 0.5951971 Vali Loss: 1.0197532 Test Loss: 0.6098373
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.9588446617126465
+Epoch: 2, Steps: 33 | Train Loss: 0.4376133 Vali Loss: 0.7303823 Test Loss: 0.4043331
+Validation loss decreased (1.019753 --> 0.730382).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.4334986209869385
+Epoch: 3, Steps: 33 | Train Loss: 0.3846415 Vali Loss: 0.6973049 Test Loss: 0.3843235
+Validation loss decreased (0.730382 --> 0.697305).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.326749563217163
+Epoch: 4, Steps: 33 | Train Loss: 0.3671097 Vali Loss: 0.6847726 Test Loss: 0.3800637
+Validation loss decreased (0.697305 --> 0.684773).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.410343408584595
+Epoch: 5, Steps: 33 | Train Loss: 0.3582641 Vali Loss: 0.6803910 Test Loss: 0.3784572
+Validation loss decreased (0.684773 --> 0.680391).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.36829686164856
+Epoch: 6, Steps: 33 | Train Loss: 0.3531260 Vali Loss: 0.6732931 Test Loss: 0.3749713
+Validation loss decreased (0.680391 --> 0.673293).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.2688233852386475
+Epoch: 7, Steps: 33 | Train Loss: 0.3492571 Vali Loss: 0.6849145 Test Loss: 0.3749571
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.459000825881958
+Epoch: 8, Steps: 33 | Train Loss: 0.3459645 Vali Loss: 0.6757475 Test Loss: 0.3730426
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.339998722076416
+Epoch: 9, Steps: 33 | Train Loss: 0.3434022 Vali Loss: 0.6641194 Test Loss: 0.3723499
+Validation loss decreased (0.673293 --> 0.664119).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.338089942932129
+Epoch: 10, Steps: 33 | Train Loss: 0.3416896 Vali Loss: 0.6734633 Test Loss: 0.3729411
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.444507360458374
+Epoch: 11, Steps: 33 | Train Loss: 0.3394174 Vali Loss: 0.6735410 Test Loss: 0.3723492
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.5243306159973145
+Epoch: 12, Steps: 33 | Train Loss: 0.3381407 Vali Loss: 0.6714154 Test Loss: 0.3723932
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.252914905548096
+Epoch: 13, Steps: 33 | Train Loss: 0.3372045 Vali Loss: 0.6758774 Test Loss: 0.3729913
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.326943397521973
+Epoch: 14, Steps: 33 | Train Loss: 0.3358522 Vali Loss: 0.6696236 Test Loss: 0.3724518
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37149661779403687, mae:0.39341771602630615
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2024/
+seed=2024 W=168 exit=0 wall=83s
+
+=== seed=2025 W=6  (Mon Aug 10 15:43:18     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=6, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.304585218429565
+Epoch: 1, Steps: 33 | Train Loss: 0.5942760 Vali Loss: 1.0059404 Test Loss: 0.6000988
+Validation loss decreased (inf --> 1.005940).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.479967355728149
+Epoch: 2, Steps: 33 | Train Loss: 0.4358956 Vali Loss: 0.7358182 Test Loss: 0.4037645
+Validation loss decreased (1.005940 --> 0.735818).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.529027462005615
+Epoch: 3, Steps: 33 | Train Loss: 0.3846277 Vali Loss: 0.6882604 Test Loss: 0.3856790
+Validation loss decreased (0.735818 --> 0.688260).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.502607583999634
+Epoch: 4, Steps: 33 | Train Loss: 0.3670136 Vali Loss: 0.6839247 Test Loss: 0.3797423
+Validation loss decreased (0.688260 --> 0.683925).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.4650163650512695
+Epoch: 5, Steps: 33 | Train Loss: 0.3582042 Vali Loss: 0.6689715 Test Loss: 0.3766404
+Validation loss decreased (0.683925 --> 0.668972).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.411740779876709
+Epoch: 6, Steps: 33 | Train Loss: 0.3523824 Vali Loss: 0.6646057 Test Loss: 0.3758923
+Validation loss decreased (0.668972 --> 0.664606).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.550184488296509
+Epoch: 7, Steps: 33 | Train Loss: 0.3482307 Vali Loss: 0.6720588 Test Loss: 0.3733551
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.758976221084595
+Epoch: 8, Steps: 33 | Train Loss: 0.3451003 Vali Loss: 0.6808045 Test Loss: 0.3717921
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.543144941329956
+Epoch: 9, Steps: 33 | Train Loss: 0.3422553 Vali Loss: 0.6796960 Test Loss: 0.3722794
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.440152883529663
+Epoch: 10, Steps: 33 | Train Loss: 0.3406183 Vali Loss: 0.6727661 Test Loss: 0.3706207
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.458245277404785
+Epoch: 11, Steps: 33 | Train Loss: 0.3384540 Vali Loss: 0.6750814 Test Loss: 0.3724506
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37529951333999634, mae:0.3925820589065552
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2025/
+seed=2025 W=6 exit=0 wall=67s
+
+=== seed=2025 W=8  (Mon Aug 10 15:44:25     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=8, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.356072664260864
+Epoch: 1, Steps: 33 | Train Loss: 0.5942761 Vali Loss: 1.0059407 Test Loss: 0.6000991
+Validation loss decreased (inf --> 1.005941).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.614755392074585
+Epoch: 2, Steps: 33 | Train Loss: 0.4358952 Vali Loss: 0.7358208 Test Loss: 0.4037715
+Validation loss decreased (1.005941 --> 0.735821).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.530913591384888
+Epoch: 3, Steps: 33 | Train Loss: 0.3846230 Vali Loss: 0.6882467 Test Loss: 0.3856573
+Validation loss decreased (0.735821 --> 0.688247).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.4858222007751465
+Epoch: 4, Steps: 33 | Train Loss: 0.3670152 Vali Loss: 0.6841279 Test Loss: 0.3796232
+Validation loss decreased (0.688247 --> 0.684128).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.473774433135986
+Epoch: 5, Steps: 33 | Train Loss: 0.3582418 Vali Loss: 0.6683717 Test Loss: 0.3764623
+Validation loss decreased (0.684128 --> 0.668372).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.556566953659058
+Epoch: 6, Steps: 33 | Train Loss: 0.3523016 Vali Loss: 0.6650187 Test Loss: 0.3760486
+Validation loss decreased (0.668372 --> 0.665019).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.509930372238159
+Epoch: 7, Steps: 33 | Train Loss: 0.3481722 Vali Loss: 0.6724216 Test Loss: 0.3741952
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.441741228103638
+Epoch: 8, Steps: 33 | Train Loss: 0.3449933 Vali Loss: 0.6814111 Test Loss: 0.3725534
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.591720819473267
+Epoch: 9, Steps: 33 | Train Loss: 0.3420972 Vali Loss: 0.6799031 Test Loss: 0.3729317
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.518364429473877
+Epoch: 10, Steps: 33 | Train Loss: 0.3404954 Vali Loss: 0.6730291 Test Loss: 0.3712294
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.471974849700928
+Epoch: 11, Steps: 33 | Train Loss: 0.3382241 Vali Loss: 0.6754186 Test Loss: 0.3731358
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37546414136886597, mae:0.39309197664260864
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2025/
+seed=2025 W=8 exit=0 wall=67s
+
+=== seed=2025 W=12  (Mon Aug 10 15:45:33     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=12, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.381173849105835
+Epoch: 1, Steps: 33 | Train Loss: 0.5942760 Vali Loss: 1.0059406 Test Loss: 0.6000989
+Validation loss decreased (inf --> 1.005941).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.574717044830322
+Epoch: 2, Steps: 33 | Train Loss: 0.4358788 Vali Loss: 0.7357511 Test Loss: 0.4037575
+Validation loss decreased (1.005941 --> 0.735751).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.575366973876953
+Epoch: 3, Steps: 33 | Train Loss: 0.3845002 Vali Loss: 0.6877705 Test Loss: 0.3852791
+Validation loss decreased (0.735751 --> 0.687771).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.447581768035889
+Epoch: 4, Steps: 33 | Train Loss: 0.3668869 Vali Loss: 0.6837378 Test Loss: 0.3793349
+Validation loss decreased (0.687771 --> 0.683738).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.436343669891357
+Epoch: 5, Steps: 33 | Train Loss: 0.3583201 Vali Loss: 0.6696218 Test Loss: 0.3758931
+Validation loss decreased (0.683738 --> 0.669622).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.5974390506744385
+Epoch: 6, Steps: 33 | Train Loss: 0.3527551 Vali Loss: 0.6658067 Test Loss: 0.3749762
+Validation loss decreased (0.669622 --> 0.665807).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.562519073486328
+Epoch: 7, Steps: 33 | Train Loss: 0.3488246 Vali Loss: 0.6733190 Test Loss: 0.3730663
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.534456968307495
+Epoch: 8, Steps: 33 | Train Loss: 0.3458211 Vali Loss: 0.6835871 Test Loss: 0.3715180
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.442113399505615
+Epoch: 9, Steps: 33 | Train Loss: 0.3428419 Vali Loss: 0.6816537 Test Loss: 0.3722721
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.436333656311035
+Epoch: 10, Steps: 33 | Train Loss: 0.3411362 Vali Loss: 0.6747498 Test Loss: 0.3711801
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.440589189529419
+Epoch: 11, Steps: 33 | Train Loss: 0.3387754 Vali Loss: 0.6759566 Test Loss: 0.3727629
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37437349557876587, mae:0.39261043071746826
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2025/
+seed=2025 W=12 exit=0 wall=67s
+
+=== seed=2025 W=23  (Mon Aug 10 15:46:40     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=23, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.364138603210449
+Epoch: 1, Steps: 33 | Train Loss: 0.5942761 Vali Loss: 1.0059407 Test Loss: 0.6000991
+Validation loss decreased (inf --> 1.005941).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.405729055404663
+Epoch: 2, Steps: 33 | Train Loss: 0.4358930 Vali Loss: 0.7358185 Test Loss: 0.4037733
+Validation loss decreased (1.005941 --> 0.735819).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.5833635330200195
+Epoch: 3, Steps: 33 | Train Loss: 0.3846022 Vali Loss: 0.6882513 Test Loss: 0.3857916
+Validation loss decreased (0.735819 --> 0.688251).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.401493310928345
+Epoch: 4, Steps: 33 | Train Loss: 0.3669502 Vali Loss: 0.6839991 Test Loss: 0.3801516
+Validation loss decreased (0.688251 --> 0.683999).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.463793992996216
+Epoch: 5, Steps: 33 | Train Loss: 0.3582636 Vali Loss: 0.6689570 Test Loss: 0.3766076
+Validation loss decreased (0.683999 --> 0.668957).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.390513896942139
+Epoch: 6, Steps: 33 | Train Loss: 0.3526436 Vali Loss: 0.6656446 Test Loss: 0.3760791
+Validation loss decreased (0.668957 --> 0.665645).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.435616970062256
+Epoch: 7, Steps: 33 | Train Loss: 0.3486605 Vali Loss: 0.6725977 Test Loss: 0.3744130
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.405282020568848
+Epoch: 8, Steps: 33 | Train Loss: 0.3454799 Vali Loss: 0.6824510 Test Loss: 0.3725164
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 5.233327150344849
+Epoch: 9, Steps: 33 | Train Loss: 0.3425089 Vali Loss: 0.6808112 Test Loss: 0.3735082
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.884091854095459
+Epoch: 10, Steps: 33 | Train Loss: 0.3406975 Vali Loss: 0.6748298 Test Loss: 0.3725081
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.4489874839782715
+Epoch: 11, Steps: 33 | Train Loss: 0.3382409 Vali Loss: 0.6763673 Test Loss: 0.3743094
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3754912316799164, mae:0.3934449553489685
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2025/
+seed=2025 W=23 exit=0 wall=67s
+
+=== seed=2025 W=25  (Mon Aug 10 15:47:47     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=25, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.305255174636841
+Epoch: 1, Steps: 33 | Train Loss: 0.5942761 Vali Loss: 1.0059407 Test Loss: 0.6000991
+Validation loss decreased (inf --> 1.005941).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.747639417648315
+Epoch: 2, Steps: 33 | Train Loss: 0.4358940 Vali Loss: 0.7358184 Test Loss: 0.4037690
+Validation loss decreased (1.005941 --> 0.735818).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.494743585586548
+Epoch: 3, Steps: 33 | Train Loss: 0.3846131 Vali Loss: 0.6883974 Test Loss: 0.3857705
+Validation loss decreased (0.735818 --> 0.688397).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.491398811340332
+Epoch: 4, Steps: 33 | Train Loss: 0.3670031 Vali Loss: 0.6848482 Test Loss: 0.3797691
+Validation loss decreased (0.688397 --> 0.684848).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.459728240966797
+Epoch: 5, Steps: 33 | Train Loss: 0.3582822 Vali Loss: 0.6701530 Test Loss: 0.3765179
+Validation loss decreased (0.684848 --> 0.670153).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.646915435791016
+Epoch: 6, Steps: 33 | Train Loss: 0.3526123 Vali Loss: 0.6665036 Test Loss: 0.3757481
+Validation loss decreased (0.670153 --> 0.666504).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.474512100219727
+Epoch: 7, Steps: 33 | Train Loss: 0.3485016 Vali Loss: 0.6733513 Test Loss: 0.3735281
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.500775098800659
+Epoch: 8, Steps: 33 | Train Loss: 0.3452006 Vali Loss: 0.6825806 Test Loss: 0.3718708
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.483828067779541
+Epoch: 9, Steps: 33 | Train Loss: 0.3420967 Vali Loss: 0.6804609 Test Loss: 0.3727634
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.439388751983643
+Epoch: 10, Steps: 33 | Train Loss: 0.3403490 Vali Loss: 0.6742297 Test Loss: 0.3712236
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.7257444858551025
+Epoch: 11, Steps: 33 | Train Loss: 0.3379066 Vali Loss: 0.6769159 Test Loss: 0.3729242
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3751494884490967, mae:0.3929941952228546
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2025/
+seed=2025 W=25 exit=0 wall=67s
+
+=== seed=2025 W=48  (Mon Aug 10 15:48:55     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=48, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.299231052398682
+Epoch: 1, Steps: 33 | Train Loss: 0.5942760 Vali Loss: 1.0059404 Test Loss: 0.6000989
+Validation loss decreased (inf --> 1.005940).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.485568284988403
+Epoch: 2, Steps: 33 | Train Loss: 0.4358531 Vali Loss: 0.7357225 Test Loss: 0.4036898
+Validation loss decreased (1.005940 --> 0.735723).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.533531427383423
+Epoch: 3, Steps: 33 | Train Loss: 0.3841862 Vali Loss: 0.6874763 Test Loss: 0.3852980
+Validation loss decreased (0.735723 --> 0.687476).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.409486532211304
+Epoch: 4, Steps: 33 | Train Loss: 0.3665030 Vali Loss: 0.6824533 Test Loss: 0.3794976
+Validation loss decreased (0.687476 --> 0.682453).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.385030746459961
+Epoch: 5, Steps: 33 | Train Loss: 0.3580346 Vali Loss: 0.6693745 Test Loss: 0.3762604
+Validation loss decreased (0.682453 --> 0.669374).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.604443073272705
+Epoch: 6, Steps: 33 | Train Loss: 0.3527765 Vali Loss: 0.6653584 Test Loss: 0.3756914
+Validation loss decreased (0.669374 --> 0.665358).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.495406627655029
+Epoch: 7, Steps: 33 | Train Loss: 0.3491371 Vali Loss: 0.6721981 Test Loss: 0.3727412
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.444344758987427
+Epoch: 8, Steps: 33 | Train Loss: 0.3462339 Vali Loss: 0.6827365 Test Loss: 0.3707666
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.472359895706177
+Epoch: 9, Steps: 33 | Train Loss: 0.3433698 Vali Loss: 0.6820787 Test Loss: 0.3715463
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.492626667022705
+Epoch: 10, Steps: 33 | Train Loss: 0.3419787 Vali Loss: 0.6734812 Test Loss: 0.3702666
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.355832815170288
+Epoch: 11, Steps: 33 | Train Loss: 0.3394022 Vali Loss: 0.6760341 Test Loss: 0.3716043
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37508445978164673, mae:0.39315417408943176
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2025/
+seed=2025 W=48 exit=0 wall=67s
+
+=== seed=2025 W=168  (Mon Aug 10 15:50:02     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=168, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.360438108444214
+Epoch: 1, Steps: 33 | Train Loss: 0.5942760 Vali Loss: 1.0059406 Test Loss: 0.6000990
+Validation loss decreased (inf --> 1.005941).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.383765697479248
+Epoch: 2, Steps: 33 | Train Loss: 0.4358719 Vali Loss: 0.7357551 Test Loss: 0.4037355
+Validation loss decreased (1.005941 --> 0.735755).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.539951324462891
+Epoch: 3, Steps: 33 | Train Loss: 0.3842190 Vali Loss: 0.6874154 Test Loss: 0.3854597
+Validation loss decreased (0.735755 --> 0.687415).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.399296998977661
+Epoch: 4, Steps: 33 | Train Loss: 0.3660494 Vali Loss: 0.6817115 Test Loss: 0.3797039
+Validation loss decreased (0.687415 --> 0.681711).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.404001951217651
+Epoch: 5, Steps: 33 | Train Loss: 0.3571748 Vali Loss: 0.6690739 Test Loss: 0.3764625
+Validation loss decreased (0.681711 --> 0.669074).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.380194902420044
+Epoch: 6, Steps: 33 | Train Loss: 0.3515263 Vali Loss: 0.6649826 Test Loss: 0.3764867
+Validation loss decreased (0.669074 --> 0.664983).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.452783107757568
+Epoch: 7, Steps: 33 | Train Loss: 0.3476377 Vali Loss: 0.6719913 Test Loss: 0.3731915
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.401952505111694
+Epoch: 8, Steps: 33 | Train Loss: 0.3441942 Vali Loss: 0.6810664 Test Loss: 0.3716549
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.355534076690674
+Epoch: 9, Steps: 33 | Train Loss: 0.3412493 Vali Loss: 0.6810943 Test Loss: 0.3722294
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.390689849853516
+Epoch: 10, Steps: 33 | Train Loss: 0.3396149 Vali Loss: 0.6726545 Test Loss: 0.3710010
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.478107452392578
+Epoch: 11, Steps: 33 | Train Loss: 0.3368577 Vali Loss: 0.6758726 Test Loss: 0.3728982
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3757759630680084, mae:0.3942682147026062
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2025/
+seed=2025 W=168 exit=0 wall=67s
+
+=== seed=2026 W=6  (Mon Aug 10 15:51:09     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=6, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.5372185707092285
+Epoch: 1, Steps: 33 | Train Loss: 0.5954054 Vali Loss: 1.0089202 Test Loss: 0.6085770
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.60361385345459
+Epoch: 2, Steps: 33 | Train Loss: 0.4372263 Vali Loss: 0.7348937 Test Loss: 0.4026936
+Validation loss decreased (1.008920 --> 0.734894).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.537146329879761
+Epoch: 3, Steps: 33 | Train Loss: 0.3853672 Vali Loss: 0.7115087 Test Loss: 0.3820521
+Validation loss decreased (0.734894 --> 0.711509).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.510791778564453
+Epoch: 4, Steps: 33 | Train Loss: 0.3682415 Vali Loss: 0.6781825 Test Loss: 0.3810378
+Validation loss decreased (0.711509 --> 0.678182).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.504911422729492
+Epoch: 5, Steps: 33 | Train Loss: 0.3592165 Vali Loss: 0.6707575 Test Loss: 0.3772888
+Validation loss decreased (0.678182 --> 0.670757).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.647164821624756
+Epoch: 6, Steps: 33 | Train Loss: 0.3538998 Vali Loss: 0.6731076 Test Loss: 0.3765575
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.544647455215454
+Epoch: 7, Steps: 33 | Train Loss: 0.3497969 Vali Loss: 0.6754499 Test Loss: 0.3740015
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.538960695266724
+Epoch: 8, Steps: 33 | Train Loss: 0.3467857 Vali Loss: 0.6748450 Test Loss: 0.3731053
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.642205715179443
+Epoch: 9, Steps: 33 | Train Loss: 0.3438049 Vali Loss: 0.6721498 Test Loss: 0.3724204
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.643526792526245
+Epoch: 10, Steps: 33 | Train Loss: 0.3422653 Vali Loss: 0.6650771 Test Loss: 0.3720942
+Validation loss decreased (0.670757 --> 0.665077).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.520946741104126
+Epoch: 11, Steps: 33 | Train Loss: 0.3405385 Vali Loss: 0.6682634 Test Loss: 0.3707813
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.493526220321655
+Epoch: 12, Steps: 33 | Train Loss: 0.3395208 Vali Loss: 0.6662949 Test Loss: 0.3706938
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.615424156188965
+Epoch: 13, Steps: 33 | Train Loss: 0.3381020 Vali Loss: 0.6732941 Test Loss: 0.3716369
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.474106788635254
+Epoch: 14, Steps: 33 | Train Loss: 0.3370469 Vali Loss: 0.6688641 Test Loss: 0.3708324
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.492363929748535
+Epoch: 15, Steps: 33 | Train Loss: 0.3366157 Vali Loss: 0.6694646 Test Loss: 0.3705655
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.371407687664032, mae:0.39274200797080994
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2026/
+seed=2026 W=6 exit=0 wall=90s
+
+=== seed=2026 W=8  (Mon Aug 10 15:52:39     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=8, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.6547157764434814
+Epoch: 1, Steps: 33 | Train Loss: 0.5954054 Vali Loss: 1.0089200 Test Loss: 0.6085768
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.60448694229126
+Epoch: 2, Steps: 33 | Train Loss: 0.4372267 Vali Loss: 0.7348979 Test Loss: 0.4026943
+Validation loss decreased (1.008920 --> 0.734898).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 5.002024173736572
+Epoch: 3, Steps: 33 | Train Loss: 0.3853693 Vali Loss: 0.7115521 Test Loss: 0.3820463
+Validation loss decreased (0.734898 --> 0.711552).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.4574806690216064
+Epoch: 4, Steps: 33 | Train Loss: 0.3682372 Vali Loss: 0.6782545 Test Loss: 0.3810346
+Validation loss decreased (0.711552 --> 0.678255).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.709852933883667
+Epoch: 5, Steps: 33 | Train Loss: 0.3591854 Vali Loss: 0.6707865 Test Loss: 0.3772891
+Validation loss decreased (0.678255 --> 0.670786).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.512783527374268
+Epoch: 6, Steps: 33 | Train Loss: 0.3538576 Vali Loss: 0.6732143 Test Loss: 0.3765220
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.47166633605957
+Epoch: 7, Steps: 33 | Train Loss: 0.3497210 Vali Loss: 0.6756420 Test Loss: 0.3740287
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.452411890029907
+Epoch: 8, Steps: 33 | Train Loss: 0.3467587 Vali Loss: 0.6750151 Test Loss: 0.3730949
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.6745476722717285
+Epoch: 9, Steps: 33 | Train Loss: 0.3437939 Vali Loss: 0.6724101 Test Loss: 0.3724575
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.495290279388428
+Epoch: 10, Steps: 33 | Train Loss: 0.3422768 Vali Loss: 0.6654050 Test Loss: 0.3721451
+Validation loss decreased (0.670786 --> 0.665405).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.515806436538696
+Epoch: 11, Steps: 33 | Train Loss: 0.3405615 Vali Loss: 0.6684610 Test Loss: 0.3708318
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.568730115890503
+Epoch: 12, Steps: 33 | Train Loss: 0.3395336 Vali Loss: 0.6665315 Test Loss: 0.3707317
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.46146035194397
+Epoch: 13, Steps: 33 | Train Loss: 0.3381072 Vali Loss: 0.6735523 Test Loss: 0.3716774
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.793323278427124
+Epoch: 14, Steps: 33 | Train Loss: 0.3370904 Vali Loss: 0.6691165 Test Loss: 0.3708878
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.453946113586426
+Epoch: 15, Steps: 33 | Train Loss: 0.3366450 Vali Loss: 0.6697807 Test Loss: 0.3706075
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3714563548564911, mae:0.3927720785140991
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2026/
+seed=2026 W=8 exit=0 wall=90s
+
+=== seed=2026 W=12  (Mon Aug 10 15:54:09     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=12, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.573473215103149
+Epoch: 1, Steps: 33 | Train Loss: 0.5954054 Vali Loss: 1.0089202 Test Loss: 0.6085770
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.627840280532837
+Epoch: 2, Steps: 33 | Train Loss: 0.4372210 Vali Loss: 0.7348999 Test Loss: 0.4026871
+Validation loss decreased (1.008920 --> 0.734900).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.550882577896118
+Epoch: 3, Steps: 33 | Train Loss: 0.3853207 Vali Loss: 0.7118819 Test Loss: 0.3817982
+Validation loss decreased (0.734900 --> 0.711882).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.43365740776062
+Epoch: 4, Steps: 33 | Train Loss: 0.3681817 Vali Loss: 0.6781517 Test Loss: 0.3803360
+Validation loss decreased (0.711882 --> 0.678152).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.820089101791382
+Epoch: 5, Steps: 33 | Train Loss: 0.3592148 Vali Loss: 0.6711908 Test Loss: 0.3764926
+Validation loss decreased (0.678152 --> 0.671191).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.321055173873901
+Epoch: 6, Steps: 33 | Train Loss: 0.3539962 Vali Loss: 0.6734360 Test Loss: 0.3762462
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.486543416976929
+Epoch: 7, Steps: 33 | Train Loss: 0.3498828 Vali Loss: 0.6770415 Test Loss: 0.3734188
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.530445337295532
+Epoch: 8, Steps: 33 | Train Loss: 0.3469390 Vali Loss: 0.6762565 Test Loss: 0.3727055
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.573560476303101
+Epoch: 9, Steps: 33 | Train Loss: 0.3439402 Vali Loss: 0.6740866 Test Loss: 0.3722762
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.53366494178772
+Epoch: 10, Steps: 33 | Train Loss: 0.3423819 Vali Loss: 0.6680915 Test Loss: 0.3719424
+Validation loss decreased (0.671191 --> 0.668091).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.55835485458374
+Epoch: 11, Steps: 33 | Train Loss: 0.3405099 Vali Loss: 0.6717408 Test Loss: 0.3709901
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.512027263641357
+Epoch: 12, Steps: 33 | Train Loss: 0.3394406 Vali Loss: 0.6699122 Test Loss: 0.3708158
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.433980226516724
+Epoch: 13, Steps: 33 | Train Loss: 0.3379760 Vali Loss: 0.6770230 Test Loss: 0.3719684
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.4966042041778564
+Epoch: 14, Steps: 33 | Train Loss: 0.3368099 Vali Loss: 0.6725591 Test Loss: 0.3712730
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.442542314529419
+Epoch: 15, Steps: 33 | Train Loss: 0.3364683 Vali Loss: 0.6732806 Test Loss: 0.3709956
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37120407819747925, mae:0.39307424426078796
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2026/
+seed=2026 W=12 exit=0 wall=90s
+
+=== seed=2026 W=23  (Mon Aug 10 15:55:39     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=23, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.263388395309448
+Epoch: 1, Steps: 33 | Train Loss: 0.5954055 Vali Loss: 1.0089203 Test Loss: 0.6085771
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.474100351333618
+Epoch: 2, Steps: 33 | Train Loss: 0.4372294 Vali Loss: 0.7349280 Test Loss: 0.4027057
+Validation loss decreased (1.008920 --> 0.734928).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.534359931945801
+Epoch: 3, Steps: 33 | Train Loss: 0.3853832 Vali Loss: 0.7116717 Test Loss: 0.3820443
+Validation loss decreased (0.734928 --> 0.711672).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.4845850467681885
+Epoch: 4, Steps: 33 | Train Loss: 0.3682401 Vali Loss: 0.6782324 Test Loss: 0.3810277
+Validation loss decreased (0.711672 --> 0.678232).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.877988576889038
+Epoch: 5, Steps: 33 | Train Loss: 0.3591714 Vali Loss: 0.6707655 Test Loss: 0.3773269
+Validation loss decreased (0.678232 --> 0.670765).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.7896928787231445
+Epoch: 6, Steps: 33 | Train Loss: 0.3538127 Vali Loss: 0.6731908 Test Loss: 0.3766195
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.781872749328613
+Epoch: 7, Steps: 33 | Train Loss: 0.3496524 Vali Loss: 0.6756104 Test Loss: 0.3741657
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.77873158454895
+Epoch: 8, Steps: 33 | Train Loss: 0.3466492 Vali Loss: 0.6751208 Test Loss: 0.3734608
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.5982887744903564
+Epoch: 9, Steps: 33 | Train Loss: 0.3436344 Vali Loss: 0.6727343 Test Loss: 0.3728215
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.508288145065308
+Epoch: 10, Steps: 33 | Train Loss: 0.3421261 Vali Loss: 0.6659638 Test Loss: 0.3727382
+Validation loss decreased (0.670765 --> 0.665964).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.5982420444488525
+Epoch: 11, Steps: 33 | Train Loss: 0.3403453 Vali Loss: 0.6689891 Test Loss: 0.3716068
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.696359395980835
+Epoch: 12, Steps: 33 | Train Loss: 0.3392285 Vali Loss: 0.6673614 Test Loss: 0.3715034
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.538972854614258
+Epoch: 13, Steps: 33 | Train Loss: 0.3377999 Vali Loss: 0.6742809 Test Loss: 0.3725871
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.796745538711548
+Epoch: 14, Steps: 33 | Train Loss: 0.3367314 Vali Loss: 0.6699114 Test Loss: 0.3717948
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.468786001205444
+Epoch: 15, Steps: 33 | Train Loss: 0.3363202 Vali Loss: 0.6704558 Test Loss: 0.3716234
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3720673620700836, mae:0.3932396471500397
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2026/
+seed=2026 W=23 exit=0 wall=91s
+
+=== seed=2026 W=25  (Mon Aug 10 15:57:10     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=25, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.2163920402526855
+Epoch: 1, Steps: 33 | Train Loss: 0.5954055 Vali Loss: 1.0089203 Test Loss: 0.6085773
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.525973081588745
+Epoch: 2, Steps: 33 | Train Loss: 0.4372299 Vali Loss: 0.7349316 Test Loss: 0.4027066
+Validation loss decreased (1.008920 --> 0.734932).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.417016506195068
+Epoch: 3, Steps: 33 | Train Loss: 0.3853861 Vali Loss: 0.7117325 Test Loss: 0.3820435
+Validation loss decreased (0.734932 --> 0.711733).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 5.541902303695679
+Epoch: 4, Steps: 33 | Train Loss: 0.3682393 Vali Loss: 0.6783338 Test Loss: 0.3810264
+Validation loss decreased (0.711733 --> 0.678334).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 5.258346080780029
+Epoch: 5, Steps: 33 | Train Loss: 0.3591601 Vali Loss: 0.6709045 Test Loss: 0.3773282
+Validation loss decreased (0.678334 --> 0.670904).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.488581418991089
+Epoch: 6, Steps: 33 | Train Loss: 0.3538054 Vali Loss: 0.6733825 Test Loss: 0.3765711
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.64525032043457
+Epoch: 7, Steps: 33 | Train Loss: 0.3496487 Vali Loss: 0.6759785 Test Loss: 0.3741286
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.6146790981292725
+Epoch: 8, Steps: 33 | Train Loss: 0.3466736 Vali Loss: 0.6754161 Test Loss: 0.3731948
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.394271373748779
+Epoch: 9, Steps: 33 | Train Loss: 0.3436900 Vali Loss: 0.6731209 Test Loss: 0.3726417
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.700714588165283
+Epoch: 10, Steps: 33 | Train Loss: 0.3421829 Vali Loss: 0.6664199 Test Loss: 0.3723059
+Validation loss decreased (0.670904 --> 0.666420).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.4408533573150635
+Epoch: 11, Steps: 33 | Train Loss: 0.3404412 Vali Loss: 0.6695195 Test Loss: 0.3710618
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.554486274719238
+Epoch: 12, Steps: 33 | Train Loss: 0.3393545 Vali Loss: 0.6677009 Test Loss: 0.3709755
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.491708755493164
+Epoch: 13, Steps: 33 | Train Loss: 0.3378962 Vali Loss: 0.6746576 Test Loss: 0.3719732
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.421258211135864
+Epoch: 14, Steps: 33 | Train Loss: 0.3368671 Vali Loss: 0.6704248 Test Loss: 0.3712066
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.457528829574585
+Epoch: 15, Steps: 33 | Train Loss: 0.3364333 Vali Loss: 0.6711300 Test Loss: 0.3709336
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3716098964214325, mae:0.3928285241127014
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2026/
+seed=2026 W=25 exit=0 wall=92s
+
+=== seed=2026 W=48  (Mon Aug 10 15:58:42     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=48, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.32484769821167
+Epoch: 1, Steps: 33 | Train Loss: 0.5954054 Vali Loss: 1.0089204 Test Loss: 0.6085771
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.715670347213745
+Epoch: 2, Steps: 33 | Train Loss: 0.4372057 Vali Loss: 0.7349218 Test Loss: 0.4026603
+Validation loss decreased (1.008920 --> 0.734922).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.523220062255859
+Epoch: 3, Steps: 33 | Train Loss: 0.3850076 Vali Loss: 0.7112116 Test Loss: 0.3815258
+Validation loss decreased (0.734922 --> 0.711212).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.405609846115112
+Epoch: 4, Steps: 33 | Train Loss: 0.3677091 Vali Loss: 0.6773719 Test Loss: 0.3804322
+Validation loss decreased (0.711212 --> 0.677372).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.503842115402222
+Epoch: 5, Steps: 33 | Train Loss: 0.3588223 Vali Loss: 0.6702711 Test Loss: 0.3769722
+Validation loss decreased (0.677372 --> 0.670271).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.533033609390259
+Epoch: 6, Steps: 33 | Train Loss: 0.3538585 Vali Loss: 0.6730462 Test Loss: 0.3765871
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.4783666133880615
+Epoch: 7, Steps: 33 | Train Loss: 0.3499817 Vali Loss: 0.6762067 Test Loss: 0.3736959
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.426805734634399
+Epoch: 8, Steps: 33 | Train Loss: 0.3471568 Vali Loss: 0.6755711 Test Loss: 0.3732891
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.4966881275177
+Epoch: 9, Steps: 33 | Train Loss: 0.3443054 Vali Loss: 0.6736227 Test Loss: 0.3726929
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.432290077209473
+Epoch: 10, Steps: 33 | Train Loss: 0.3426705 Vali Loss: 0.6675709 Test Loss: 0.3725083
+Validation loss decreased (0.670271 --> 0.667571).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.523963928222656
+Epoch: 11, Steps: 33 | Train Loss: 0.3413195 Vali Loss: 0.6702965 Test Loss: 0.3715232
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.548600196838379
+Epoch: 12, Steps: 33 | Train Loss: 0.3399374 Vali Loss: 0.6694191 Test Loss: 0.3712094
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.396851301193237
+Epoch: 13, Steps: 33 | Train Loss: 0.3385063 Vali Loss: 0.6756030 Test Loss: 0.3726142
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.483642101287842
+Epoch: 14, Steps: 33 | Train Loss: 0.3376272 Vali Loss: 0.6733664 Test Loss: 0.3718948
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.6384406089782715
+Epoch: 15, Steps: 33 | Train Loss: 0.3373261 Vali Loss: 0.6726583 Test Loss: 0.3716512
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3718031644821167, mae:0.3934658169746399
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2026/
+seed=2026 W=48 exit=0 wall=89s
+
+=== seed=2026 W=168  (Mon Aug 10 16:00:11     2026) ===
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=168, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.44010591506958
+Epoch: 1, Steps: 33 | Train Loss: 0.5954054 Vali Loss: 1.0089204 Test Loss: 0.6085773
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.561604022979736
+Epoch: 2, Steps: 33 | Train Loss: 0.4372209 Vali Loss: 0.7349485 Test Loss: 0.4026938
+Validation loss decreased (1.008920 --> 0.734949).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.4723241329193115
+Epoch: 3, Steps: 33 | Train Loss: 0.3851193 Vali Loss: 0.7113277 Test Loss: 0.3816494
+Validation loss decreased (0.734949 --> 0.711328).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.560852766036987
+Epoch: 4, Steps: 33 | Train Loss: 0.3673296 Vali Loss: 0.6766539 Test Loss: 0.3808756
+Validation loss decreased (0.711328 --> 0.676654).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.603199243545532
+Epoch: 5, Steps: 33 | Train Loss: 0.3580458 Vali Loss: 0.6706496 Test Loss: 0.3775435
+Validation loss decreased (0.676654 --> 0.670650).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.444838762283325
+Epoch: 6, Steps: 33 | Train Loss: 0.3527621 Vali Loss: 0.6742476 Test Loss: 0.3776492
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.466824054718018
+Epoch: 7, Steps: 33 | Train Loss: 0.3488053 Vali Loss: 0.6783123 Test Loss: 0.3744962
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.6452085971832275
+Epoch: 8, Steps: 33 | Train Loss: 0.3458248 Vali Loss: 0.6765892 Test Loss: 0.3735860
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.326943874359131
+Epoch: 9, Steps: 33 | Train Loss: 0.3430608 Vali Loss: 0.6746433 Test Loss: 0.3731472
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.423535108566284
+Epoch: 10, Steps: 33 | Train Loss: 0.3412369 Vali Loss: 0.6679479 Test Loss: 0.3730098
+Validation loss decreased (0.670650 --> 0.667948).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.404086112976074
+Epoch: 11, Steps: 33 | Train Loss: 0.3399333 Vali Loss: 0.6711743 Test Loss: 0.3717318
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.410683870315552
+Epoch: 12, Steps: 33 | Train Loss: 0.3387484 Vali Loss: 0.6706372 Test Loss: 0.3715451
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.5689170360565186
+Epoch: 13, Steps: 33 | Train Loss: 0.3370471 Vali Loss: 0.6767636 Test Loss: 0.3727451
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.309671878814697
+Epoch: 14, Steps: 33 | Train Loss: 0.3362079 Vali Loss: 0.6736252 Test Loss: 0.3722167
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 4.471067190170288
+Epoch: 15, Steps: 33 | Train Loss: 0.3357452 Vali Loss: 0.6725703 Test Loss: 0.3719825
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37216585874557495, mae:0.39428937435150146
+saved predictions and metrics under ./results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2026/
+seed=2026 W=168 exit=0 wall=89s
+Sweep wall-clock: 1683s
+
+--- --cycle auto demonstration (distinct model_id: ETTh1_96_96_armB_auto) ---
+[cycle_auto] acf=24 (peak=0.8851540915365546) periodogram=24 (power=19641471.641798608) agree=True rows=[0, 8640) -> cycle=24 (source=estimated)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96_armB_auto', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_ours.txt', save_outputs=1, channel_criterion_record=None, cycle_source='estimated', cycle_estimate_record={'n': 8640, 'min_lag': 2, 'max_lag': 400, 'acf_period': 24, 'acf_peak_value': 0.8851540915365546, 'acf_local_maxima': {24: 0.8851540915365546, 48: 0.8458005766600092, 72: 0.8225992791671596, 96: 0.8224963325291095, 120: 0.8139951251476679, 144: 0.8084944893162584, 168: 0.8043185159622589, 192: 0.7898427125676991, 216: 0.7842321749948802, 240: 0.7795363238074076, 264: 0.7714441933372094, 288: 0.773557017805436, 312: 0.7730065785283556, 336: 0.7658012156693199, 360: 0.7678253797542155, 384: 0.7542079437255147}, 'periodogram_period': 24, 'periodogram_power': 19641471.641798608, 'agree': True})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_armB_auto_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 4.473003149032593
+Epoch: 1, Steps: 33 | Train Loss: 0.5951969 Vali Loss: 1.0197530 Test Loss: 0.6098369
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 4.526536703109741
+Epoch: 2, Steps: 33 | Train Loss: 0.4375831 Vali Loss: 0.7303498 Test Loss: 0.4042962
+Validation loss decreased (1.019753 --> 0.730350).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 4.639784812927246
+Epoch: 3, Steps: 33 | Train Loss: 0.3846297 Vali Loss: 0.6972772 Test Loss: 0.3842108
+Validation loss decreased (0.730350 --> 0.697277).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 4.469227313995361
+Epoch: 4, Steps: 33 | Train Loss: 0.3675739 Vali Loss: 0.6859072 Test Loss: 0.3798576
+Validation loss decreased (0.697277 --> 0.685907).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 4.5555548667907715
+Epoch: 5, Steps: 33 | Train Loss: 0.3590523 Vali Loss: 0.6805875 Test Loss: 0.3778679
+Validation loss decreased (0.685907 --> 0.680587).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 4.715980529785156
+Epoch: 6, Steps: 33 | Train Loss: 0.3542045 Vali Loss: 0.6751392 Test Loss: 0.3745876
+Validation loss decreased (0.680587 --> 0.675139).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 4.599131107330322
+Epoch: 7, Steps: 33 | Train Loss: 0.3504889 Vali Loss: 0.6849226 Test Loss: 0.3747052
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 4.6903228759765625
+Epoch: 8, Steps: 33 | Train Loss: 0.3471192 Vali Loss: 0.6757304 Test Loss: 0.3722762
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 4.613431692123413
+Epoch: 9, Steps: 33 | Train Loss: 0.3445481 Vali Loss: 0.6638342 Test Loss: 0.3717837
+Validation loss decreased (0.675139 --> 0.663834).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 4.562420606613159
+Epoch: 10, Steps: 33 | Train Loss: 0.3427320 Vali Loss: 0.6731902 Test Loss: 0.3722006
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 4.6874284744262695
+Epoch: 11, Steps: 33 | Train Loss: 0.3405762 Vali Loss: 0.6732065 Test Loss: 0.3714248
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 4.6452648639678955
+Epoch: 12, Steps: 33 | Train Loss: 0.3394394 Vali Loss: 0.6709489 Test Loss: 0.3715019
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 4.43340277671814
+Epoch: 13, Steps: 33 | Train Loss: 0.3385080 Vali Loss: 0.6759011 Test Loss: 0.3720649
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 4.566166400909424
+Epoch: 14, Steps: 33 | Train Loss: 0.3370976 Vali Loss: 0.6703151 Test Loss: 0.3713402
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_armB_auto_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3710499405860901, mae:0.39272406697273254
+saved predictions and metrics under ./results/ETTh1_96_96_armB_auto_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/
+
+--- Post-training validation metrics ---
+==============================================================================
+validation_metrics.py run starting 2026-08-10T16:03:10
+REPO_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+TQNET_ROOT = C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\TQNet
+torch version = 2.9.1+cpu
+torch.cuda.is_available() = False
+Found 49 checkpoint directories.
+[1/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2024 pred_len=192 val_MSE=0.9869258508941762 val_MAE=0.6510316144042335
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[2/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2024_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2024 pred_len=192 val_MSE=0.9896004404605488 val_MAE=0.6526268499127609
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[3/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2025 pred_len=192 val_MSE=0.9832517426354129 val_MAE=0.6487804520877789
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[4/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2025_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2025 pred_len=192 val_MSE=0.985544944546859 val_MAE=0.6499253303060188
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[5/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026
+Use CPU
+val 2689
+test 2689
+  arm=reconstruction seed=2026 pred_len=192 val_MSE=0.9826968910187351 val_MAE=0.6493404424524812
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[6/49] ETTh1_96_192_TQNet_ETTh1_ftM_sl96_pl192_cycle24_seed2026_tq0ca0
+Use CPU
+val 2689
+test 2689
+  arm=armD seed=2026 pred_len=192 val_MSE=0.9921220532366278 val_MAE=0.6534679417557892
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2689 n_windows_val(dataset_len)=2689 n_windows_test(dataset_len)=2689
+  val/test dataset-length windows are EQUAL (2689 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[7/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2024 pred_len=336 val_MSE=1.2831294057132752 val_MAE=0.7562362832683209
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[8/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2024_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2024 pred_len=336 val_MSE=1.2837455227139352 val_MAE=0.7565095498405752
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[9/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2025 pred_len=336 val_MSE=1.290187973460736 val_MAE=0.7586170378277104
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[10/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2025_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2025 pred_len=336 val_MSE=1.2876259966376138 val_MAE=0.7568751357526426
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[11/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026
+Use CPU
+val 2545
+test 2545
+  arm=reconstruction seed=2026 pred_len=336 val_MSE=1.2828700809595037 val_MAE=0.7558962281840311
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[12/49] ETTh1_96_336_TQNet_ETTh1_ftM_sl96_pl336_cycle24_seed2026_tq0ca0
+Use CPU
+val 2545
+test 2545
+  arm=armD seed=2026 pred_len=336 val_MSE=1.285842172590149 val_MAE=0.7573847980130316
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2545 n_windows_val(dataset_len)=2545 n_windows_test(dataset_len)=2545
+  val/test dataset-length windows are EQUAL (2545 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[13/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2024 pred_len=720 val_MSE=1.5656952294577686 val_MAE=0.8477118626017368
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[14/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2024_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2024 pred_len=720 val_MSE=1.564966416024261 val_MAE=0.8521000411618372
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[15/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2025 pred_len=720 val_MSE=1.5612634743032026 val_MAE=0.8493634735943071
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[16/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2025_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2025 pred_len=720 val_MSE=1.5658308706626174 val_MAE=0.853434511275635
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[17/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026
+Use CPU
+val 2161
+test 2161
+  arm=reconstruction seed=2026 pred_len=720 val_MSE=1.5647363575816038 val_MAE=0.8510950261802275
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[18/49] ETTh1_96_720_TQNet_ETTh1_ftM_sl96_pl720_cycle24_seed2026_tq0ca0
+Use CPU
+val 2161
+test 2161
+  arm=armD seed=2026 pred_len=720 val_MSE=1.5658419578095464 val_MAE=0.8533720506751904
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2161 n_windows_val(dataset_len)=2161 n_windows_test(dataset_len)=2161
+  val/test dataset-length windows are EQUAL (2161 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[19/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6716537568893131 val_MAE=0.5408090306534271
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[20/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6737847414964826 val_MAE=0.5404750234700162
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[21/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6733536080981822 val_MAE=0.5420634328637552
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[22/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6713853217988164 val_MAE=0.5391181425458181
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[23/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6732518433132122 val_MAE=0.5390684470308559
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[24/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6733619263729219 val_MAE=0.5413942617534935
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[25/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.671200786941799 val_MAE=0.5395704577631485
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[26/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6736105864591796 val_MAE=0.5398122260280496
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[27/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6712481906014808 val_MAE=0.5401362885803337
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[28/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550701723053 val_MAE=0.5441242222601348
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+  SANITY ANCHOR (ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024): val_MSE=0.6869550701723053 test_MSE=0.37104994668966473 diff=0.31590512348264055
+[29/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.6952801971213933 val_MAE=0.5610087111832488
+  use_damped_trend=True damped_phi=0.8 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[30/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi1
+Use CPU
+val 2785
+test 2785
+  arm=armA seed=2024 pred_len=96 val_MSE=0.9491608951697321 val_MAE=0.675605386674245
+  use_damped_trend=True damped_phi=1.0 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[31/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2024 pred_len=96 val_MSE=0.6795092456048932 val_MAE=0.5439968638624214
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[32/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6735143635280876 val_MAE=0.53924157451204
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[33/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2025 pred_len=96 val_MSE=0.6812630824349228 val_MAE=0.5445259098960321
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[34/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6727194169596606 val_MAE=0.5414755241267981
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[35/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0
+Use CPU
+val 2785
+test 2785
+  arm=armD seed=2026 pred_len=96 val_MSE=0.6808913767587101 val_MAE=0.5437019334254315
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[36/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6722750953831385 val_MAE=0.5397102855944012
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[37/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6745795077563317 val_MAE=0.5401772931270977
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[38/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6716480837470329 val_MAE=0.5402650151899123
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[39/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.671381847713255 val_MAE=0.5393384462376885
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[40/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6734766012401661 val_MAE=0.5392290428625116
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[41/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.672729027149321 val_MAE=0.5414931828697106
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[42/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6712658063450453 val_MAE=0.539379723388013
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[43/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6726172796379547 val_MAE=0.5386515697540618
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[44/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6703286251080852 val_MAE=0.539537608734085
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[45/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6715714846197122 val_MAE=0.5395904123703281
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[46/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2025
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2025 pred_len=96 val_MSE=0.6731067525019135 val_MAE=0.539159600987833
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[47/49] ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2026
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2026 pred_len=96 val_MSE=0.6706429722567896 val_MAE=0.5396857396478154
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[48/49] ETTh1_96_96_armB_auto_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6712632724477633 val_MAE=0.5392097235520087
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+[49/49] ETTh1_96_96_armB_smoke_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024
+Use CPU
+val 2785
+test 2785
+  arm=reconstruction seed=2024 pred_len=96 val_MSE=0.6869550703100449 val_MAE=0.544124222302456
+  use_damped_trend=False damped_phi=0.9 missing_keys=[] unexpected_keys=[]
+  n_windows_val(evaluated)=2785 n_windows_val(dataset_len)=2785 n_windows_test(dataset_len)=2785
+  val/test dataset-length windows are EQUAL (2785 each) -- expected for this split (val and test are both exactly 4 calendar months, see script docstring); rows underneath are disjoint ([8544,11520) vs [11424,14400)).
+Done: 49 succeeded, 0 failed, 44.7s elapsed.
+Wrote summary: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project\results\validation\_summary.json
+==============================================================================
+
+--- Re-reading the two anchors after all training ---
+POST-TRAINING ANCHOR: mse1=0.6869550701723053 n_params=661640 mse2(tq0ca0)=0.6795092456048932
+
+--- Checkpoint diff (protected set must be additions-only) ---
+27a28,49
+> 1786365272.7288387000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2024/checkpoint.pth
+> 1786365355.2889041000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2024/checkpoint.pth
+> 1786365438.6515558000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2024/checkpoint.pth
+> 1786365521.6900150000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2024/checkpoint.pth
+> 1786365604.1485811000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2024/checkpoint.pth
+> 1786365687.1685327000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2024/checkpoint.pth
+> 1786365769.7600783000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2024/checkpoint.pth
+> 1786365836.3079793000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2025/checkpoint.pth
+> 1786365903.7787287000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2025/checkpoint.pth
+> 1786365971.0271222000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2025/checkpoint.pth
+> 1786366037.7996659000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2025/checkpoint.pth
+> 1786366106.1990260000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2025/checkpoint.pth
+> 1786366173.6814609000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2025/checkpoint.pth
+> 1786366240.4048525000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2025/checkpoint.pth
+> 1786366329.7945653000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle6_seed2026/checkpoint.pth
+> 1786366420.3648176000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle8_seed2026/checkpoint.pth
+> 1786366510.3069902000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle12_seed2026/checkpoint.pth
+> 1786366600.8994925000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle23_seed2026/checkpoint.pth
+> 1786366693.2340523000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle25_seed2026/checkpoint.pth
+> 1786366782.3043576000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle48_seed2026/checkpoint.pth
+> 1786366871.8718030000 TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle168_seed2026/checkpoint.pth
+> 1786366956.4074966000 TQNet/checkpoints/ETTh1_96_96_armB_auto_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/checkpoint.pth
+(diff exit code: 1; 0/1 both fine here, 1 just means differences exist)
+
+--- Final pytest ---
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+..................................                                       [100%]
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27
+  C:\Users\amita\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    _epoch = datetime.utcfromtimestamp(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+178 passed, 1 warning in 7.86s
+
+--- git status (read-only) ---
+ M TQNet/exp/exp_main.py
+ M TQNet/models/TQNet.py
+ M TQNet/run.py
+ M docs/STATUS.md
+ M report/results.md
+?? CLAUDE.md
+?? TQNet/channel_criterion.py
+?? TQNet/layers/DampedTrend.py
+?? TQNet/results_armD/
+?? armA_phi.log
+?? armD_ingest.log
+?? armD_runs.log
+?? armD_wallclock.log
+?? channel_criterion_check.log
+?? cycle_estimate.log
+?? damped_trend_liveness.log
+?? damped_trend_measure.py
+?? damped_trend_mutation.log
+?? damped_trend_numpy_check.log
+?? damped_trend_numpy_check.py
+?? damped_trend_torch_check.log
+?? param_check.log
+?? report/cycle_estimate.md
+?? report/horizon_sigma.md
+?? results/runs/improved-TQNet-s2024-h192-1786297718824254300.json
+?? results/runs/improved-TQNet-s2024-h336-1786297721348461400.json
+?? results/runs/improved-TQNet-s2024-h720-1786297725895635200.json
+?? results/runs/improved-TQNet-s2024-h96-1786297731786703500.json
+?? results/runs/improved-TQNet-s2025-h192-1786297719581725300.json
+?? results/runs/improved-TQNet-s2025-h336-1786297722570589100.json
+?? results/runs/improved-TQNet-s2025-h720-1786297728236759100.json
+?? results/runs/improved-TQNet-s2025-h96-1786297732554574700.json
+?? results/runs/improved-TQNet-s2026-h192-1786297720360776900.json
+?? results/runs/improved-TQNet-s2026-h336-1786297723838791500.json
+?? results/runs/improved-TQNet-s2026-h720-1786297730459978500.json
+?? results/runs/improved-TQNet-s2026-h96-1786297733835667500.json
+?? results/validation/
+?? run_w_curve.sh
+?? tests/test_damped_trend.py
+?? tests/test_estimate_cycle.py
+?? tools/backfill_checkpoint_config.py
+?? tools/estimate_cycle.py
+?? tools/horizon_sigma.py
+?? tools/validation_metrics.py
+?? w_curve.log
+
+==============================================================
+J-15 Arm B W-curve run finished: Mon Aug 10 16:04:06     2026
+==============================================================

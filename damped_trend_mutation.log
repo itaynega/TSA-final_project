@@ -1,0 +1,209 @@
+=== J-12e evidence run: 2026-08-10T08:27:54Z ===
+0. sidecar mtime BEFORE this job: 2026-08-10 10:26:09.715056400 +0300
+1. sha256(TQNet/layers/DampedTrend.py) BEFORE revert: 57244876dc8d0711674a2fa6f4a342be68c5c2e78d100b3a0e15ffdd742fed89
+2. sha256(TQNet/layers/DampedTrend.py) AFTER revert (expected to differ from step 1): 4279b37ccc455c996aa3ac92d73624e685ead62b98571218b9d89ea2ceb9cdf1
+3. Running phi=1 oracle test on REVERTED code (expected to FAIL):
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\amita\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+plugins: anyio-4.12.1, Faker-40.8.0, requests-mock-1.12.1
+collecting ... collected 58 items / 57 deselected / 1 selected
+
+tests/test_damped_trend.py::test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly: max_abs_error=0.950000000 first_step_error=-0.950000000 last_step_error=-0.950000000 expected_pre_fix_error(b*(S-1)/2)=-0.950000000
+FAILED
+
+================================== FAILURES ===================================
+_____ test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly ______
+
+    def test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly():
+        """PM arithmetic: x(t) = 3.0 + 0.02*(t - 47.5), seq_len = pred_len = 96.
+    
+        The window is exactly linear, so the OLS slope recovered is exactly the
+        generating slope `b` and `detrend()` leaves an exactly flat residual --
+        whatever origin `detrend` uses, because a perfectly linear signal minus
+        its own fitted line (about any origin on that same line) is a constant.
+        An oracle forecaster is simulated by feeding that flat residual straight
+        to `retrend()` (skipping normalisation and the network entirely, since
+        both are the identity on an already-constant input in the noiseless
+        case). At phi = 1, `retrend` must then reproduce the line's true
+        continuation for h = 1..pred_len, to 1e-9.
+    
+        This is the test the dispatch requires be seen to fail before the fix:
+        with the centre origin `t - (S-1)/2`, the level carried through is the
+        line's value at the window CENTRE, but `retrend` projects forward from
+        the window END (t = S-1, damped Holt's own convention) -- so every
+        reconstructed step is short by exactly `b * (S-1)/2`, a *constant*, not a
+        drift (the signature of a misplaced origin, not a wrong Sigma
+        convention).
+        """
+        seq_len = pred_len = 96
+        b = 0.02
+        a = 3.0  # value at the window centre, t = 47.5 = (seq_len - 1) / 2
+    
+        module = DampedTrendInstanceNorm(seq_len, pred_len, phi=1.0)
+    
+        t = torch.arange(seq_len, dtype=torch.float64)
+        centre = (seq_len - 1) / 2.0
+        x = (a + b * (t - centre)).view(1, -1, 1)  # (1, 96, 1), exactly linear
+    
+        residual, slope = module.detrend(x)
+        assert float(torch.max(torch.abs(slope - b))) < 1e-12, (
+            "OLS slope on an exactly linear window must recover b exactly"
+        )
+        # Flat residual: the "oracle forecaster" just repeats it for every
+        # forecast step -- this stands in for a network that is the identity on
+        # an already-constant input.
+        flat_level = residual[:, :1, :]  # (1, 1, 1)
+        oracle_forecast = flat_level.expand(1, pred_len, 1)
+    
+        reconstruction = module.retrend(oracle_forecast, slope)
+    
+        h = torch.arange(1, pred_len + 1, dtype=torch.float64).view(1, -1, 1)
+        true_continuation = a + b * ((seq_len - 1 + h) - centre)
+    
+        diff = reconstruction - true_continuation
+        max_abs_error = float(torch.max(torch.abs(diff)))
+        first_step_error = float(diff[0, 0, 0])
+        last_step_error = float(diff[0, -1, 0])
+    
+        expected_pre_fix_error = -b * (seq_len - 1) / 2.0  # -0.95 for this b
+    
+        print(
+            "test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly: "
+            "max_abs_error={:.9f} first_step_error={:.9f} last_step_error={:.9f} "
+            "expected_pre_fix_error(b*(S-1)/2)={:.9f}".format(
+                max_abs_error, first_step_error, last_step_error, expected_pre_fix_error
+            )
+        )
+    
+>       assert max_abs_error < 1e-9, (
+            "phi=1 oracle reconstruction of a perfectly linear window must match "
+            "the true continuation to 1e-9; max abs error = {:.9e} "
+            "(first_step={:.9e}, last_step={:.9e}). Pre-fix (centre origin) this "
+            "is expected to be a CONSTANT error of b*(S-1)/2 = {:.9e} at every "
+            "step.".format(max_abs_error, first_step_error, last_step_error,
+                            expected_pre_fix_error)
+        )
+E       AssertionError: phi=1 oracle reconstruction of a perfectly linear window must match the true continuation to 1e-9; max abs error = 9.500000000e-01 (first_step=-9.500000000e-01, last_step=-9.500000000e-01). Pre-fix (centre origin) this is expected to be a CONSTANT error of b*(S-1)/2 = -9.500000000e-01 at every step.
+E       assert 0.9499999999999993 < 1e-09
+
+tests\test_damped_trend.py:484: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_damped_trend.py::test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly
+====================== 1 failed, 57 deselected in 6.94s =======================
+   pytest exit code: 1 (nonzero = test failed, expected here)
+4. sha256(TQNet/layers/DampedTrend.py) AFTER restore: 62e39fb27eb8162215034142c13f4f85db3ee176f06371fa695e6e05cbe737c2
+   MISMATCH: file NOT restored correctly. STOP and report this.
+4b. Running phi=1 oracle test on RESTORED code (expected to PASS):
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\amita\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+plugins: anyio-4.12.1, Faker-40.8.0, requests-mock-1.12.1
+collecting ... collected 58 items / 57 deselected / 1 selected
+
+tests/test_damped_trend.py::test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly test_phi_one_oracle_reconstructs_a_perfectly_linear_window_exactly: max_abs_error=0.000000000 first_step_error=0.000000000 last_step_error=0.000000000 expected_pre_fix_error(b*(S-1)/2)=-0.950000000
+PASSED
+
+====================== 1 passed, 57 deselected in 10.65s ======================
+5. Running J-11's two original tests with temp prints (-s):
+============================= test session starts =============================
+platform win32 -- Python 3.13.14, pytest-9.1.1, pluggy-1.6.0 -- C:\Users\amita\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\amita\OneDrive\שולחן העבודה\עבודות\לימודים\שנה ד'\סמסטר ח'\ניתוח סדרות עיתיות\Final Project\TSA-final_project
+plugins: anyio-4.12.1, Faker-40.8.0, requests-mock-1.12.1
+collecting ... collected 58 items / 50 deselected / 8 selected
+
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend[1-0.0] J12E_MARGIN test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend phi=0.0 use_revin=1 discrepancy=3.552713679e-14
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend[1-1e-08] J12E_MARGIN test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend phi=1e-08 use_revin=1 discrepancy=3.552713679e-14
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend[0-0.0] J12E_MARGIN test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend phi=0.0 use_revin=0 discrepancy=3.197442311e-14
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend[0-1e-08] J12E_MARGIN test_phi_to_zero_matches_arm_off_when_the_window_has_no_trend phi=1e-08 use_revin=0 discrepancy=3.197442311e-14
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_on_the_detrended_window[1-0.0] J12E_MARGIN test_phi_to_zero_matches_arm_off_on_the_detrended_window phi=0.0 use_revin=1 discrepancy=0.000000000e+00
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_on_the_detrended_window[1-1e-08] J12E_MARGIN test_phi_to_zero_matches_arm_off_on_the_detrended_window phi=1e-08 use_revin=1 discrepancy=3.468521470e-09
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_on_the_detrended_window[0-0.0] J12E_MARGIN test_phi_to_zero_matches_arm_off_on_the_detrended_window phi=0.0 use_revin=0 discrepancy=0.000000000e+00
+PASSED
+tests/test_damped_trend.py::test_phi_to_zero_matches_arm_off_on_the_detrended_window[0-1e-08] J12E_MARGIN test_phi_to_zero_matches_arm_off_on_the_detrended_window phi=1e-08 use_revin=0 discrepancy=3.468521470e-09
+PASSED
+
+====================== 8 passed, 50 deselected in 4.65s =======================
+   test file prints removed; restored from backup. sha256(tests/test_damped_trend.py) now: 449682c81d938577a2f06b67d176b0e69cbc242a8612f7130946eddaa066cbf7
+6. Full suite (python -m pytest -q):
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+..................................                                       [100%]
+============================== warnings summary ===============================
+..\..\..\..\..\..\..\..\..\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27
+  C:\Users\amita\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pytz\tzinfo.py:27: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+    _epoch = datetime.utcfromtimestamp(0)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+178 passed, 1 warning in 15.90s
+7. sidecar mtime AFTER job: 2026-08-10 10:26:09.715056400 +0300 (must equal BEFORE: 2026-08-10 10:26:09.715056400 +0300)
+=== git status --porcelain (read-only) ===
+ M TQNet/exp/exp_main.py
+ M TQNet/models/TQNet.py
+ M TQNet/run.py
+ M docs/STATUS.md
+ M report/results.md
+?? TQNet/channel_criterion.py
+?? TQNet/layers/DampedTrend.py
+?? TQNet/results_armD/
+?? armA_phi.log
+?? armD_ingest.log
+?? armD_runs.log
+?? armD_wallclock.log
+?? channel_criterion_check.log
+?? cycle_estimate.log
+?? damped_trend_liveness.log
+?? damped_trend_measure.py
+?? damped_trend_mutation.log
+?? damped_trend_numpy_check.log
+?? damped_trend_numpy_check.py
+?? damped_trend_torch_check.log
+?? j12e_run.sh
+?? param_check.log
+?? report/cycle_estimate.md
+?? report/horizon_sigma.md
+?? results/runs/improved-TQNet-s2024-h192-1786297718824254300.json
+?? results/runs/improved-TQNet-s2024-h336-1786297721348461400.json
+?? results/runs/improved-TQNet-s2024-h720-1786297725895635200.json
+?? results/runs/improved-TQNet-s2024-h96-1786297731786703500.json
+?? results/runs/improved-TQNet-s2025-h192-1786297719581725300.json
+?? results/runs/improved-TQNet-s2025-h336-1786297722570589100.json
+?? results/runs/improved-TQNet-s2025-h720-1786297728236759100.json
+?? results/runs/improved-TQNet-s2025-h96-1786297732554574700.json
+?? results/runs/improved-TQNet-s2026-h192-1786297720360776900.json
+?? results/runs/improved-TQNet-s2026-h336-1786297723838791500.json
+?? results/runs/improved-TQNet-s2026-h720-1786297730459978500.json
+?? results/runs/improved-TQNet-s2026-h96-1786297733835667500.json
+?? results/validation/
+?? tests/test_damped_trend.py
+?? tests/test_estimate_cycle.py
+?? tools/backfill_checkpoint_config.py
+?? tools/estimate_cycle.py
+?? tools/horizon_sigma.py
+?? tools/validation_metrics.py
+=== DONE. Paste this whole damped_trend_mutation.log back, plus the two sha256 lines above, to Claude. ===
+
+=== CORRECTION, appended after initial run ===
+The line above reading "MISMATCH: file NOT restored correctly" was a false
+alarm caused by the evidence script's own bug: the revert/restore edits to
+DampedTrend.py used Python text-mode file I/O with no raw-byte backup taken
+first. On this Windows Python, text-mode write silently normalizes line
+endings to CRLF regardless of the file's original convention. The original
+file was pure LF (0 lone LF, 0 lone CR, all via CRLF pairs after the bug).
+Diagnostic: sha256(current bytes with CRLF->LF) == 57244876dc8d0711674a2fa6f4a342be68c5c2e78d100b3a0e15ffdd742fed89,
+which is exactly the sha256 recorded BEFORE the revert in step 1. Confirmed
+no other byte differed. Applied a binary-mode fix (CRLF->LF only, no other
+translation) and re-hashed:
+  sha256(TQNet/layers/DampedTrend.py) = 57244876dc8d0711674a2fa6f4a342be68c5c2e78d100b3a0e15ffdd742fed89
+  MATCHES sha256 recorded before revert: True
+Re-ran the phi=1 oracle test after the byte-level fix: 1 passed, 57 deselected.
+Criterion 1 (sha256 before revert == sha256 after restore) is satisfied.
