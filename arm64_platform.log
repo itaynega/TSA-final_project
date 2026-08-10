@@ -1,0 +1,741 @@
+run_arm64_platform.sh: line 32: /dev/fd/62: Operation not permitted
+==============================================================
+arm64 platform replication started: Mon Aug 10 19:39:49 IDT 2026
+uname: arm64 / Darwin
+==============================================================
+
+--- Precondition: pytest ---
+........................................................................ [ 79%]
+.....................................                                    [100%]
+181 passed in 3.59s
+
+--- Recording the protected checkpoints BEFORE any training ---
+44759d7a224071280f4319e6fbbe88d878e308989976b00612989ef3a789a20c  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/checkpoint.pth
+ad1affbc287627319e8aeb2f765871606f9f1919109d9527516436f34d559f21  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0/checkpoint.pth
+f197cdedde3b3eb342c763ce813c5d0f24a8404ee8f2626e38dcaf21e6691b0a  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca1/checkpoint.pth
+2fa6a5d5d63ff7fe4e0632d627d85227716895c0a3f575e36e65a446e335c091  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025/checkpoint.pth
+70aa0e7e043fb09cf59a9c39eabd588f65d304755afca81bc83ccd49755b3b26  TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026/checkpoint.pth
+protected checkpoint count:        5
+
+########## Arm B -- period estimated from the training split ##########
+
+=== ETTh1_96_96_arm64_armB seed=2024  (Mon Aug 10 19:39:53 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-1gom6ia1 because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[cycle_auto] acf=24 (peak=0.8851540915365544) periodogram=24 (power=19641471.641798608) agree=True rows=[0, 8640) -> cycle=24 (source=estimated)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96_arm64_armB', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='estimated', cycle_estimate_record={'n': 8640, 'min_lag': 2, 'max_lag': 400, 'acf_period': 24, 'acf_peak_value': 0.8851540915365544, 'acf_local_maxima': {24: 0.8851540915365544, 48: 0.8458005766600091, 72: 0.8225992791671596, 96: 0.8224963325291094, 120: 0.8139951251476679, 144: 0.8084944893162584, 168: 0.8043185159622588, 192: 0.789842712567699, 216: 0.7842321749948801, 240: 0.7795363238074076, 264: 0.7714441933372093, 288: 0.773557017805436, 312: 0.7730065785283556, 336: 0.7658012156693199, 360: 0.7678253797542155, 384: 0.7542079437255147}, 'periodogram_period': 24, 'periodogram_power': 19641471.641798608, 'agree': True})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.800117015838623
+Epoch: 1, Steps: 33 | Train Loss: 0.5951969 Vali Loss: 1.0197530 Test Loss: 0.6098369
+Validation loss decreased (inf --> 1.019753).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7678310871124268
+Epoch: 2, Steps: 33 | Train Loss: 0.4375830 Vali Loss: 0.7303498 Test Loss: 0.4042962
+Validation loss decreased (1.019753 --> 0.730350).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7593879699707031
+Epoch: 3, Steps: 33 | Train Loss: 0.3846297 Vali Loss: 0.6972772 Test Loss: 0.3842108
+Validation loss decreased (0.730350 --> 0.697277).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.7687761783599854
+Epoch: 4, Steps: 33 | Train Loss: 0.3675739 Vali Loss: 0.6859074 Test Loss: 0.3798576
+Validation loss decreased (0.697277 --> 0.685907).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.8161799907684326
+Epoch: 5, Steps: 33 | Train Loss: 0.3590523 Vali Loss: 0.6805874 Test Loss: 0.3778679
+Validation loss decreased (0.685907 --> 0.680587).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.798098087310791
+Epoch: 6, Steps: 33 | Train Loss: 0.3542045 Vali Loss: 0.6751392 Test Loss: 0.3745876
+Validation loss decreased (0.680587 --> 0.675139).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.7799072265625
+Epoch: 7, Steps: 33 | Train Loss: 0.3504889 Vali Loss: 0.6849225 Test Loss: 0.3747052
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7863318920135498
+Epoch: 8, Steps: 33 | Train Loss: 0.3471192 Vali Loss: 0.6757304 Test Loss: 0.3722762
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.7808248996734619
+Epoch: 9, Steps: 33 | Train Loss: 0.3445481 Vali Loss: 0.6638342 Test Loss: 0.3717837
+Validation loss decreased (0.675139 --> 0.663834).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.7857532501220703
+Epoch: 10, Steps: 33 | Train Loss: 0.3427320 Vali Loss: 0.6731902 Test Loss: 0.3722005
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.80153489112854
+Epoch: 11, Steps: 33 | Train Loss: 0.3405762 Vali Loss: 0.6732064 Test Loss: 0.3714248
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.7821528911590576
+Epoch: 12, Steps: 33 | Train Loss: 0.3394394 Vali Loss: 0.6709489 Test Loss: 0.3715019
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.7709708213806152
+Epoch: 13, Steps: 33 | Train Loss: 0.3385080 Vali Loss: 0.6759011 Test Loss: 0.3720649
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 0.7655618190765381
+Epoch: 14, Steps: 33 | Train Loss: 0.3370976 Vali Loss: 0.6703151 Test Loss: 0.3713402
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3710499107837677, mae:0.39272403717041016
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/
+ETTh1_96_96_arm64_armB seed=2024 exit=0 wall=33s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armB seed=2025  (Mon Aug 10 19:40:26 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-jn6kh32h because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[cycle_auto] acf=24 (peak=0.8851540915365544) periodogram=24 (power=19641471.641798608) agree=True rows=[0, 8640) -> cycle=24 (source=estimated)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96_arm64_armB', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='estimated', cycle_estimate_record={'n': 8640, 'min_lag': 2, 'max_lag': 400, 'acf_period': 24, 'acf_peak_value': 0.8851540915365544, 'acf_local_maxima': {24: 0.8851540915365544, 48: 0.8458005766600091, 72: 0.8225992791671596, 96: 0.8224963325291094, 120: 0.8139951251476679, 144: 0.8084944893162584, 168: 0.8043185159622588, 192: 0.789842712567699, 216: 0.7842321749948801, 240: 0.7795363238074076, 264: 0.7714441933372093, 288: 0.773557017805436, 312: 0.7730065785283556, 336: 0.7658012156693199, 360: 0.7678253797542155, 384: 0.7542079437255147}, 'periodogram_period': 24, 'periodogram_power': 19641471.641798608, 'agree': True})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.7889740467071533
+Epoch: 1, Steps: 33 | Train Loss: 0.5942760 Vali Loss: 1.0059404 Test Loss: 0.6000988
+Validation loss decreased (inf --> 1.005940).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7775499820709229
+Epoch: 2, Steps: 33 | Train Loss: 0.4358365 Vali Loss: 0.7356802 Test Loss: 0.4036596
+Validation loss decreased (1.005940 --> 0.735680).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7718338966369629
+Epoch: 3, Steps: 33 | Train Loss: 0.3841470 Vali Loss: 0.6874005 Test Loss: 0.3852784
+Validation loss decreased (0.735680 --> 0.687401).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.7798600196838379
+Epoch: 4, Steps: 33 | Train Loss: 0.3664976 Vali Loss: 0.6824790 Test Loss: 0.3795413
+Validation loss decreased (0.687401 --> 0.682479).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.7693729400634766
+Epoch: 5, Steps: 33 | Train Loss: 0.3580450 Vali Loss: 0.6694187 Test Loss: 0.3762926
+Validation loss decreased (0.682479 --> 0.669419).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.7660839557647705
+Epoch: 6, Steps: 33 | Train Loss: 0.3527995 Vali Loss: 0.6653945 Test Loss: 0.3757185
+Validation loss decreased (0.669419 --> 0.665395).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.7631840705871582
+Epoch: 7, Steps: 33 | Train Loss: 0.3491592 Vali Loss: 0.6722115 Test Loss: 0.3727341
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7693350315093994
+Epoch: 8, Steps: 33 | Train Loss: 0.3462533 Vali Loss: 0.6827684 Test Loss: 0.3707692
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.7582106590270996
+Epoch: 9, Steps: 33 | Train Loss: 0.3433837 Vali Loss: 0.6821563 Test Loss: 0.3715452
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.7721211910247803
+Epoch: 10, Steps: 33 | Train Loss: 0.3419961 Vali Loss: 0.6735664 Test Loss: 0.3702685
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.7700309753417969
+Epoch: 11, Steps: 33 | Train Loss: 0.3394006 Vali Loss: 0.6760963 Test Loss: 0.3716170
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37511202692985535, mae:0.3931562900543213
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025/
+ETTh1_96_96_arm64_armB seed=2025 exit=0 wall=23s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armB seed=2026  (Mon Aug 10 19:40:49 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-7vz_j7iw because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[cycle_auto] acf=24 (peak=0.8851540915365544) periodogram=24 (power=19641471.641798608) agree=True rows=[0, 8640) -> cycle=24 (source=estimated)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96_arm64_armB', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='estimated', cycle_estimate_record={'n': 8640, 'min_lag': 2, 'max_lag': 400, 'acf_period': 24, 'acf_peak_value': 0.8851540915365544, 'acf_local_maxima': {24: 0.8851540915365544, 48: 0.8458005766600091, 72: 0.8225992791671596, 96: 0.8224963325291094, 120: 0.8139951251476679, 144: 0.8084944893162584, 168: 0.8043185159622588, 192: 0.789842712567699, 216: 0.7842321749948801, 240: 0.7795363238074076, 264: 0.7714441933372093, 288: 0.773557017805436, 312: 0.7730065785283556, 336: 0.7658012156693199, 360: 0.7678253797542155, 384: 0.7542079437255147}, 'periodogram_period': 24, 'periodogram_power': 19641471.641798608, 'agree': True})
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.7837021350860596
+Epoch: 1, Steps: 33 | Train Loss: 0.5954053 Vali Loss: 1.0089203 Test Loss: 0.6085770
+Validation loss decreased (inf --> 1.008920).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7709319591522217
+Epoch: 2, Steps: 33 | Train Loss: 0.4371975 Vali Loss: 0.7349053 Test Loss: 0.4026424
+Validation loss decreased (1.008920 --> 0.734905).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7707669734954834
+Epoch: 3, Steps: 33 | Train Loss: 0.3849710 Vali Loss: 0.7111262 Test Loss: 0.3815143
+Validation loss decreased (0.734905 --> 0.711126).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.7697019577026367
+Epoch: 4, Steps: 33 | Train Loss: 0.3677048 Vali Loss: 0.6773383 Test Loss: 0.3804362
+Validation loss decreased (0.711126 --> 0.677338).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.7669742107391357
+Epoch: 5, Steps: 33 | Train Loss: 0.3588234 Vali Loss: 0.6702928 Test Loss: 0.3769764
+Validation loss decreased (0.677338 --> 0.670293).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.7667858600616455
+Epoch: 6, Steps: 33 | Train Loss: 0.3538632 Vali Loss: 0.6730391 Test Loss: 0.3765835
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.7667112350463867
+Epoch: 7, Steps: 33 | Train Loss: 0.3499844 Vali Loss: 0.6762179 Test Loss: 0.3736964
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7651729583740234
+Epoch: 8, Steps: 33 | Train Loss: 0.3471501 Vali Loss: 0.6755228 Test Loss: 0.3733069
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.7655320167541504
+Epoch: 9, Steps: 33 | Train Loss: 0.3442949 Vali Loss: 0.6735839 Test Loss: 0.3727235
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.764376163482666
+Epoch: 10, Steps: 33 | Train Loss: 0.3426534 Vali Loss: 0.6675695 Test Loss: 0.3725419
+Validation loss decreased (0.670293 --> 0.667570).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.7661371231079102
+Epoch: 11, Steps: 33 | Train Loss: 0.3412963 Vali Loss: 0.6702983 Test Loss: 0.3715615
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.7675671577453613
+Epoch: 12, Steps: 33 | Train Loss: 0.3399160 Vali Loss: 0.6694444 Test Loss: 0.3712482
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.7646121978759766
+Epoch: 13, Steps: 33 | Train Loss: 0.3384960 Vali Loss: 0.6756676 Test Loss: 0.3726551
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 0.789160966873169
+Epoch: 14, Steps: 33 | Train Loss: 0.3376090 Vali Loss: 0.6734155 Test Loss: 0.3719336
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 0.7677278518676758
+Epoch: 15, Steps: 33 | Train Loss: 0.3373145 Vali Loss: 0.6727182 Test Loss: 0.3716888
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3718372881412506, mae:0.39347150921821594
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026/
+ETTh1_96_96_arm64_armB seed=2026 exit=0 wall=27s
+  [guard] 5 protected checkpoints unchanged.
+
+########## Arm D -- channel-count-conditional attention ##########
+
+=== ETTh1_96_96_arm64_armD seed=2024  (Mon Aug 10 19:41:17 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-3ob1b1w3 because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96_arm64_armD', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.31101311769968243, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[1.0, 0.23196165390164256, 0.9837243378178623, 0.14708545727634442, 0.39556083470029113, 0.11212040986088107, 0.19977889170480556], [0.23196165390164256, 0.9999999999999998, 0.19645373501239738, 0.9256023549691942, 0.23374941448999292, 0.2968585657741116, 0.6014441426143745], [0.9837243378178623, 0.19645373501239738, 1.0, 0.14273895718264112, 0.23279705137642098, 0.037538244121025646, 0.15024069325639341], [0.1470854572763444, 0.9256023549691942, 0.14273895718264112, 1.0, 0.04807037723043155, -0.03757430448997622, 0.5235301651125964], [0.39556083470029113, 0.23374941448999292, 0.23279705137642098, 0.048070377230431546, 1.0, 0.43527358143450207, 0.315764237985253], [0.11212040986088107, 0.29685856577411157, 0.037538244121025646, -0.03757430448997622, 0.43527358143450207, 0.9999999999999998, 0.28340806138219343], [0.1997788917048056, 0.6014441426143745, 0.15024069325639344, 0.5235301651125964, 0.315764237985253, 0.2834080613821935, 0.9999999999999998]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0}, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.4352571964263916
+Epoch: 1, Steps: 33 | Train Loss: 0.5821408 Vali Loss: 1.0127079 Test Loss: 0.5948361
+Validation loss decreased (inf --> 1.012708).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.41286396980285645
+Epoch: 2, Steps: 33 | Train Loss: 0.4330633 Vali Loss: 0.7355103 Test Loss: 0.4033260
+Validation loss decreased (1.012708 --> 0.735510).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.430325984954834
+Epoch: 3, Steps: 33 | Train Loss: 0.3843818 Vali Loss: 0.7014598 Test Loss: 0.3854903
+Validation loss decreased (0.735510 --> 0.701460).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.412905216217041
+Epoch: 4, Steps: 33 | Train Loss: 0.3680718 Vali Loss: 0.6841446 Test Loss: 0.3788867
+Validation loss decreased (0.701460 --> 0.684145).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.4185299873352051
+Epoch: 5, Steps: 33 | Train Loss: 0.3602107 Vali Loss: 0.6859454 Test Loss: 0.3769438
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.4209110736846924
+Epoch: 6, Steps: 33 | Train Loss: 0.3556873 Vali Loss: 0.6900512 Test Loss: 0.3760846
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.41442179679870605
+Epoch: 7, Steps: 33 | Train Loss: 0.3524347 Vali Loss: 0.6792630 Test Loss: 0.3754287
+Validation loss decreased (0.684145 --> 0.679263).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.4120361804962158
+Epoch: 8, Steps: 33 | Train Loss: 0.3496310 Vali Loss: 0.6771929 Test Loss: 0.3738918
+Validation loss decreased (0.679263 --> 0.677193).  Saving model ...
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.41211509704589844
+Epoch: 9, Steps: 33 | Train Loss: 0.3474287 Vali Loss: 0.6819002 Test Loss: 0.3733724
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.4123649597167969
+Epoch: 10, Steps: 33 | Train Loss: 0.3454400 Vali Loss: 0.6746325 Test Loss: 0.3716877
+Validation loss decreased (0.677193 --> 0.674633).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.40853404998779297
+Epoch: 11, Steps: 33 | Train Loss: 0.3444719 Vali Loss: 0.6772773 Test Loss: 0.3712561
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.41165804862976074
+Epoch: 12, Steps: 33 | Train Loss: 0.3430808 Vali Loss: 0.6794468 Test Loss: 0.3711207
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.41051483154296875
+Epoch: 13, Steps: 33 | Train Loss: 0.3420825 Vali Loss: 0.6753255 Test Loss: 0.3714558
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 0.4312610626220703
+Epoch: 14, Steps: 33 | Train Loss: 0.3413015 Vali Loss: 0.6802781 Test Loss: 0.3709011
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 0.4083878993988037
+Epoch: 15, Steps: 33 | Train Loss: 0.3407890 Vali Loss: 0.6784443 Test Loss: 0.3710077
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3709627687931061, mae:0.39211657643318176
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0/
+ETTh1_96_96_arm64_armD seed=2024 exit=0 wall=20s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armD seed=2025  (Mon Aug 10 19:41:37 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-98qo1c94 because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96_arm64_armD', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.31101311769968243, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[1.0, 0.23196165390164256, 0.9837243378178623, 0.14708545727634442, 0.39556083470029113, 0.11212040986088107, 0.19977889170480556], [0.23196165390164256, 0.9999999999999998, 0.19645373501239738, 0.9256023549691942, 0.23374941448999292, 0.2968585657741116, 0.6014441426143745], [0.9837243378178623, 0.19645373501239738, 1.0, 0.14273895718264112, 0.23279705137642098, 0.037538244121025646, 0.15024069325639341], [0.1470854572763444, 0.9256023549691942, 0.14273895718264112, 1.0, 0.04807037723043155, -0.03757430448997622, 0.5235301651125964], [0.39556083470029113, 0.23374941448999292, 0.23279705137642098, 0.048070377230431546, 1.0, 0.43527358143450207, 0.315764237985253], [0.11212040986088107, 0.29685856577411157, 0.037538244121025646, -0.03757430448997622, 0.43527358143450207, 0.9999999999999998, 0.28340806138219343], [0.1997788917048056, 0.6014441426143745, 0.15024069325639344, 0.5235301651125964, 0.315764237985253, 0.2834080613821935, 0.9999999999999998]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0}, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.4282197952270508
+Epoch: 1, Steps: 33 | Train Loss: 0.5812121 Vali Loss: 0.9959120 Test Loss: 0.5924728
+Validation loss decreased (inf --> 0.995912).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.40836477279663086
+Epoch: 2, Steps: 33 | Train Loss: 0.4316903 Vali Loss: 0.7344992 Test Loss: 0.3999425
+Validation loss decreased (0.995912 --> 0.734499).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.41757798194885254
+Epoch: 3, Steps: 33 | Train Loss: 0.3829328 Vali Loss: 0.7177773 Test Loss: 0.3843653
+Validation loss decreased (0.734499 --> 0.717777).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.4089808464050293
+Epoch: 4, Steps: 33 | Train Loss: 0.3672343 Vali Loss: 0.6964585 Test Loss: 0.3795689
+Validation loss decreased (0.717777 --> 0.696459).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.41328001022338867
+Epoch: 5, Steps: 33 | Train Loss: 0.3598014 Vali Loss: 0.6825465 Test Loss: 0.3776721
+Validation loss decreased (0.696459 --> 0.682546).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.41158294677734375
+Epoch: 6, Steps: 33 | Train Loss: 0.3547881 Vali Loss: 0.6880394 Test Loss: 0.3751254
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.4097771644592285
+Epoch: 7, Steps: 33 | Train Loss: 0.3516774 Vali Loss: 0.6800478 Test Loss: 0.3738848
+Validation loss decreased (0.682546 --> 0.680048).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.4083981513977051
+Epoch: 8, Steps: 33 | Train Loss: 0.3494114 Vali Loss: 0.6826297 Test Loss: 0.3721597
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.4124932289123535
+Epoch: 9, Steps: 33 | Train Loss: 0.3466333 Vali Loss: 0.6845132 Test Loss: 0.3728388
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.40918397903442383
+Epoch: 10, Steps: 33 | Train Loss: 0.3452569 Vali Loss: 0.6806219 Test Loss: 0.3720362
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.41042089462280273
+Epoch: 11, Steps: 33 | Train Loss: 0.3438315 Vali Loss: 0.6806732 Test Loss: 0.3723055
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.4069662094116211
+Epoch: 12, Steps: 33 | Train Loss: 0.3428414 Vali Loss: 0.6813202 Test Loss: 0.3720266
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3732233941555023, mae:0.39163434505462646
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0/
+ETTh1_96_96_arm64_armD seed=2025 exit=0 wall=20s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armD seed=2026  (Mon Aug 10 19:41:57 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-48y5yzhz because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[channel_criterion] mean_abs_offdiag_pearson_correlation=0.311013 threshold=0.3 (justification: Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.) rows=[0, 8640] -> decision=drop (use_tq=0, channel_aggre=0)
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96_arm64_armD', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=0, channel_aggre=0, channel_criterion=1, use_damped_trend=0, damped_phi=0.9, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record={'statistic_name': 'mean_abs_offdiag_pearson_correlation', 'statistic_value': 0.31101311769968243, 'row_range': [0, 8640], 'n_channels': 7, 'channels': ['HUFL', 'HULL', 'MUFL', 'MULL', 'LUFL', 'LULL', 'OT'], 'csv_path': './dataset/ETTh1.csv', 'corr_matrix': [[1.0, 0.23196165390164256, 0.9837243378178623, 0.14708545727634442, 0.39556083470029113, 0.11212040986088107, 0.19977889170480556], [0.23196165390164256, 0.9999999999999998, 0.19645373501239738, 0.9256023549691942, 0.23374941448999292, 0.2968585657741116, 0.6014441426143745], [0.9837243378178623, 0.19645373501239738, 1.0, 0.14273895718264112, 0.23279705137642098, 0.037538244121025646, 0.15024069325639341], [0.1470854572763444, 0.9256023549691942, 0.14273895718264112, 1.0, 0.04807037723043155, -0.03757430448997622, 0.5235301651125964], [0.39556083470029113, 0.23374941448999292, 0.23279705137642098, 0.048070377230431546, 1.0, 0.43527358143450207, 0.315764237985253], [0.11212040986088107, 0.29685856577411157, 0.037538244121025646, -0.03757430448997622, 0.43527358143450207, 0.9999999999999998, 0.28340806138219343], [0.1997788917048056, 0.6014441426143745, 0.15024069325639344, 0.5235301651125964, 0.315764237985253, 0.2834080613821935, 0.9999999999999998]], 'threshold_name': 'CHANNEL_CORR_DROP_THRESHOLD', 'threshold_value': 0.3, 'threshold_justification': "Cohen (1988) 'medium effect' convention for a Pearson correlation magnitude (small ~0.10, medium ~0.30, large ~0.50). Fixed in advance of, and external to, this study; not tuned to make any arm's prediction come out a particular way.", 'decision': 'drop', 'use_tq': 0, 'channel_aggre': 0}, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.42652130126953125
+Epoch: 1, Steps: 33 | Train Loss: 0.5926368 Vali Loss: 1.0157667 Test Loss: 0.6154875
+Validation loss decreased (inf --> 1.015767).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.4122450351715088
+Epoch: 2, Steps: 33 | Train Loss: 0.4343715 Vali Loss: 0.7429637 Test Loss: 0.4045541
+Validation loss decreased (1.015767 --> 0.742964).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.4100358486175537
+Epoch: 3, Steps: 33 | Train Loss: 0.3844373 Vali Loss: 0.7059886 Test Loss: 0.3887810
+Validation loss decreased (0.742964 --> 0.705989).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.412045955657959
+Epoch: 4, Steps: 33 | Train Loss: 0.3692866 Vali Loss: 0.6961082 Test Loss: 0.3817484
+Validation loss decreased (0.705989 --> 0.696108).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.4083740711212158
+Epoch: 5, Steps: 33 | Train Loss: 0.3610991 Vali Loss: 0.6907815 Test Loss: 0.3776821
+Validation loss decreased (0.696108 --> 0.690781).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.41605305671691895
+Epoch: 6, Steps: 33 | Train Loss: 0.3566400 Vali Loss: 0.6861035 Test Loss: 0.3749612
+Validation loss decreased (0.690781 --> 0.686104).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.41129612922668457
+Epoch: 7, Steps: 33 | Train Loss: 0.3531394 Vali Loss: 0.6811147 Test Loss: 0.3740371
+Validation loss decreased (0.686104 --> 0.681115).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.4128561019897461
+Epoch: 8, Steps: 33 | Train Loss: 0.3509040 Vali Loss: 0.6734438 Test Loss: 0.3723726
+Validation loss decreased (0.681115 --> 0.673444).  Saving model ...
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.4120666980743408
+Epoch: 9, Steps: 33 | Train Loss: 0.3484927 Vali Loss: 0.6824412 Test Loss: 0.3728933
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.4121372699737549
+Epoch: 10, Steps: 33 | Train Loss: 0.3471382 Vali Loss: 0.6819213 Test Loss: 0.3721879
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.42916202545166016
+Epoch: 11, Steps: 33 | Train Loss: 0.3452989 Vali Loss: 0.6855068 Test Loss: 0.3712694
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.4109079837799072
+Epoch: 12, Steps: 33 | Train Loss: 0.3443209 Vali Loss: 0.6834179 Test Loss: 0.3711888
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.4144601821899414
+Epoch: 13, Steps: 33 | Train Loss: 0.3432409 Vali Loss: 0.6806494 Test Loss: 0.3710846
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.37167346477508545, mae:0.3911754786968231
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0/
+ETTh1_96_96_arm64_armD seed=2026 exit=0 wall=19s
+  [guard] 5 protected checkpoints unchanged.
+
+########## Arm A -- damped-trend instance normalisation, phi=0.8 ##########
+
+=== ETTh1_96_96_arm64_armA seed=2024  (Mon Aug 10 19:42:17 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-8ytllrgx because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[damped_trend] enabled: phi=0.8, seq_len=96, pred_len=96 (trend added at step h = slope * phi * (1 - phi**h) / (1 - phi))
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='ETTh1_96_96_arm64_armA', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=1, damped_phi=0.8, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.8012259006500244
+Epoch: 1, Steps: 33 | Train Loss: 0.6529327 Vali Loss: 1.0302079 Test Loss: 0.6659665
+Validation loss decreased (inf --> 1.030208).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7889912128448486
+Epoch: 2, Steps: 33 | Train Loss: 0.4961291 Vali Loss: 0.7609143 Test Loss: 0.4535412
+Validation loss decreased (1.030208 --> 0.760914).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7913269996643066
+Epoch: 3, Steps: 33 | Train Loss: 0.4405716 Vali Loss: 0.7207171 Test Loss: 0.4297620
+Validation loss decreased (0.760914 --> 0.720717).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.7861242294311523
+Epoch: 4, Steps: 33 | Train Loss: 0.4190880 Vali Loss: 0.7147325 Test Loss: 0.4163664
+Validation loss decreased (0.720717 --> 0.714732).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.7920060157775879
+Epoch: 5, Steps: 33 | Train Loss: 0.4045494 Vali Loss: 0.7025394 Test Loss: 0.4102541
+Validation loss decreased (0.714732 --> 0.702539).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.7832300662994385
+Epoch: 6, Steps: 33 | Train Loss: 0.3943256 Vali Loss: 0.6958135 Test Loss: 0.4066023
+Validation loss decreased (0.702539 --> 0.695813).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.7942988872528076
+Epoch: 7, Steps: 33 | Train Loss: 0.3873467 Vali Loss: 0.7023506 Test Loss: 0.4076267
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7889668941497803
+Epoch: 8, Steps: 33 | Train Loss: 0.3810415 Vali Loss: 0.6973332 Test Loss: 0.4028566
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.7866497039794922
+Epoch: 9, Steps: 33 | Train Loss: 0.3765012 Vali Loss: 0.6870061 Test Loss: 0.4013049
+Validation loss decreased (0.695813 --> 0.687006).  Saving model ...
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.7891669273376465
+Epoch: 10, Steps: 33 | Train Loss: 0.3729205 Vali Loss: 0.6974228 Test Loss: 0.4018023
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.7861108779907227
+Epoch: 11, Steps: 33 | Train Loss: 0.3699518 Vali Loss: 0.6917936 Test Loss: 0.4031233
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.7850732803344727
+Epoch: 12, Steps: 33 | Train Loss: 0.3682459 Vali Loss: 0.6904036 Test Loss: 0.4021926
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.7797508239746094
+Epoch: 13, Steps: 33 | Train Loss: 0.3659744 Vali Loss: 0.6925553 Test Loss: 0.4015771
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 0.7954549789428711
+Epoch: 14, Steps: 33 | Train Loss: 0.3641703 Vali Loss: 0.6880227 Test Loss: 0.4006931
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.4004500210285187, mae:0.41619718074798584
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8/
+ETTh1_96_96_arm64_armA seed=2024 exit=0 wall=26s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armA seed=2025  (Mon Aug 10 19:42:43 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-fh533k8g because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[damped_trend] enabled: phi=0.8, seq_len=96, pred_len=96 (trend added at step h = slope * phi * (1 - phi**h) / (1 - phi))
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2025, is_training=1, model_id='ETTh1_96_96_arm64_armA', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=1, damped_phi=0.8, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_dphi0.8>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.8018958568572998
+Epoch: 1, Steps: 33 | Train Loss: 0.6453365 Vali Loss: 1.0058463 Test Loss: 0.6497260
+Validation loss decreased (inf --> 1.005846).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7939231395721436
+Epoch: 2, Steps: 33 | Train Loss: 0.4934401 Vali Loss: 0.7587520 Test Loss: 0.4525077
+Validation loss decreased (1.005846 --> 0.758752).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7966351509094238
+Epoch: 3, Steps: 33 | Train Loss: 0.4391855 Vali Loss: 0.7161697 Test Loss: 0.4293144
+Validation loss decreased (0.758752 --> 0.716170).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.7888271808624268
+Epoch: 4, Steps: 33 | Train Loss: 0.4180807 Vali Loss: 0.7086129 Test Loss: 0.4166364
+Validation loss decreased (0.716170 --> 0.708613).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.7955820560455322
+Epoch: 5, Steps: 33 | Train Loss: 0.4017709 Vali Loss: 0.7043220 Test Loss: 0.4058774
+Validation loss decreased (0.708613 --> 0.704322).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.7909731864929199
+Epoch: 6, Steps: 33 | Train Loss: 0.3915814 Vali Loss: 0.6914986 Test Loss: 0.4091695
+Validation loss decreased (0.704322 --> 0.691499).  Saving model ...
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.7905640602111816
+Epoch: 7, Steps: 33 | Train Loss: 0.3840413 Vali Loss: 0.6911395 Test Loss: 0.4103379
+Validation loss decreased (0.691499 --> 0.691139).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7803130149841309
+Epoch: 8, Steps: 33 | Train Loss: 0.3782973 Vali Loss: 0.7001411 Test Loss: 0.4037366
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.8209710121154785
+Epoch: 9, Steps: 33 | Train Loss: 0.3737475 Vali Loss: 0.6998549 Test Loss: 0.4023942
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.7829699516296387
+Epoch: 10, Steps: 33 | Train Loss: 0.3707740 Vali Loss: 0.6914751 Test Loss: 0.4020734
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.7922220230102539
+Epoch: 11, Steps: 33 | Train Loss: 0.3680206 Vali Loss: 0.6915101 Test Loss: 0.4038941
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.782001256942749
+Epoch: 12, Steps: 33 | Train Loss: 0.3650272 Vali Loss: 0.6969332 Test Loss: 0.4018461
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_dphi0.8<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.40959590673446655, mae:0.4217974543571472
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_dphi0.8/
+ETTh1_96_96_arm64_armA seed=2025 exit=0 wall=25s
+  [guard] 5 protected checkpoints unchanged.
+
+=== ETTh1_96_96_arm64_armA seed=2026  (Mon Aug 10 19:43:08 IDT 2026) ===
+/Users/inega/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/qy/t693zbgs4gzfck47wyy46qwr0000gp/T/matplotlib-jlbmifhr because there was an issue with the default path (/Users/inega/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Matplotlib is building the font cache; this may take a moment.
+[damped_trend] enabled: phi=0.8, seq_len=96, pred_len=96 (trend added at step h = slope * phi * (1 - phi**h) / (1 - phi))
+[split_hash] expected=b66ee6b47e2b2eb8 actual=b66ee6b47e2b2eb8 OK
+Args in experiment:
+Namespace(random_seed=2026, is_training=1, model_id='ETTh1_96_96_arm64_armA', model='TQNet', data='ETTh1', root_path='./dataset/', data_path='ETTh1.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=0, pred_len=96, cycle=24, model_type='mlp', use_revin=1, use_tq=1, channel_aggre=1, channel_criterion=0, use_damped_trend=1, damped_phi=0.8, fc_dropout=0.05, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=0, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, rnn_type='gru', dec_way='pmf', seg_len=48, channel_id=1, embed_type=0, enc_in=7, dec_in=7, c_out=7, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.5, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=0, itr=1, train_epochs=30, batch_size=256, patience=5, learning_rate=0.001, des='test', loss='mse', lradj='type3', pct_start=0.3, use_amp=False, use_gpu=False, gpu=0, use_multi_gpu=False, devices='0,1', test_flop=False, accelerator='cpu', result_path='./result_arm64.txt', save_outputs=1, channel_criterion_record=None, cycle_source='passed', cycle_estimate_record=None)
+Use CPU
+>>>>>>>start training : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_dphi0.8>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 0.8087379932403564
+Epoch: 1, Steps: 33 | Train Loss: 0.6506031 Vali Loss: 1.0182474 Test Loss: 0.6663700
+Validation loss decreased (inf --> 1.018247).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 0.7947449684143066
+Epoch: 2, Steps: 33 | Train Loss: 0.4934198 Vali Loss: 0.7494227 Test Loss: 0.4540138
+Validation loss decreased (1.018247 --> 0.749423).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 0.7926831245422363
+Epoch: 3, Steps: 33 | Train Loss: 0.4398336 Vali Loss: 0.7253166 Test Loss: 0.4261823
+Validation loss decreased (0.749423 --> 0.725317).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 0.8032450675964355
+Epoch: 4, Steps: 33 | Train Loss: 0.4179466 Vali Loss: 0.7069607 Test Loss: 0.4200789
+Validation loss decreased (0.725317 --> 0.706961).  Saving model ...
+Updating learning rate to 0.0008
+Epoch: 5 cost time: 0.8385298252105713
+Epoch: 5, Steps: 33 | Train Loss: 0.4032759 Vali Loss: 0.6954241 Test Loss: 0.4120301
+Validation loss decreased (0.706961 --> 0.695424).  Saving model ...
+Updating learning rate to 0.0006400000000000002
+Epoch: 6 cost time: 0.7979679107666016
+Epoch: 6, Steps: 33 | Train Loss: 0.3928473 Vali Loss: 0.7007298 Test Loss: 0.4092891
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0005120000000000001
+Epoch: 7 cost time: 0.8079230785369873
+Epoch: 7, Steps: 33 | Train Loss: 0.3850642 Vali Loss: 0.6928446 Test Loss: 0.4077009
+Validation loss decreased (0.695424 --> 0.692845).  Saving model ...
+Updating learning rate to 0.0004096000000000001
+Epoch: 8 cost time: 0.7865049839019775
+Epoch: 8, Steps: 33 | Train Loss: 0.3786760 Vali Loss: 0.6942819 Test Loss: 0.4026348
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0003276800000000001
+Epoch: 9 cost time: 0.8081300258636475
+Epoch: 9, Steps: 33 | Train Loss: 0.3730996 Vali Loss: 0.6971704 Test Loss: 0.4019889
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 0.0002621440000000001
+Epoch: 10 cost time: 0.7883341312408447
+Epoch: 10, Steps: 33 | Train Loss: 0.3703882 Vali Loss: 0.6880158 Test Loss: 0.4000395
+Validation loss decreased (0.692845 --> 0.688016).  Saving model ...
+Updating learning rate to 0.0002097152000000001
+Epoch: 11 cost time: 0.8012547492980957
+Epoch: 11, Steps: 33 | Train Loss: 0.3675849 Vali Loss: 0.6881888 Test Loss: 0.4010928
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.0001677721600000001
+Epoch: 12 cost time: 0.7960808277130127
+Epoch: 12, Steps: 33 | Train Loss: 0.3661548 Vali Loss: 0.6867019 Test Loss: 0.4008192
+Validation loss decreased (0.688016 --> 0.686702).  Saving model ...
+Updating learning rate to 0.00013421772800000008
+Epoch: 13 cost time: 0.7838940620422363
+Epoch: 13, Steps: 33 | Train Loss: 0.3638525 Vali Loss: 0.6912673 Test Loss: 0.4002564
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 0.00010737418240000006
+Epoch: 14 cost time: 0.807077169418335
+Epoch: 14, Steps: 33 | Train Loss: 0.3623306 Vali Loss: 0.6892533 Test Loss: 0.3990447
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 8.589934592000005e-05
+Epoch: 15 cost time: 0.794661283493042
+Epoch: 15, Steps: 33 | Train Loss: 0.3615575 Vali Loss: 0.6894512 Test Loss: 0.3991600
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 6.871947673600005e-05
+Epoch: 16 cost time: 0.7901418209075928
+Epoch: 16, Steps: 33 | Train Loss: 0.3606010 Vali Loss: 0.6907978 Test Loss: 0.3995816
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 5.497558138880004e-05
+Epoch: 17 cost time: 0.7905740737915039
+Epoch: 17, Steps: 33 | Train Loss: 0.3595040 Vali Loss: 0.6859712 Test Loss: 0.3993945
+Validation loss decreased (0.686702 --> 0.685971).  Saving model ...
+Updating learning rate to 4.398046511104004e-05
+Epoch: 18 cost time: 0.8023018836975098
+Epoch: 18, Steps: 33 | Train Loss: 0.3591996 Vali Loss: 0.6909331 Test Loss: 0.3992426
+EarlyStopping counter: 1 out of 5
+Updating learning rate to 3.518437208883203e-05
+Epoch: 19 cost time: 0.7868850231170654
+Epoch: 19, Steps: 33 | Train Loss: 0.3588727 Vali Loss: 0.6885109 Test Loss: 0.3991665
+EarlyStopping counter: 2 out of 5
+Updating learning rate to 2.8147497671065623e-05
+Epoch: 20 cost time: 0.7977471351623535
+Epoch: 20, Steps: 33 | Train Loss: 0.3577783 Vali Loss: 0.6936856 Test Loss: 0.3990638
+EarlyStopping counter: 3 out of 5
+Updating learning rate to 2.2517998136852502e-05
+Epoch: 21 cost time: 0.8007912635803223
+Epoch: 21, Steps: 33 | Train Loss: 0.3581452 Vali Loss: 0.6903956 Test Loss: 0.3990671
+EarlyStopping counter: 4 out of 5
+Updating learning rate to 1.8014398509482003e-05
+Epoch: 22 cost time: 0.7954649925231934
+Epoch: 22, Steps: 33 | Train Loss: 0.3578178 Vali Loss: 0.6869479 Test Loss: 0.3991463
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_dphi0.8<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.39844638109207153, mae:0.4174345135688782
+saved predictions and metrics under ./results/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_dphi0.8/
+ETTh1_96_96_arm64_armA seed=2026 exit=0 wall=35s
+  [guard] 5 protected checkpoints unchanged.
+
+Total wall-clock: 230s
+
+--- Final protected-checkpoint verification ---
+  [guard] 5 protected checkpoints unchanged.
+
+--- New checkpoint directories created ---
+abe434282d857effb1af67554881bba4c0fcee08a922a779b4afa1bd45bd0ab2  TQNet/checkpoints/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_dphi0.8/checkpoint.pth
+1afa709674f4d11c83d0d3fa47863918aff9f66e472404c13e09ee4ccd9e09ff  TQNet/checkpoints/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_dphi0.8/checkpoint.pth
+9e26471043a7bab695471bd2dbda0dc64cc62cc13411596e2b0e592e1c8b5607  TQNet/checkpoints/ETTh1_96_96_arm64_armA_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_dphi0.8/checkpoint.pth
+e5631d9d5d186237555e2595c4577800349b4948a04eb55926536d4a421550af  TQNet/checkpoints/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/checkpoint.pth
+a9600f25403a910f463f6853dd571c8c1e4221d367f1a53ed59ad215b0ad6c78  TQNet/checkpoints/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025/checkpoint.pth
+1aaed97b9e58c55ecaf2ffe12448080b09b830e4d75c921154d849c44d2a1025  TQNet/checkpoints/ETTh1_96_96_arm64_armB_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026/checkpoint.pth
+ad1affbc287627319e8aeb2f765871606f9f1919109d9527516436f34d559f21  TQNet/checkpoints/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024_tq0ca0/checkpoint.pth
+9d64d179c8f1928f89935a61597a166f60ebe0366d105005ba273afba26b5a8d  TQNet/checkpoints/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2025_tq0ca0/checkpoint.pth
+efc40bb067105f892fc39966ec65afd6ea973dbc1c0b96a2e06b373d6c21cd84  TQNet/checkpoints/ETTh1_96_96_arm64_armD_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2026_tq0ca0/checkpoint.pth
+
+--- Final pytest ---
+........................................................................ [ 79%]
+.....................................                                    [100%]
+181 passed in 3.71s
+
+==============================================================
+arm64 platform replication finished: Mon Aug 10 19:43:47 IDT 2026
+==============================================================

@@ -145,6 +145,8 @@ def test_parses_the_published_setting():
         "seed": 2024,
         "use_tq": 1,
         "channel_aggre": 1,
+        "use_damped_trend": False,
+        "damped_phi": None,
     }
     assert collect_results.variant_label(parsed) == "published"
 
@@ -162,6 +164,32 @@ def test_parses_ablation_suffixes(suffix, use_tq, channel_aggre, label):
     assert parsed["use_tq"] == use_tq
     assert parsed["channel_aggre"] == channel_aggre
     assert collect_results.variant_label(parsed) == label
+
+
+@pytest.mark.parametrize("suffix,phi,label", [
+    ("_dphi0.8", 0.8, "damped trend (phi=0.8)"),
+    ("_dphi1", 1.0, "damped trend (phi=1)"),
+])
+def test_parses_damped_trend_suffix(suffix, phi, label):
+    """Arm A leaves use_tq and channel_aggre at 1, so only the tag distinguishes it
+    from the published model -- and being mislabelled 'published' would make it
+    eligible for the reconstruction column in tools/make_report.py."""
+    parsed = collect_results.parse_setting(
+        "ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024" + suffix
+    )
+    assert parsed["use_damped_trend"] is True
+    assert parsed["damped_phi"] == phi
+    assert parsed["use_tq"] == 1 and parsed["channel_aggre"] == 1
+    assert collect_results.variant_label(parsed) == label
+
+
+def test_published_setting_reports_no_damped_trend():
+    parsed = collect_results.parse_setting(
+        "ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024"
+    )
+    assert parsed["use_damped_trend"] is False
+    assert parsed["damped_phi"] is None
+    assert collect_results.variant_label(parsed) == "published"
 
 
 def test_parses_other_horizons_and_seeds():

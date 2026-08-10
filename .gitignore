@@ -14,6 +14,7 @@ checkpoints/
 TQNet/results/
 TQNet/test_results/
 TQNet/result_ours.txt
+TQNet/result_arm64.txt
 logs/
 *.pth
 *.ckpt
@@ -26,6 +27,13 @@ runs/
 !results/runs/
 !results/runs/*.json
 !results/*.json
+
+# The arm64 platform replication keeps its own ledger so it can never be mistaken for
+# a seed or displace the x86 re-baseline in the F5 table. Same reasoning as above: the
+# records are small JSON and report/platform_arm64.md is assembled from them, so they
+# have to be committed to be traceable.
+!results/platform-arm64/runs/
+!results/platform-arm64/runs/*.json
 
 # Generated report material. Committed deliberately -- report/results.md and its
 # figures are deliverables, and a reader without the dataset still needs to see them.

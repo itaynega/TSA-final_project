@@ -55,12 +55,19 @@ from common import split as split_mod  # noqa: E402
 TQNET_RESULTS = os.path.join(REPO_ROOT, "TQNet", "results")
 OUR_RESULTS = os.path.join(REPO_ROOT, "results")
 
-# ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024[_tq0ca1]
+# ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024[_tq0ca1][_dphi0.8]
+#
+# The `_dphi` group matches the tag TQNet/run.py appends for Arm A. Without it a
+# damped-trend run does not parse at all and its numbers cannot leave
+# TQNet/results/; with it but without the `variant_label` branch below, it parses
+# as "published" and `tools/make_report.py`'s variant filter would offer it as the
+# reconstruction.
 SETTING_RE = re.compile(
     r"^(?P<model_id>.+?)_(?P<model>[A-Za-z]+)_(?P<data>[A-Za-z0-9]+)"
     r"_ft(?P<features>[A-Z]+)_sl(?P<seq_len>\d+)_pl(?P<pred_len>\d+)"
     r"_cycle(?P<cycle>\d+)_seed(?P<seed>\d+)"
-    r"(?:_tq(?P<use_tq>\d)ca(?P<channel_aggre>\d))?$"
+    r"(?:_tq(?P<use_tq>\d)ca(?P<channel_aggre>\d))?"
+    r"(?:_dphi(?P<damped_phi>[0-9]+(?:\.[0-9]+)?))?$"
 )
 
 # Agreement tolerance between the two metric implementations, as a *relative* error.
@@ -76,6 +83,7 @@ def parse_setting(setting):
     if not match:
         return None
     fields = match.groupdict()
+    phi = fields["damped_phi"]
     parsed = {
         "model_id": fields["model_id"],
         "model": fields["model"],
@@ -87,12 +95,21 @@ def parse_setting(setting):
         "seed": int(fields["seed"]),
         "use_tq": int(fields["use_tq"]) if fields["use_tq"] is not None else 1,
         "channel_aggre": int(fields["channel_aggre"]) if fields["channel_aggre"] is not None else 1,
+        "use_damped_trend": phi is not None,
+        "damped_phi": float(phi) if phi is not None else None,
     }
     return parsed
 
 
 def variant_label(parsed):
-    """A short human name for the ablation variant this run represents."""
+    """A short human name for the ablation variant this run represents.
+
+    Arm A is checked first and reported with its phi. It changes the normalisation
+    rather than the TQ/attention wiring, so it leaves `use_tq` and `channel_aggre`
+    at 1 and would otherwise be indistinguishable from the published model here.
+    """
+    if parsed.get("use_damped_trend"):
+        return "damped trend (phi={:g})".format(parsed["damped_phi"])
     if parsed["use_tq"] and parsed["channel_aggre"]:
         return "published"
     if not parsed["use_tq"] and parsed["channel_aggre"]:
@@ -213,6 +230,8 @@ def ingest(directory, arm, results_dir=OUR_RESULTS, record=True, csv_path=data_m
                 "variant": variant_label(parsed),
                 "use_tq": parsed["use_tq"],
                 "channel_aggre": parsed["channel_aggre"],
+                "use_damped_trend": parsed["use_damped_trend"],
+                "damped_phi": parsed["damped_phi"],
                 "cycle": parsed["cycle"],
                 "features": parsed["features"],
                 "data_sha256": digest,
