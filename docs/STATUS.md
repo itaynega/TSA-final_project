@@ -20,7 +20,7 @@ exists.
 | # | Gap | State | Evidence |
 |---|---|---|---|
 | **G1** | Leakage-audit artefacts never committed | **CLOSED 12:41** | Commit `9663bcd`. `report/audit.md` (4,067 B) and `results/audit.json` (5,091 B). 10 rulings, 7 CLEAN / 3 DISCLOSE, re-read from the committed blob |
-| **G2** | 5 of 7 runs have no committed run record | **HALF CLOSED, HALF PERMANENTLY UNCLOSEABLE** | See below |
+| **G2** | 5 of 7 runs have no committed run record | **CLOSED 2026-08-10** — was recorded as half-uncloseable on 09.08 on a premise that proved false | Commit `8ac3f9b`. The arm64 machine was reachable and its artefacts intact; the two missing ablation variants were ingested. See below |
 | **G3** | Only horizon 96 exists; F5 needs four | **CLOSED 13:50** | Commit `ee6e334`. 12 new records at H = 96/192/336/720 × seeds 2024/2025/2026. 14 records total |
 | **G4** | Neither pre-registration exists | **CLOSED for the improvement; permanently open, by design, for the reconstruction** | Commit `ac426c7` (frozen text) + `3d807b0` (Amendments). No arm had run when it landed |
 | **G5** | Repo lives inside OneDrive, against D23 | **OPEN, knowingly accepted** | Amitay's decision, 12:00. `git fsck` silent, no corruption ever observed |
@@ -28,7 +28,46 @@ exists.
 
 ---
 
-## G2 — re-scoped, and half of it can never close
+## G2 — CLOSED 2026-08-10
+
+> **Correction, 2026-08-10.** Everything below the rule was written on 2026-08-09 and asserted that
+> half of this gap *"cannot close, ever"*. **That was wrong, and the premise was wrong rather than
+> the reasoning.** The original text is retained verbatim underneath, per this project's norm of
+> marking superseded claims instead of deleting them.
+>
+> **The machine was never gone.** The macOS/arm64 machine is reachable; its five Stage-1 checkpoints
+> and all five sets of `pred.npy` / `true.npy` have been on disk untouched since 2026-07-30
+> 18:44–18:51. They were invisible to every audit conducted from git because `.gitignore` excludes
+> `TQNet/results/` wholesale — the artefacts were never lost, only unreadable from the one place
+> anyone looked.
+>
+> **What closed it.** `tools/collect_results.py` ingested the two variants that had no record, at
+> commit `8ac3f9b`:
+>
+> | Variant | MSE `[test]` | Record |
+> |---|---|---|
+> | no-TQ (self-attention) | `0.3717761290076582` | `results/runs/reconstruction-TQNet-s2024-h96-1786379059318751000.json` |
+> | pure MLP | `0.37096275348328595` | `results/runs/reconstruction-TQNet-s2024-h96-1786379059385966000.json` |
+>
+> Both passed the split-hash assertion (`b66ee6b47e2b2eb8`), the 2,785-window check, and agreement
+> with TQNet's own float32 metrics to under `2e-7` relative. The published variant at seed 2024 was
+> already committed on 2026-07-30 (`reconstruction-TQNet-s2024-h96-1785426343196465000.json`), so the
+> ablation triple is now complete and `tools/make_report.py`'s ablation table renders from committed
+> records for the first time. The deltas — `+0.000726` (0.34σ) for no-TQ and `−0.000087` (0.04σ) for
+> pure MLP — reproduce `docs/03` §3.7 and `report/prereg-improvement.md` §1 exactly.
+>
+> **Three seeds of the full model were deliberately NOT re-ingested.** `tools/make_report.py` keys
+> its seed-spread table by seed and takes the most recent record, so fresh arm64 records would have
+> displaced the x86 re-baseline and reported a σ mixing two architectures — the conflation
+> `tools/horizon_sigma.py` exists to prevent. The x86 σ stands.
+>
+> **Job J-07′ is therefore unnecessary** as a rerun; the ablation no longer needs superseding. **T15
+> is satisfied for these numbers** — they are traceable and may be printed. The `M6` reading below
+> still holds as a lesson about *where the error started*, but the bill it describes did not arrive.
+
+---
+
+*Superseded text, 2026-08-09, retained:*
 
 The 07-31 text said "rerun and ingest, ~5 minutes". That fix is **no longer available for half of
 this gap**, and the reason matters enough to state plainly.

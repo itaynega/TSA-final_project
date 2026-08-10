@@ -605,3 +605,112 @@ whatever checkpoint is on disk and is the path that created the landmine — it 
 
 *End of J-17. This file froze the numbers for F1–F7. It wrote no other file, ran no training, ran
 no writing `git` command, invoked no evaluator, and sourced no number from `_summary.json`.*
+
+---
+
+# Amendments
+
+Append-only, per this project's norm for frozen documents (`report/prereg-improvement.md`
+carries its correction the same way). **No value in §§0–11 is altered or deleted by anything
+below; every entry is an addition.** Amendments to a sole-writer file are raised for the
+writer's approval, not adopted unilaterally — this block is written by the arm64 track and
+needs Amitay's sign-off.
+
+### 2026-08-10 — four provenance corrections
+
+**Explicitly out of scope: no measurement from the arm64 platform replication
+(`report/platform_arm64.md`) is introduced here, and no arm's value is restated from it.**
+Substituting arm64 measurements into this sheet would make them reported results, which is
+the post-hoc move `report/prereg-improvement.md` §4.5 forbids, and would reverse in prose the
+exclusion `tools/horizon_sigma.py` enforces in code. All four entries below concern
+**provenance and digests only**.
+
+#### A1 — §6.1 labels one of our own numbers as the authors' run
+
+§6.1's first row reads *"Authors' own run, MSE — `0.3710499405860901`"*, sourced from the x86
+record's `upstream_metric_agreement` block, and §6.1 computes a reproduction gap of
+`6.103574645699439e-09` from it.
+
+**That value is not the authors' run.** Inside `upstream_metric_agreement`, `upstream` means
+*upstream's metric code* — TQNet's `utils/metrics.py` — not *upstream's run*. The block exists
+to cross-check two scorings of **one array, ours**, which is why its sibling key is `ours`.
+`0.3710499405860901` is byte-identical to the `upstream_mse` field of our own
+`TQNet/results/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/metrics.json`.
+
+The authors' published figures for this cell:
+
+| Value | What it is | Source path | sha256 | Split |
+|---|---|---|---|---|
+| **`0.3712165653705597`** | **Authors' own run, MSE**, ETTh1 L = 96 → H = 96, seed 2024 | `TQNet/result_authors_reference.txt` | `5264c43d52262f1ac267637f209ab54c5ffe8472a1bdcd75eaf41c78fe2f3040` | `[test]` |
+| **`0.3928201496601105`** | **Authors' own run, MAE**, same cell | `TQNet/result_authors_reference.txt` | `5264c43d…` | `[test]` |
+| **`−0.0001666186808949588`** | **The reproduction gap**, ours − authors' **[derived]** | `0.37104994668966473 − 0.3712165653705597` | `ee3aadfb…` + `5264c43d…` | `[test]` |
+| `−0.04488...` % | The same gap, relative **[derived]** | `100 × −0.0001666186808949588 / 0.3712165653705597` | as above | `[test]` |
+| **`0.1666`** | **Gap in units of the paper's own H = 96 seed sd (0.001, Table 9 p. 18)** **[derived]** | `0.0001666186808949588 / 0.001` | as above | `[test]` |
+
+**Why this is not a precision quibble.** §6.1 as written reports a reproduction five orders of
+magnitude better than the real one — a gap so small it would read as a copied number rather
+than an independent run — and in doing so discards the project's strongest result, which is
+that an independent data path and an independent metric land **0.167σ** from the authors'
+published figure. F-authors quote the rows above. `report/F1-F3.md` §F3.1 already does.
+
+#### A2 — §6's stated reason for excluding the arm64 record is false
+
+§6 describes the arm64 record as *"produced on a machine that no longer exists"*, and
+`docs/STATUS.md` G2 built on the same premise. **The machine exists.** It is the macOS/arm64
+machine this amendment was written on; its five Stage-1 checkpoints and all five sets of
+`pred.npy`/`true.npy` have been on disk untouched since 2026-07-30 18:44–18:51. They were
+invisible to every audit conducted from git because `.gitignore` excludes `TQNet/results/`
+wholesale, not because they were lost.
+
+Two of the previously-unrecorded runs now have committed records:
+
+| Value | What it is | Source path | sha256 | Split |
+|---|---|---|---|---|
+| `0.3717761290076582` | ETTh1 ablation, no-TQ (self-attention), seed 2024 | `results/runs/reconstruction-TQNet-s2024-h96-1786379059318751000.json` | `b4a47af0fc50cb7a343255451c4b5d222dc39a9876a2e2563f4e4bed0cc65064` | `[test]` |
+| `0.37096275348328595` | ETTh1 ablation, pure MLP, seed 2024 | `results/runs/reconstruction-TQNet-s2024-h96-1786379059385966000.json` | `37adae9a1ef493bff5796028155560b0962f075e0fb87b8aab348408f1886856` | `[test]` |
+
+**The exclusion itself stands, and this amendment does not disturb it.** Mixing architectures
+under a σ of ~0.002 is bad practice whether or not the second machine is reachable, so
+`tools/horizon_sigma.py`'s rule (`git_commit == "9663bcd"`) and §5's σ are unchanged. Only the
+*reason* recorded in §6 needs correcting: the record is excluded by protocol, not by loss.
+
+#### A3 — §2 and §10 state a machine-local hash as though it were universal
+
+§2's third row and §10's closing list both record
+`TQNet/checkpoints/ETTh1_96_96_TQNet_ETTh1_ftM_sl96_pl96_cycle24_seed2024/checkpoint.pth`
+with sha256 `c5d0f7bbc057d48608c15e60a4872712b363a5fa4c12238ba77fb16860773ca2`, the retained
+epoch-3 artefact. On the arm64 clone that same path holds
+`44759d7a224071280f4319e6fbbe88d878e308989976b00612989ef3a789a20c` — the original Stage-1
+weights, which were never overwritten because the incident happened on the x86 clone.
+
+Neither hash is wrong; the path is **gitignored and machine-local**, so it does not have one
+hash. A reader verifying §2 on this clone gets a mismatch and would reasonably conclude the
+sheet is broken. Both values are recorded here with the clone each belongs to:
+
+| Clone | sha256 of that path | What it is |
+|---|---|---|
+| x86 (Amitay) | `c5d0f7bbc057d48608c15e60a4872712b363a5fa4c12238ba77fb16860773ca2` | epoch-3 artefact, retained as §7j / F6 evidence |
+| arm64 | `44759d7a224071280f4319e6fbbe88d878e308989976b00612989ef3a789a20c` | original Stage-1 weights, never overwritten |
+
+Every other hash in this sheet is of a **committed** file and is therefore clone-independent.
+This row is the only exception, and it is the only one that needed qualifying.
+
+#### A4 — §9's missing digest, discharged
+
+§9 records that `results/runs/baseline-seasonal_naive_24-sna-h96-1785426202205168000.json`
+carries no sha256, and bars §6.2's four seasonal-naive values under T15′ — which also blocks
+the `27.6%`-over-baseline figure in `report/results.md`.
+
+| Value | What it is | Source path | sha256 | Split |
+|---|---|---|---|---|
+| — | The digest §9 asked for. Read-only `sha256sum` of a file already committed; no measurement, no evaluator, nothing re-run. | `results/runs/baseline-seasonal_naive_24-sna-h96-1785426202205168000.json` | **`85951e46b25653ae67a53c4a1f4f990b397fda24b204c52da61a572afc1f1948`** | `[test]` |
+
+**With this, §6.2's four values satisfy T15′ and become quotable**, and the `27.6%` figure is
+unblocked. §6.2's values themselves are unchanged; only the missing column is supplied.
+
+#### Also raised, and deliberately not amended here
+
+§6.2 attributes paper Table 5 to *"`PTQNet.pdf` p. 15"*. PTQNet is a different paper — Xun et
+al., *Information Processing & Management* 63(7):104785, 2026 — which is paywalled and unread
+(`report/prereg-improvement.md` §3, Arm B). Table 5 is in `files/project/TQnet.pdf` p. 15. A
+citation in the frozen body is the sole writer's to fix; it is flagged rather than edited.
